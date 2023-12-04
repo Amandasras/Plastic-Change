@@ -19,6 +19,9 @@
   --gray900: #1c1e22;
 
   /* sizes */
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-3: 3px;
   --size-4: 4px;
   --size-8: 8px;
   --size-12: 12px;
@@ -67,7 +70,7 @@
   --color-text-gray500: var(--gray500);
   --color-text-gray900: var(--gray900);
 
-  /* spacing */
+  /* spacing Size */
   --size-spacing-4: var(--size-4);
   --size-spacing-8: var(--size-8);
   --size-spacing-12: var(--size-12);
@@ -79,8 +82,13 @@
   --size-spacing-48: var(--size-48);
   --size-spacing-56: var(--size-56);
   --size-spacing-64: var(--size-64);
+
+  /* Border stroke size*/
+  --size-stroke-1: var(--size-1);
+  --size-stroke-2: var(--size-2);
 }
 
+/* ----------------- Fonts ----------------- */
 @font-face {
   font-family: "Rubrik";
   src: local(Rubrik), url(../assets/fonts/Rubik-VariableFont_wght.ttf);
@@ -89,4 +97,102 @@
 @font-face {
   font-family: "Champton";
   src: local(Champton), url(../assets/fonts/CamptonBold.otf) format("opentype"), url(../assets/fonts/CamptonMedium.otf) format("opentype"), url(../assets/fonts/CamptonSemiBold.otf) format("opentype");
+}
+/* display */
+.text-display-large {
+  font-family: Campton;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.text-display-medium {
+  font-family: Campton;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text-display-small {
+  font-family: Campton;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* title */
+.text-title-regular {
+  font-family: Campton;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28.8px;
+}
+
+.text-title-uppercase {
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+/* body */
+
+.text-body-regular {
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.text-body-small {
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* form */
+.text-form-title-large {
+  font-family: Campton;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.text-form-title-medium {
+  font-family: Campton;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28.8px;
+}
+
+.text-form-label-regular {
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.text-form-label-semibold {
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.text-form-label-semibold-small {
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
