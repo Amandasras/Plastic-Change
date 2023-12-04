@@ -80,3 +80,13 @@
   --size-spacing-56: var(--size-56);
   --size-spacing-64: var(--size-64);
 }
+
+@font-face {
+  font-family: "Rubrik";
+  src: local(Rubrik), url(../assets/fonts/Rubik-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Champton";
+  src: local(Champton), url(../assets/fonts/CamptonBold.otf) format("opentype"), url(../assets/fonts/CamptonMedium.otf) format("opentype"), url(../assets/fonts/CamptonSemiBold.otf) format("opentype");
+}
