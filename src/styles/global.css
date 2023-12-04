@@ -1,0 +1,54 @@
+:root {
+  /* primitive colors */
+  --red300: #ff7591;
+  --red500: #ff1053;
+  --red600: #cf1046;
+  --red700: #a20e38;
+
+  --green500: #007b79;
+  --green700: #004e4d;
+
+  --yellow500: #f5b335;
+  --yellow700: #cf8800;
+
+  --white: #ffffff;
+  --gray300: #cacdd5;
+  --gray400: #a2a6b4;
+  --gray500: #6f717d;
+  --gray900: #1c1e22;
+
+  /* Surface Color */
+  --color-surface-red300: var(--red300);
+  --color-surface-red500: var(--red500);
+  --color-surface-red600: var(--red600);
+  --color-surface-red700: var(--red700);
+
+  --color-surface-green500: var(--green500);
+  --color-surface-green700: var(--green700);
+
+  --color-surface-yellow500: var(--yellow500);
+  --color-surface-yellow700: var(--yellow700);
+
+  --color-surface-white: var(--white);
+  --color-surface-gray300: var(--gray300);
+  --color-surface-gray400: var(--gray400);
+
+  /* Stroke Color */
+  --color-stroke-red500: var(--red500);
+  --color-stroke-green500: var(--green500);
+  --color-stroke-yellow500: var(--yellow500);
+
+  --color-stroke-white: var(--white);
+  --color-stroke-gray300: var(--gray300);
+  --color-stroke-gray400: var(--gray400);
+  --color-stroke-gray500: var(--gray500);
+  --color-stroke-gray900: var(--gray900);
+
+  /* Text Color */
+  --color-text-red500: var(--red500);
+  --color-text-white: var(--white);
+  --color-text-gray300: var(--gray300);
+  --color-text-gray400: var(--gray400);
+  --color-text-gray500: var(--gray500);
+  --color-text-gray900: var(--gray900);
+}
