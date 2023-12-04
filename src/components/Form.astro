@@ -1,0 +1,38 @@
+---
+
+---
+
+<div id="formWithSnow">
+  <!-- skift stien til at være i src istedet for public -->
+  <img src="../../snow.svg" alt="illustration af sne på formularen" id="snow" />
+  <div id="form_container"></div>
+</div>
+
+<style>
+  #formWithSnow {
+    width: 432.27px;
+    position: relative;
+  }
+  #snow {
+    width: 432.27px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  #form_container {
+    position: absolute;
+    top: 75px;
+    justify-self: center;
+    margin-left: calc((432.27px - 384px) / 2);
+
+    width: 384px;
+    height: 646px;
+    /* padding: var(--size-spacing-64) var(--size-spacing-32); */
+    border-radius: 11px;
+    background-color: var(--color-surface-white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+  }
+</style>
