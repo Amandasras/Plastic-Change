@@ -1,4 +1,5 @@
 :root {
+  /* ----------------- primitives ----------------- */
   /* primitive colors */
   --red300: #ff7591;
   --red500: #ff1053;
@@ -17,6 +18,20 @@
   --gray500: #6f717d;
   --gray900: #1c1e22;
 
+  /* sizes */
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-56: 56px;
+  --size-64: 64px;
+
+  /* ----------------- Tokens ----------------- */
   /* Surface Color */
   --color-surface-red300: var(--red300);
   --color-surface-red500: var(--red500);
@@ -51,4 +66,17 @@
   --color-text-gray400: var(--gray400);
   --color-text-gray500: var(--gray500);
   --color-text-gray900: var(--gray900);
+
+  /* spacing */
+  --size-spacing-4: var(--size-4);
+  --size-spacing-8: var(--size-8);
+  --size-spacing-12: var(--size-12);
+  --size-spacing-16: var(--size-16);
+  --size-spacing-20: var(--size-20);
+  --size-spacing-24: var(--size-24);
+  --size-spacing-32: var(--size-32);
+  --size-spacing-40: var(--size-40);
+  --size-spacing-48: var(--size-48);
+  --size-spacing-56: var(--size-56);
+  --size-spacing-64: var(--size-64);
 }
