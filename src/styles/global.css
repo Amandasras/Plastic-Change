@@ -123,6 +123,17 @@
   line-height: normal;
 }
 
+/* display Mobile*/
+@media (max-width: 600px) {
+  .text-display-large {
+    font-size: 36px;
+  }
+
+  .text-display-medium {
+    font-size: 28px;
+  }
+}
+
 /* title */
 .text-title-regular {
   font-family: Campton;
