@@ -1,0 +1,14 @@
+<svg width="180" height="179" viewBox="0 0 180 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 179V1.06548V0H180V179H0Z" fill="#A20E38"/>
+<rect opacity="0.59" width="20" height="179" fill="#CF1046"/>
+<rect opacity="0.59" x="80" width="20" height="179" fill="#CF1046"/>
+<rect opacity="0.59" x="160" width="20" height="179" fill="#CF1046"/>
+<rect opacity="0.59" x="120" width="20" height="179" fill="#CF1046"/>
+<rect opacity="0.59" x="40" width="20" height="179" fill="#CF1046"/>
+<rect opacity="0.8" y="20.119" width="20.119" height="180" transform="rotate(-90 0 20.119)" fill="#CF1046"/>
+<rect opacity="0.8" y="60.3571" width="20.119" height="180" transform="rotate(-90 0 60.3571)" fill="#CF1046"/>
+<rect opacity="0.8" y="100.595" width="20.119" height="180" transform="rotate(-90 0 100.595)" fill="#CF1046"/>
+<rect opacity="0.8" y="140.833" width="20.119" height="180" transform="rotate(-90 0 140.833)" fill="#CF1046"/>
+<rect opacity="0.8" y="179" width="18" height="180" transform="rotate(-90 0 179)" fill="#CF1046"/>
+<path d="M93.664 62.472C109.408 62.472 119.968 73.032 119.968 86.184C119.968 91.56 117.76 96.552 114.4 102.024L97.408 129H79.072L91.552 109.512C77.056 108.744 67.264 98.952 67.264 86.472C67.264 72.84 78.016 62.472 93.664 62.472ZM101.344 94.248L101.728 93.576C104.032 90.312 104.896 88.2 104.896 85.8C104.896 80.424 100.288 75.432 93.664 75.432C87.04 75.432 82.528 80.424 82.528 85.896C82.528 91.368 86.944 96.456 93.664 96.456C96.544 96.456 99.328 95.688 101.344 94.248Z" fill="white"/>
+</svg>
