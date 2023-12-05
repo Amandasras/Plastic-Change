@@ -1,0 +1,33 @@
+---
+---
+
+<div class="radioButton isChecked">
+  <div id="fill"></div>
+</div>
+
+<style>
+  .radioButton {
+    width: 28px;
+    height: 28px;
+    border-radius: calc(28px / 2);
+    border: 1px solid var(--color-stroke-gray300);
+    box-sizing: border-box;
+    padding: 3px;
+  }
+
+  #fill {
+    width: 20px;
+    height: 20px;
+    border-radius: calc(20px / 2);
+    background-color: var(--color-surface-red500);
+    display: none;
+  }
+
+  .isChecked {
+    border-color: var(--color-stroke-red500);
+  }
+
+  .isChecked #fill {
+    display: block;
+  }
+</style>
