@@ -4,16 +4,12 @@
 <div id="radioButtonContainer">
   <label for="radioButtonMonthlyPayment" class="radioLabel text-form-label-regular">
     <input type="radio" name="radioInputField" id="radioButtonMonthlyPayment" class="radioInput" />
-    <div class="radioButtonCustom">
-      <div id="fill"></div>
-    </div>
+    <div class="radioButtonCustom"></div>
     Månedligt
   </label>
   <label for="radioButtonSinglePayment" class="radioLabel text-form-label-regular">
     <input type="radio" name="radioInputField" id="radioButtonSinglePayment" class="radioInput" />
-    <div class="radioButtonCustom">
-      <div id="fill"></div>
-    </div>
+    <div class="radioButtonCustom"></div>
     Én gang
   </label>
 </div>
@@ -37,7 +33,7 @@
   .radioButtonCustom {
     width: 28px;
     height: 28px;
-    border-radius: calc(28px / 2);
+    border-radius: 50%;
     border: 1px solid var(--color-stroke-gray300);
     box-sizing: border-box;
     padding: 3px;
