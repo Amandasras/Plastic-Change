@@ -1,33 +1,62 @@
 ---
 ---
 
-<div class="radioButton isChecked">
-  <div id="fill"></div>
+<div id="radioButtonContainer">
+  <label for="radioButtonMonthlyPayment" class="radioLabel text-form-label-regular">
+    <input type="radio" name="radioInputField" id="radioButtonMonthlyPayment" class="radioInput" />
+    <div class="radioButtonCustom">
+      <div id="fill"></div>
+    </div>
+    Månedligt
+  </label>
+  <label for="radioButtonSinglePayment" class="radioLabel text-form-label-regular">
+    <input type="radio" name="radioInputField" id="radioButtonSinglePayment" class="radioInput" />
+    <div class="radioButtonCustom">
+      <div id="fill"></div>
+    </div>
+    Én gang
+  </label>
 </div>
 
 <style>
-  .radioButton {
+  #radioButtonContainer {
+    display: flex;
+  }
+  .radioLabel {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 24px;
+    color: var(--color-text-gray500);
+  }
+  .radioInput {
+    display: none;
+  }
+
+  /* selve radio knappen */
+  .radioButtonCustom {
     width: 28px;
     height: 28px;
     border-radius: calc(28px / 2);
     border: 1px solid var(--color-stroke-gray300);
     box-sizing: border-box;
     padding: 3px;
+    margin-right: 10px;
   }
-
-  #fill {
-    width: 20px;
-    height: 20px;
-    border-radius: calc(20px / 2);
+  .radioButtonCustom::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
     background-color: var(--color-surface-red500);
-    display: none;
+    transform: scale(0);
+    transition: transform 0.15s;
   }
-
-  .isChecked {
+  .radioInput:checked + .radioButtonCustom {
     border-color: var(--color-stroke-red500);
   }
-
-  .isChecked #fill {
-    display: block;
+  .radioInput:checked + .radioButtonCustom::after {
+    transform: scale(1);
   }
 </style>

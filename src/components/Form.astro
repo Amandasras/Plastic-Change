@@ -1,11 +1,16 @@
 ---
-
+import RadioButton from "../components/form/RadioButton.astro";
 ---
 
 <div id="formWithSnow">
   <!-- skift stien til at være i src istedet for public -->
   <img src="../../snow.svg" alt="illustration af sne på formularen" id="snow" />
-  <div id="form_container"></div>
+  <div id="form_container">
+    <h2 class="text-form-title-large">Her er overskriften</h2>
+    <form action="">
+      <RadioButton />
+    </form>
+  </div>
 </div>
 
 <style>
@@ -18,21 +23,58 @@
     position: absolute;
     z-index: 2;
   }
-
   #form_container {
     position: absolute;
     top: 75px;
     justify-self: center;
     margin-left: calc((432.27px - 384px) / 2);
+    margin-right: calc((432.27px - 384px) / 2);
+    padding: var(--size-spacing-64) var(--size-spacing-32);
 
-    width: 384px;
+    width: 320px;
     height: 646px;
-    /* padding: var(--size-spacing-64) var(--size-spacing-32); */
     border-radius: 11px;
     background-color: var(--color-surface-white);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 48px;
+  }
+  .radioOld {
+    display: none;
+  }
+
+  .radioLabel {
+    position: relative;
+    display: flex;
+    /* padding-left giver plads til radiobutton */
+    padding-left: 34px;
+    color: var(--color-text-gray500);
+  }
+
+  .radioLabel::before {
+    left: 4px;
+    top: 4px;
+    background: var(--color-surface-red500);
+    border: none;
+    width: 20px;
+    height: 20px;
+    float: right;
+  }
+
+  .radioLabel::before {
+    border-color: var(--color-stroke-red500);
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    border: 1px solid #cacdd5;
+    border-radius: 50%;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    transition: all 0.25s ease-in-out;
   }
 </style>
