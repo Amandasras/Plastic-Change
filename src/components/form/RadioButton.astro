@@ -1,28 +1,19 @@
 ---
+const { label, radioGroup } = Astro.props;
 ---
 
-<div id="radioButtonContainer">
-  <label for="radioButtonMonthlyPayment" class="radioLabel text-form-label-regular">
-    <input type="radio" name="supportTypePicker" id="radioButtonMonthlyPayment" class="radioInput" />
-    <div class="radioButtonCustom"></div>
-    Månedligt
-  </label>
-  <label for="radioButtonSinglePayment" class="radioLabel text-form-label-regular">
-    <input type="radio" name="supportTypePicker" id="radioButtonSinglePayment" class="radioInput" />
-    <div class="radioButtonCustom"></div>
-    Én gang
-  </label>
-</div>
+<label for={"input" + label} class="radioLabel text-form-label-regular">
+  <input type="radio" name={radioGroup} id={"input" + label} class="radioInput" />
+  <div class="radioButtonCustom"></div>
+  {label}
+</label>
 
 <style>
-  #radioButtonContainer {
-    display: flex;
-  }
   .radioLabel {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    margin-right: 24px;
+    /* margin-right: 24px; */
     color: var(--color-text-gray500);
   }
   .radioInput {
