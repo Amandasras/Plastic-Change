@@ -103,60 +103,6 @@ import "../styles/reset.css";
       </div>
     </div>
   </body>
-  <!-- <script>
-    // Funktion til at åbne en dør
-    function openDoor(day) {
-      // Erstat 'placeholder' med præfikset for dine SVG-billeder
-      var imagePath = "src/assets/images/julekalender/1.svg" + day + ".svg";
-
-      // Åbn lågen og vis billedet
-      var doorElement = document.querySelector(".door:nth-child(" + day + ")");
-      doorElement.innerHTML =
-        '<img src="./assets/images/julekalender/1.svg' +
-        imagePath +
-        '" alt="Door ' +
-        day +
-        '">';
-
-      // Vis en pop-up med en udfordring
-      var challenge = getChallenge(day);
-      showPopup(challenge);
-    }
-
-    // Funktion til at hente udfordringer
-    function getChallenge(day) {
-      // Erstat disse strengværdier med dine egne udfordringer for hver dag
-      var challenges = [
-        "Dag 1: Syng din yndlingssang højt!",
-        "Dag 2: Dans som ingen ser dig!",
-        // Fortsæt med udfordringerne for de resterende dage
-        // ...
-      ];
-
-      return challenges[day - 1];
-    }
-
-    // Funktion til at vise pop-up
-    function showPopup(challenge) {
-      // Opret pop-up element
-      var popup = document.createElement("div");
-      popup.className = "popup";
-      popup.innerHTML =
-        "<p>" + challenge + '</p><button onclick="closePopup()"> Luk </button>';
-
-      // Tilføj pop-up til body
-      document.body.appendChild(popup);
-    }
-
-    // Funktion til at lukke pop-up
-    function closePopup() {
-      // Fjern pop-up element
-      var popup = document.querySelector(".popup");
-      if (popup) {
-        popup.remove();
-      }
-    }
-  </script> -->
 </html>
 
 <style>
@@ -223,3 +169,57 @@ import "../styles/reset.css";
     cursor: pointer;
   } */
 </style>
+<!-- <script>
+    // Funktion til at åbne en dør
+    function openDoor(day) {
+      // Erstat 'placeholder' med præfikset for dine SVG-billeder
+      var imagePath = "src/assets/images/julekalender/1.svg" + day + ".svg";
+
+      // Åbn lågen og vis billedet
+      var doorElement = document.querySelector(".door:nth-child(" + day + ")");
+      doorElement.innerHTML =
+        '<img src="./assets/images/julekalender/1.svg' +
+        imagePath +
+        '" alt="Door ' +
+        day +
+        '">';
+
+      // Vis en pop-up med en udfordring
+      var challenge = getChallenge(day);
+      showPopup(challenge);
+    }
+
+    // Funktion til at hente udfordringer
+    function getChallenge(day) {
+      // Erstat disse strengværdier med dine egne udfordringer for hver dag
+      var challenges = [
+        "Dag 1: Syng din yndlingssang højt!",
+        "Dag 2: Dans som ingen ser dig!",
+        // Fortsæt med udfordringerne for de resterende dage
+        // ...
+      ];
+
+      return challenges[day - 1];
+    }
+
+    // Funktion til at vise pop-up
+    function showPopup(challenge) {
+      // Opret pop-up element
+      var popup = document.createElement("div");
+      popup.className = "popup";
+      popup.innerHTML =
+        "<p>" + challenge + '</p><button onclick="closePopup()"> Luk </button>';
+
+      // Tilføj pop-up til body
+      document.body.appendChild(popup);
+    }
+
+    // Funktion til at lukke pop-up
+    function closePopup() {
+      // Fjern pop-up element
+      var popup = document.querySelector(".popup");
+      if (popup) {
+        popup.remove();
+      }
+    }
+  </script> -->
