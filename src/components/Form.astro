@@ -1,5 +1,5 @@
 ---
-import RadioButton from "../components/form/RadioButton.astro";
+import RadioButton from "./form/RadioButton.astro";
 import AmountPicker from "./form/AmountPicker.astro";
 import InputFieldRequired from "./form/InputFieldRequired.astro";
 import InputField from "./form/InputField.astro";
@@ -14,7 +14,10 @@ import PaymentMethod from "./form/PaymentMethod.astro";
     <div id="step1" class="formStep">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <form action="">
-        <RadioButton />
+        <div id="radioButtonContainer">
+          <RadioButton label="Månedligt" radioGroup="PaymentInfo" />
+          <RadioButton label="Én gang" radioGroup="PaymentInfo" />
+        </div>
         <AmountPicker size="regular" />
         <!-- <InputFieldRequired label="Andet beløb" labelThickness="thick" placeholder="ex: 1000" unit="kr." name="amountPicker" /> -->
         <Button label="Støt nu" size="thick" style="filled" />
@@ -72,8 +75,13 @@ import PaymentMethod from "./form/PaymentMethod.astro";
     align-items: flex-start;
     gap: 32px;
   }
-
   /* .hide {
     display: none;
   } */
+
+  /* –––––––––– Step 1 –––––––––– */
+  #radioButtonContainer {
+    display: flex;
+    gap: 24px;
+  }
 </style>

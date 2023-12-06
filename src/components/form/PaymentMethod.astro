@@ -1,2 +1,41 @@
 ---
+import RadioButton from "./RadioButton.astro";
 ---
+
+<div id="paymentMethod">
+  <div class="MobilePay paymentType">
+    <RadioButton label="MobilePay" radioGroup="PaymentInfo" />
+    <img src="../../assets/mobilepay.png" alt="mobilepay logo" />
+  </div>
+  <div class="Card paymentType">
+    <RadioButton label="Betalingskort" radioGroup="PaymentInfo" />
+    <div class="methods">
+      <img src="../../assets/dankort.png" alt="dankort logo" />
+      <img src="../../assets/visa.png" alt="visa logo" />
+      <img src="../../assets/mastercard.png" alt="mastercard logo" />
+    </div>
+  </div>
+</div>
+
+<style>
+  #paymentMethod {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .paymentType {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .methods {
+    display: flex;
+    gap: 3px;
+  }
+
+  img {
+    height: 25px;
+  }
+</style>
