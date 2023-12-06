@@ -177,6 +177,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin: 0;
+  color: var(--color-text-gray900);
 }
 .text-form-title-medium {
   font-family: Campton;
