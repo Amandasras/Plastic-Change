@@ -1,0 +1,77 @@
+---
+const { label, labelThickness, placeholder, unit, name } = Astro.props;
+---
+
+<div class="inputFieldContainer">
+  <div class="label">
+    <label for="InputFieldID" class="inputLabel" label-thickness={labelThickness}>{label}</label>
+    <div id="required" class="text-form-label-semibold">*</div>
+  </div>
+  <div class="Field">
+    <input type="number" id="InputFieldID" class="inputField" placeholder={placeholder} name="amountPicker" required />
+    <div id="unit" class="text-form-label-regular">{unit}</div>
+  </div>
+</div>
+
+<style>
+  .inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 320px;
+  }
+  .label {
+    display: flex;
+    gap: 4px;
+  }
+  .inputLabel {
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  #required {
+    color: var(--color-text-red500);
+  }
+  .Field {
+    border-radius: 4px;
+    border: 1px solid var(--color-stroke-gray-300, #cacdd5);
+    background: var(--color-surface-white, #fff);
+
+    display: flex;
+    justify-content: space-between;
+  }
+  .inputField {
+    padding: 10px 0 10px 20px;
+
+    border: none;
+    width: 100%;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    color: var(--color-text-gray400);
+  }
+
+  .inputField::placeholder {
+    color: var(--color-text-gray400);
+  }
+  #unit {
+    color: var(--color-text-gray500);
+    padding: 10px 20px;
+  }
+  /* ----------- Variants ----------- */
+
+  /* label styling */
+  [label-thickness="regular"] {
+    font-weight: 400;
+    color: var(--color-text-gray500);
+  }
+
+  [label-thickness="thick"] {
+    font-weight: 600;
+    color: var(--color-text-gray900);
+  }
+</style>
