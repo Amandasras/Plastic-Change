@@ -1,23 +1,44 @@
 ---
+import InputFieldRequired from "./InputFieldRequired.astro";
 ---
 
 <div class="amountPickerContainer">
-  <input type="radio" name="radioInputField" id="radioButton50" class="radioInput" />
-  <label for="radioButton50" class="radioLabel text-form-label-semibold"> 50 kr.</label>
-  <input type="radio" name="radioInputField" id="radioButton75" class="radioInput" />
-  <label for="radioButton75" class="radioLabel text-form-label-semibold"> 75 kr.</label>
-  <input type="radio" name="radioInputField" id="radioButton125" class="radioInput" />
-  <label for="radioButton125" class="radioLabel text-form-label-semibold"> 125 kr.</label>
+  <div class="amountPickerRadioButtons">
+    <input type="radio" name="amountPicker" id="radioButton50" class="radioInput" />
+    <label for="radioButton50" class="radioLabel text-form-label-semibold"> 50 kr.</label>
+    <input type="radio" name="amountPicker" id="radioButton75" class="radioInput" />
+    <label for="radioButton75" class="radioLabel text-form-label-semibold"> 75 kr.</label>
+    <input type="radio" name="amountPicker" id="radioButton125" class="radioInput" />
+    <label for="radioButton125" class="radioLabel text-form-label-semibold"> 125 kr.</label>
+  </div>
+  <div class="inputFieldContainer">
+    <label for="InputFieldID" class="inputLabel">Andet beløb</label>
+    <div class="Field">
+      <input type="number" name="amountPicker" id="InputFieldID" class="inputField" placeholder="Ex. 1000" />
+      <div id="unit" class="text-form-label-regular">kr.</div>
+    </div>
+  </div>
 </div>
 
 <style>
   .amountPickerContainer {
     display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 320px;
+  }
+
+  label {
+    color: var(--color-text-gray500);
+  }
+  /* ---------- Radio buttons - set amount ---------- */
+  .amountPickerRadioButtons {
+    display: inline-flex;
     justify-content: space-between;
     width: 320px;
   }
+
   .radioLabel {
-    color: var(--color-text-gray500);
     background-color: var(--color-surface-white);
     width: 88px;
     height: 88px;
@@ -42,58 +63,48 @@
     background-color: var(--color-surface-red500);
     color: var(--color-text-white);
   }
-</style>
 
-<!-- 
-<div class="amountPickerContainer">
-  <label for="radioButton50" class="radioLabel text-form-label-regular">
-    <input type="radio" name="radioInputField" id="radioButton50" class="radioInput" />
-    <div class="radioButtonCustom"><p class="amount">50 kr.</p></div>
-  </label>
-</div>
+  /* ---------- input field - custom amount ---------- */
 
-<style>
-  .radioButtonContainer {
-    max-width: 88px;
+  .inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 320px;
   }
-  .radioLabel {
-    align-items: center;
-    cursor: pointer;
+  .inputLabel {
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .Field {
+    border-radius: 4px;
+    border: 1px solid var(--color-stroke-gray-300, #cacdd5);
+    background: var(--color-surface-white, #fff);
+
+    display: flex;
+    justify-content: space-between;
+  }
+  .inputField {
+    padding: 10px 0 10px 20px;
+
+    border: none;
+    width: 100%;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    color: var(--color-text-gray400);
+  }
+
+  .inputField::placeholder {
+    color: var(--color-text-gray400);
+  }
+  #unit {
     color: var(--color-text-gray500);
+    padding: 10px 20px;
   }
-  .radioInput {
-    display: none;
-  }
- 
-  .radioButtonCustom {
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    border: 1px solid var(--color-stroke-gray300);
-    box-sizing: border-box;
-  }
-
-  .amount {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    text-align: center;
-    line-height: 88px;
-  }
-  .radioButtonCustom::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 50%;
-    background-color: var(--color-surface-red500);
-    transform: scale(0);
-    transition: transform 0.15s;
-  }
-  .radioInput:checked + .radioButtonCustom {
-    border-color: var(--color-stroke-red500);
-  }
-  .radioInput:checked + .radioButtonCustom::after {
-    transform: scale(1);
-  }
-</style> -->
+</style>
