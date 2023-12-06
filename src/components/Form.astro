@@ -1,19 +1,44 @@
 ---
 import RadioButton from "../components/form/RadioButton.astro";
 import AmountPicker from "./form/AmountPicker.astro";
+import InputFieldRequired from "./form/InputFieldRequired.astro";
+import InputField from "./form/InputField.astro";
+import Button from "./Button.astro";
+import PaymentMethod from "./form/PaymentMethod.astro";
 ---
 
 <div id="formWithSnow">
   <!-- skift stien til at være i src istedet for public -->
   <img src="../../snow.svg" alt="illustration af sne på formularen" id="snow" />
   <div id="form_container">
-    <h2 class="text-form-title-large">Her er overskriften</h2>
-    <form action="">
-      <RadioButton />
-    </form>
-    <form action="">
-      <AmountPicker />
-    </form>
+    <div id="page1" class="formPage">
+      <h2 class="text-form-title-large">Her er overskriften</h2>
+      <form action="">
+        <RadioButton />
+        <AmountPicker />
+        <!-- <InputFieldRequired label="Andet beløb" labelThickness="thick" placeholder="ex: 1000" unit="kr." name="amountPicker" /> -->
+        <Button label="Støt nu" size="thick" style="filled" />
+      </form>
+    </div>
+    <div id="page2" class="hide formPage">
+      <h2 class="text-form-title-large">Her er overskriften</h2>
+      <form action="">
+        <!-- small -->
+        <AmountPicker />
+        <PaymentMethod />
+        <InputFieldRequired label="Fornavn" type="text" autocomplete="given-name" placeholder="" />
+        <InputFieldRequired label="Efternavn" type="text" autocomplete="family-name" placeholder="" />
+        <InputFieldRequired label="E-mail" type="email" autocomplete="email" placeholder="" />
+        <InputFieldRequired label="Telefon" type="tel" autocomplete="tel" placeholder="" />
+        <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" />
+
+        <!-- jeg ønsker fradrag fra SKAT -->
+        <!-- giv samtykke -->
+        <Button label="Gå til betaling" size="regular-wide" style="filled" />
+      </form>
+    </div>
+    <div id="page3" class="hide formPage"></div>
+    <div id="page4" class="hide formPage"></div>
   </div>
 </div>
 
@@ -36,12 +61,19 @@ import AmountPicker from "./form/AmountPicker.astro";
     padding: var(--size-spacing-64) var(--size-spacing-32);
 
     width: 320px;
-    height: 646px;
     border-radius: 11px;
     background-color: var(--color-surface-white);
+  }
+
+  .formPage,
+  form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 48px;
+    gap: 32px;
   }
+
+  /* .hide {
+    display: none;
+  } */
 </style>
