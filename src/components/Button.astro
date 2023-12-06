@@ -29,6 +29,10 @@ const { size, style, label } = Astro.props;
     width: fit-content;
     line-height: normal;
   }
+  [size-variant="regular-wide"] {
+    width: calc(100% - 40px);
+    line-height: normal;
+  }
   [size-variant="thick"] {
     width: calc(100% - 40px);
     line-height: 48px;
