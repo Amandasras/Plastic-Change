@@ -1,5 +1,8 @@
 ---
 import DonationForm from "../components/DonationForm.astro";
+import Julekalender from "../components/Julekalender.astro";
+import "../styles/global.css";
+import "../styles/reset.css";
 ---
 
 <html lang="en">
@@ -13,5 +16,10 @@ import DonationForm from "../components/DonationForm.astro";
   <body>
     <h1>Astro</h1>
     <DonationForm />
+    <section>
+      <article>
+        <Julekalender />
+      </article>
+    </section>
   </body>
 </html>
