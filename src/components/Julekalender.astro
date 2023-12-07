@@ -1,6 +1,29 @@
 ---
 import { Image } from "astro:assets";
 import door1 from "../assets/images/julekalender/door1.svg";
+import door2 from "../assets/images/julekalender/door2.svg";
+import door3 from "../assets/images/julekalender/door3.svg";
+import door4 from "../assets/images/julekalender/door4.svg";
+import door5 from "../assets/images/julekalender/door5.svg";
+import door6 from "../assets/images/julekalender/door6.svg";
+import door7 from "../assets/images/julekalender/door7.svg";
+import door8 from "../assets/images/julekalender/door8.svg";
+import door9 from "../assets/images/julekalender/door9.svg";
+import door10 from "../assets/images/julekalender/door10.svg";
+import door11 from "../assets/images/julekalender/door11.svg";
+import door12 from "../assets/images/julekalender/door12.svg";
+import door13 from "../assets/images/julekalender/door13.svg";
+import door14 from "../assets/images/julekalender/door14.svg";
+import door15 from "../assets/images/julekalender/door15.svg";
+import door16 from "../assets/images/julekalender/door16.svg";
+import door17 from "../assets/images/julekalender/door17.svg";
+import door18 from "../assets/images/julekalender/door18.svg";
+import door19 from "../assets/images/julekalender/door19.svg";
+import door20 from "../assets/images/julekalender/door20.svg";
+import door21 from "../assets/images/julekalender/door21.svg";
+import door22 from "../assets/images/julekalender/door22.svg";
+import door23 from "../assets/images/julekalender/door23.svg";
+import door24 from "../assets/images/julekalender/door24.svg";
 import "../styles/global.css";
 import "../styles/reset.css";
 
@@ -18,84 +41,87 @@ const images = await Astro.glob("/src/assets/images/julekalender/*").then(files 
         <Image src={door1} alt="Door 1"/>
       </div>
       <div class="door" 'onclick="openDoor(23)" '>
-        <img src="src/assets/images/julekalender/23.svg" alt="Door 23" />
+        <Image src={door23} alt="Door 23"/>
+
       </div>
       <div class="door" 'onclick="openDoor(16)" '>
-        <img src="src/assets/images/julekalender/16.svg" alt="Door 16" />
+        <Image src={door16} alt="Door 16"/>
       </div>
       <div class="door" 'onclick="openDoor(5)" '>
-        <img src="src/assets/images/julekalender/5.svg" alt="Door 5" />
+        <Image src={door5} alt="Door 5"/>
+
       </div>
       <div class="door" 'onclick="openDoor(11)" '>
-        <img src="src/assets/images/julekalender/11.svg" alt="Door 11" />
+        <Image src={door11} alt="Door 11"/>
       </div>
     </div>
+
     <div class="calendar-collum2">
       <div class="door" 'onclick="openDoor(14)" '>
-        <img src="src/assets/images/julekalender/14.svg" alt="Door 14" />
+        <Image src={door14} alt="Door 14"/>
       </div>
       <div class="door" 'onclick="openDoor(6)" '>
-        <img src="src/assets/images/julekalender/6.svg" alt="Door 6" />
+        <Image src={door6} alt="Door 6"/>
       </div>
       <div class="door" 'onclick="openDoor(2)" '>
-        <img src="src/assets/images/julekalender/2.svg" alt="Door 2" />
+        <Image src={door2} alt="Door 2"/>
       </div>
       <div class="door" 'onclick="openDoor(9)" '>
-        <img src="src/assets/images/julekalender/9.svg" alt="Door 9" />
+        <Image src={door9} alt="Door 9"/>
       </div>
       <div class="door" 'onclick="openDoor(18)" '>
-        <img src="src/assets/images/julekalender/18.svg" alt="Door 18" />
+        <Image src={door18} alt="Door 18"/>
       </div>
     </div>
     <div class="calendar-collum3">
       <div class="door" 'onclick="openDoor(19)" '>
-        <img src="src/assets/images/julekalender/19.svg" alt="Door 19" />
+        <Image src={door19} alt="Door 19"/>
       </div>
       <div class="door" 'onclick="openDoor(3)" '>
-        <img src="src/assets/images/julekalender/3.svg" alt="Door 3" />
+        <Image src={door3} alt="Door 3"/>
       </div>
       <div class="door" 'onclick="openDoor(21)" '>
-        <img src="src/assets/images/julekalender/21.svg" alt="Door 21" />
+        <Image src={door21} alt="Door 21"/>
       </div>
       <div class="door" 'onclick="openDoor(13)" '>
-        <img src="src/assets/images/julekalender/13.svg" alt="Door 13" />
+        <Image src={door13} alt="Door 13"/>
       </div>
     </div>
 
     <div class="calendar-collum4">
       <div class="door" 'onclick="openDoor(8)" '>
-        <img src="src/assets/images/julekalender/8.svg" alt="Door 8" />
+        <Image src={door8} alt="Door 8"/>
       </div>
 
       <div class="door" 'onclick="openDoor(10)" '>
-        <img src="src/assets/images/julekalender/10.svg" alt="Door 10" />
+        <Image src={door10} alt="Door 10"/>
       </div>
 
       <div class="door" 'onclick="openDoor(17)" '>
-        <img src="src/assets/images/julekalender/17.svg" alt="Door 17" />
+        <Image src={door17} alt="Door 17"/>
       </div>
       <div class="door" 'onclick="openDoor(22)" '>
-        <img src="src/assets/images/julekalender/22.svg" alt="Door 22" />
+        <Image src={door22} alt="Door 22"/>
       </div>
       <div class="door" 'onclick="openDoor(24)" '>
-        <img src="src/assets/images/julekalender/24.svg" alt="Door 24" />
+        <Image src={door24} alt="Door 24"/>
       </div>
     </div>
     <div class="calendar-collum5">
       <div class="door" 'onclick="openDoor(12)" '>
-        <img src="src/assets/images/julekalender/12.svg" alt="Door 12" />
+        <Image src={door12} alt="Door 12"/>
       </div>
       <div class="door" 'onclick="openDoor(20)" '>
-        <img src="src/assets/images/julekalender/20.svg" alt="Door 20" />
+        <Image src={door20} alt="Door 20"/>
       </div>
       <div class="door" 'onclick="openDoor(15)" '>
-        <img src="src/assets/images/julekalender/15.svg" alt="Door 15" />
+        <Image src={door15} alt="Door 15"/>
       </div>
       <div class="door" 'onclick="openDoor(4)" '>
-        <img src="src/assets/images/julekalender/4.svg" alt="Door 4" />
+        <Image src={door4} alt="Door 4"/>
       </div>
       <div class="door" 'onclick="openDoor(7)" '>
-        <img src="src/assets/images/julekalender/7.svg" alt="Door 7" />
+        <Image src={door7} alt="Door 7"/>
       </div>
     </div>
   </div>
