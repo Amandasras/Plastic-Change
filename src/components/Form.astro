@@ -5,13 +5,14 @@ import InputFieldRequired from "./form/InputFieldRequired.astro";
 import InputField from "./form/InputField.astro";
 import Button from "./Button.astro";
 import PaymentMethod from "./form/PaymentMethod.astro";
+import ConsentCheckBox from "./form/ConsentCheckBox.astro";
 ---
 
 <div id="formWithSnow">
   <!-- skift stien til at være i src istedet for public -->
   <img src="../../snow.svg" alt="illustration af sne på formularen" id="snow" />
   <div id="form_container">
-    <div id="step1" class="formStep">
+    <div id="step1" class="hide formStep">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <form action="">
         <div id="radioButtonContainer">
@@ -23,20 +24,20 @@ import PaymentMethod from "./form/PaymentMethod.astro";
         <Button label="Støt nu" size="thick" style="filled" />
       </form>
     </div>
-    <div id="step2" class="hide formStep">
+    <div id="step2" class="formStep">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <form action="">
-        <!-- small -->
         <AmountPicker size="small" />
         <PaymentMethod />
-        <InputFieldRequired label="Fornavn" type="text" autocomplete="given-name" placeholder="" />
-        <InputFieldRequired label="Efternavn" type="text" autocomplete="family-name" placeholder="" />
-        <InputFieldRequired label="E-mail" type="email" autocomplete="email" placeholder="" />
-        <InputFieldRequired label="Telefon" type="tel" autocomplete="tel" placeholder="" />
-        <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" fontWeight="semiBold" />
-
-        <!-- jeg ønsker fradrag fra SKAT -->
-        <!-- giv samtykke -->
+        <div id="personalInfo">
+          <InputFieldRequired label="Fornavn" type="text" autocomplete="given-name" placeholder="" />
+          <InputFieldRequired label="Efternavn" type="text" autocomplete="family-name" placeholder="" />
+          <InputFieldRequired label="E-mail" type="email" autocomplete="email" placeholder="" />
+          <InputFieldRequired label="Telefon" type="tel" autocomplete="tel" placeholder="" />
+          <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" fontWeight="semiBold" />
+        </div>
+        <RadioButton label="Jeg ønsker fradrag fra SKAT" radioGroup="skattefradrag" />
+        <ConsentCheckBox />
         <Button label="Gå til betaling" size="regular-wide" style="filled" />
       </form>
     </div>
@@ -79,13 +80,20 @@ import PaymentMethod from "./form/PaymentMethod.astro";
     align-items: flex-start;
     gap: 32px;
   }
-  /* .hide {
+  .hide {
     display: none;
-  } */
+  }
 
   /* –––––––––– Step 1 –––––––––– */
   #radioButtonContainer {
     display: flex;
     gap: 24px;
+  }
+  /* –––––––––– Step 2 –––––––––– */
+  #personalInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
   }
 </style>
