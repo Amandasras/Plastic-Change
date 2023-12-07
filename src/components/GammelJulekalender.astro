@@ -1,0 +1,252 @@
+---
+import { Image } from "astro:assets";
+import door1 from "../assets/images/julekalender/door1.svg";
+import door2 from "../assets/images/julekalender/door2.svg";
+import door3 from "../assets/images/julekalender/door3.svg";
+import door4 from "../assets/images/julekalender/door4.svg";
+import door5 from "../assets/images/julekalender/door5.svg";
+import door6 from "../assets/images/julekalender/door6.svg";
+import door7 from "../assets/images/julekalender/door7.svg";
+import door8 from "../assets/images/julekalender/door8.svg";
+import door9 from "../assets/images/julekalender/door9.svg";
+import door10 from "../assets/images/julekalender/door10.svg";
+import door11 from "../assets/images/julekalender/door11.svg";
+import door12 from "../assets/images/julekalender/door12.svg";
+import door13 from "../assets/images/julekalender/door13.svg";
+import door14 from "../assets/images/julekalender/door14.svg";
+import door15 from "../assets/images/julekalender/door15.svg";
+import door16 from "../assets/images/julekalender/door16.svg";
+import door17 from "../assets/images/julekalender/door17.svg";
+import door18 from "../assets/images/julekalender/door18.svg";
+import door19 from "../assets/images/julekalender/door19.svg";
+import door20 from "../assets/images/julekalender/door20.svg";
+import door21 from "../assets/images/julekalender/door21.svg";
+import door22 from "../assets/images/julekalender/door22.svg";
+import door23 from "../assets/images/julekalender/door23.svg";
+import door24 from "../assets/images/julekalender/door24.svg";
+
+const images = await Astro.glob("/src/assets/images/julekalender/*").then(files => {
+  return files.map(file => file.default);
+---
+
+<section>
+  <div class="calendar" id="calendar">
+    // Placeholder for 24 låger
+    // Du kan erstatte 'placeholder.jpg' med dine egne billeder
+    // Sørg for at opdatere stien til dine egne billeder
+    <div class="calendar-collum1">
+      <div class="door" onclick="openDoor(1)">
+        <Image src={door1} alt="Door 1"/>
+      </div>
+      <div class="door" 'onclick="openDoor(23)" '>
+        <Image src={door23} alt="Door 23"/>
+
+      </div>
+      <div class="door" 'onclick="openDoor(16)" '>
+        <Image src={door16} alt="Door 16"/>
+      </div>
+      <div class="door" 'onclick="openDoor(5)" '>
+        <Image src={door5} alt="Door 5"/>
+
+      </div>
+      <div class="door" 'onclick="openDoor(11)" '>
+        <Image src={door11} alt="Door 11"/>
+      </div>
+    </div>
+
+    <div class="calendar-collum2">
+      <div class="door" 'onclick="openDoor(14)" '>
+        <Image src={door14} alt="Door 14"/>
+      </div>
+      <div class="door" 'onclick="openDoor(6)" '>
+        <Image src={door6} alt="Door 6"/>
+      </div>
+      <div class="door" 'onclick="openDoor(2)" '>
+        <Image src={door2} alt="Door 2"/>
+      </div>
+      <div class="door" 'onclick="openDoor(9)" '>
+        <Image src={door9} alt="Door 9"/>
+      </div>
+      <div class="door" 'onclick="openDoor(18)" '>
+        <Image src={door18} alt="Door 18"/>
+      </div>
+    </div>
+    <div class="calendar-collum3">
+      <div class="door" 'onclick="openDoor(19)" '>
+        <Image src={door19} alt="Door 19"/>
+      </div>
+      <div class="door" 'onclick="openDoor(3)" '>
+        <Image src={door3} alt="Door 3"/>
+      </div>
+      <div class="door" 'onclick="openDoor(21)" '>
+        <Image src={door21} alt="Door 21"/>
+      </div>
+      <div class="door" 'onclick="openDoor(13)" '>
+        <Image src={door13} alt="Door 13"/>
+      </div>
+    </div>
+
+    <div class="calendar-collum4">
+      <div class="door" 'onclick="openDoor(8)" '>
+        <Image src={door8} alt="Door 8"/>
+      </div>
+
+      <div class="door" 'onclick="openDoor(10)" '>
+        <Image src={door10} alt="Door 10"/>
+      </div>
+
+      <div class="door" 'onclick="openDoor(17)" '>
+        <Image src={door17} alt="Door 17"/>
+      </div>
+      <div class="door" 'onclick="openDoor(22)" '>
+        <Image src={door22} alt="Door 22"/>
+      </div>
+      <div class="door" 'onclick="openDoor(24)" '>
+        <Image src={door24} alt="Door 24"/>
+      </div>
+    </div>
+    <div class="calendar-collum5">
+      <div class="door" 'onclick="openDoor(12)" '>
+        <Image src={door12} alt="Door 12"/>
+      </div>
+      <div class="door" 'onclick="openDoor(20)" '>
+        <Image src={door20} alt="Door 20"/>
+      </div>
+      <div class="door" 'onclick="openDoor(15)" '>
+        <Image src={door15} alt="Door 15"/>
+      </div>
+      <div class="door" 'onclick="openDoor(4)" '>
+        <Image src={door4} alt="Door 4"/>
+      </div>
+      <div class="door" 'onclick="openDoor(7)" '>
+        <Image src={door7} alt="Door 7"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .calendar-collum1,
+  .calendar-collum2,
+  .calendar-collum3,
+  .calendar-collum4,
+  .calendar-collum5 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  .calendar-collum1 :hover,
+  .calendar-collum2 :hover,
+  .calendar-collum3 :hover,
+  .calendar-collum4 :hover,
+  .calendar-collum5 :hover {
+    animation: var(--animation-pulse);
+    background-color: transparent;
+  }
+  .door {
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .door img {
+    max-width: max-content;
+    max-height: max-content;
+    object-fit: contain;
+  }
+  /* .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .popup p {
+    margin-bottom: 10px;
+  }
+
+  .popup button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  } */
+</style>
+// <script>
+//     // Funktion til at åbne en dør
+//     function openDoor(day) {
+//       // Erstat 'placeholder' med præfikset for dine SVG-billeder
+//       var imagePath = "src/assets/images/julekalender/1.svg" + day + ".svg";
+
+//       // Åbn lågen og vis billedet
+//       var doorElement = document.querySelector(".door:nth-child(" + day + ")");
+//       doorElement.innerHTML =
+//         '<img src="./assets/images/julekalender/1.svg' +
+//         imagePath +
+//         '" alt="Door ' +
+//         day +
+//         '">';
+
+//       // Vis en pop-up med en udfordring
+//       var challenge = getChallenge(day);
+//       showPopup(challenge);
+//     }
+
+//     // Funktion til at hente udfordringer
+//     function getChallenge(day) {
+//       // Erstat disse strengværdier med dine egne udfordringer for hver dag
+//       var challenges = [
+//         "Dag 1: Syng din yndlingssang højt!",
+//         "Dag 2: Dans som ingen ser dig!",
+//         // Fortsæt med udfordringerne for de resterende dage
+//         // ...
+//       ];
+
+//       return challenges[day - 1];
+//     }
+
+//     // Funktion til at vise pop-up
+//     function showPopup(challenge) {
+//       // Opret pop-up element
+//       var popup = document.createElement("div");
+//       popup.className = "popup";
+//       popup.innerHTML =
+//         "<p>" + challenge + '</p><button onclick="closePopup()"> Luk </button>';
+
+//       // Tilføj pop-up til body
+//       document.body.appendChild(popup);
+//     }
+
+//     // Funktion til at lukke pop-up
+//     function closePopup() {
+//       // Fjern pop-up element
+//       var popup = document.querySelector(".popup");
+//       if (popup) {
+//         popup.remove();
+//       }
+//     }
+// </script>
