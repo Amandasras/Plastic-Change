@@ -3,111 +3,101 @@ import "../styles/global.css";
 import "../styles/reset.css";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Julekalender</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="calendar" id="calendar">
-      <!-- Placeholder for 24 låger -->
-      <!-- Du kan erstatte 'placeholder.jpg' med dine egne billeder -->
-      <!-- Sørg for at opdatere stien til dine egne billeder -->
-      <div class="calendar-collum1">
-        <div class="door" onclick="openDoor(1)">
-          <img src="src/assets/images/julekalender/1.svg" alt="Door 1" />
-        </div>
-        <div class="door" 'onclick="openDoor(23)" '>
-          <img src="src/assets/images/julekalender/23.svg" alt="Door 23" />
-        </div>
-        <div class="door" 'onclick="openDoor(16)" '>
-          <img src="src/assets/images/julekalender/16.svg" alt="Door 16" />
-        </div>
-        <div class="door" 'onclick="openDoor(5)" '>
-          <img src="src/assets/images/julekalender/5.svg" alt="Door 5" />
-        </div>
-        <div class="door" 'onclick="openDoor(11)" '>
-          <img src="src/assets/images/julekalender/11.svg" alt="Door 11" />
-        </div>
+<section>
+  <div class="calendar" id="calendar">
+    <!-- Placeholder for 24 låger -->
+    <!-- Du kan erstatte 'placeholder.jpg' med dine egne billeder -->
+    <!-- Sørg for at opdatere stien til dine egne billeder -->
+    <div class="calendar-collum1">
+      <div class="door" onclick="openDoor(1)">
+        <img src="src/assets/images/julekalender/1.svg" alt="Door 1" />
       </div>
-      <div class="calendar-collum2">
-        <div class="door" 'onclick="openDoor(14)" '>
-          <img src="src/assets/images/julekalender/14.svg" alt="Door 14" />
-        </div>
-        <div class="door" 'onclick="openDoor(6)" '>
-          <img src="src/assets/images/julekalender/6.svg" alt="Door 6" />
-        </div>
-        <div class="door" 'onclick="openDoor(2)" '>
-          <img src="src/assets/images/julekalender/2.svg" alt="Door 2" />
-        </div>
-        <div class="door" 'onclick="openDoor(9)" '>
-          <img src="src/assets/images/julekalender/9.svg" alt="Door 9" />
-        </div>
-        <div class="door" 'onclick="openDoor(18)" '>
-          <img src="src/assets/images/julekalender/18.svg" alt="Door 18" />
-        </div>
+      <div class="door" 'onclick="openDoor(23)" '>
+        <img src="src/assets/images/julekalender/23.svg" alt="Door 23" />
       </div>
-      <div class="calendar-collum3">
-        <div class="door" 'onclick="openDoor(19)" '>
-          <img src="src/assets/images/julekalender/19.svg" alt="Door 19" />
-        </div>
-        <div class="door" 'onclick="openDoor(3)" '>
-          <img src="src/assets/images/julekalender/3.svg" alt="Door 3" />
-        </div>
-        <div class="door" 'onclick="openDoor(21)" '>
-          <img src="src/assets/images/julekalender/21.svg" alt="Door 21" />
-        </div>
-        <div class="door" 'onclick="openDoor(13)" '>
-          <img src="src/assets/images/julekalender/13.svg" alt="Door 13" />
-        </div>
+      <div class="door" 'onclick="openDoor(16)" '>
+        <img src="src/assets/images/julekalender/16.svg" alt="Door 16" />
       </div>
-
-      <div class="calendar-collum4">
-        <div class="door" 'onclick="openDoor(8)" '>
-          <img src="src/assets/images/julekalender/8.svg" alt="Door 8" />
-        </div>
-
-        <div class="door" 'onclick="openDoor(10)" '>
-          <img src="src/assets/images/julekalender/10.svg" alt="Door 10" />
-        </div>
-
-        <div class="door" 'onclick="openDoor(17)" '>
-          <img src="src/assets/images/julekalender/17.svg" alt="Door 17" />
-        </div>
-        <div class="door" 'onclick="openDoor(22)" '>
-          <img src="src/assets/images/julekalender/22.svg" alt="Door 22" />
-        </div>
-        <div class="door" 'onclick="openDoor(24)" '>
-          <img src="src/assets/images/julekalender/24.svg" alt="Door 24" />
-        </div>
+      <div class="door" 'onclick="openDoor(5)" '>
+        <img src="src/assets/images/julekalender/5.svg" alt="Door 5" />
       </div>
-      <div class="calendar-collum5">
-        <div class="door" 'onclick="openDoor(12)" '>
-          <img src="src/assets/images/julekalender/12.svg" alt="Door 12" />
-        </div>
-        <div class="door" 'onclick="openDoor(20)" '>
-          <img src="src/assets/images/julekalender/20.svg" alt="Door 20" />
-        </div>
-        <div class="door" 'onclick="openDoor(15)" '>
-          <img src="src/assets/images/julekalender/15.svg" alt="Door 15" />
-        </div>
-        <div class="door" 'onclick="openDoor(4)" '>
-          <img src="src/assets/images/julekalender/4.svg" alt="Door 4" />
-        </div>
-        <div class="door" 'onclick="openDoor(7)" '>
-          <img src="src/assets/images/julekalender/7.svg" alt="Door 7" />
-        </div>
+      <div class="door" 'onclick="openDoor(11)" '>
+        <img src="src/assets/images/julekalender/11.svg" alt="Door 11" />
       </div>
     </div>
-  </body>
-</html>
+    <div class="calendar-collum2">
+      <div class="door" 'onclick="openDoor(14)" '>
+        <img src="src/assets/images/julekalender/14.svg" alt="Door 14" />
+      </div>
+      <div class="door" 'onclick="openDoor(6)" '>
+        <img src="src/assets/images/julekalender/6.svg" alt="Door 6" />
+      </div>
+      <div class="door" 'onclick="openDoor(2)" '>
+        <img src="src/assets/images/julekalender/2.svg" alt="Door 2" />
+      </div>
+      <div class="door" 'onclick="openDoor(9)" '>
+        <img src="src/assets/images/julekalender/9.svg" alt="Door 9" />
+      </div>
+      <div class="door" 'onclick="openDoor(18)" '>
+        <img src="src/assets/images/julekalender/18.svg" alt="Door 18" />
+      </div>
+    </div>
+    <div class="calendar-collum3">
+      <div class="door" 'onclick="openDoor(19)" '>
+        <img src="src/assets/images/julekalender/19.svg" alt="Door 19" />
+      </div>
+      <div class="door" 'onclick="openDoor(3)" '>
+        <img src="src/assets/images/julekalender/3.svg" alt="Door 3" />
+      </div>
+      <div class="door" 'onclick="openDoor(21)" '>
+        <img src="src/assets/images/julekalender/21.svg" alt="Door 21" />
+      </div>
+      <div class="door" 'onclick="openDoor(13)" '>
+        <img src="src/assets/images/julekalender/13.svg" alt="Door 13" />
+      </div>
+    </div>
+
+    <div class="calendar-collum4">
+      <div class="door" 'onclick="openDoor(8)" '>
+        <img src="src/assets/images/julekalender/8.svg" alt="Door 8" />
+      </div>
+
+      <div class="door" 'onclick="openDoor(10)" '>
+        <img src="src/assets/images/julekalender/10.svg" alt="Door 10" />
+      </div>
+
+      <div class="door" 'onclick="openDoor(17)" '>
+        <img src="src/assets/images/julekalender/17.svg" alt="Door 17" />
+      </div>
+      <div class="door" 'onclick="openDoor(22)" '>
+        <img src="src/assets/images/julekalender/22.svg" alt="Door 22" />
+      </div>
+      <div class="door" 'onclick="openDoor(24)" '>
+        <img src="src/assets/images/julekalender/24.svg" alt="Door 24" />
+      </div>
+    </div>
+    <div class="calendar-collum5">
+      <div class="door" 'onclick="openDoor(12)" '>
+        <img src="src/assets/images/julekalender/12.svg" alt="Door 12" />
+      </div>
+      <div class="door" 'onclick="openDoor(20)" '>
+        <img src="src/assets/images/julekalender/20.svg" alt="Door 20" />
+      </div>
+      <div class="door" 'onclick="openDoor(15)" '>
+        <img src="src/assets/images/julekalender/15.svg" alt="Door 15" />
+      </div>
+      <div class="door" 'onclick="openDoor(4)" '>
+        <img src="src/assets/images/julekalender/4.svg" alt="Door 4" />
+      </div>
+      <div class="door" 'onclick="openDoor(7)" '>
+        <img src="src/assets/images/julekalender/7.svg" alt="Door 7" />
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
-  body {
-    display: flex;
+  section {
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -124,6 +114,7 @@ import "../styles/reset.css";
   .calendar-collum3,
   .calendar-collum4,
   .calendar-collum5 {
+    display: flex;
     flex-direction: column;
     margin-top: 10px;
     margin-bottom: 10px;
