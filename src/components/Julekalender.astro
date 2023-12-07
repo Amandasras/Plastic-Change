@@ -1,6 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import door1 from "../assets/images/julekalender/door1.svg";
 import "../styles/global.css";
 import "../styles/reset.css";
+
+const images = await Astro.glob("/src/assets/images/julekalender/*").then(files => {
+  return files.map(file => file.default);
 ---
 
 <section>
@@ -10,7 +15,7 @@ import "../styles/reset.css";
     <!-- Sørg for at opdatere stien til dine egne billeder -->
     <div class="calendar-collum1">
       <div class="door" onclick="openDoor(1)">
-        <img src="src/assets/images/julekalender/1.svg" alt="Door 1" />
+        <Image src={door1} alt="Door 1"/>
       </div>
       <div class="door" 'onclick="openDoor(23)" '>
         <img src="src/assets/images/julekalender/23.svg" alt="Door 23" />
