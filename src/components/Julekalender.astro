@@ -33,9 +33,6 @@ const images = await Astro.glob("/src/assets/images/julekalender/*").then(files 
 
 <section>
   <div class="calendar" id="calendar">
-    <!-- Placeholder for 24 låger -->
-    <!-- Du kan erstatte 'placeholder.jpg' med dine egne billeder -->
-    <!-- Sørg for at opdatere stien til dine egne billeder -->
     <div class="calendar-collum1">
       <div class="door" onclick="openDoor(1)">
         <Image src={door1} alt="Door 1"/>
@@ -123,10 +120,8 @@ const images = await Astro.glob("/src/assets/images/julekalender/*").then(files 
       <div class="door" 'onclick="openDoor(7)" '>
         <Image src={door7} alt="Door 7"/>
       </div>
-    </div>
   </div>
-</section>
-
+  </section>
 <style>
   section {
     justify-content: center;
