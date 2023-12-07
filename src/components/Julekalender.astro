@@ -1,6 +1,6 @@
 ---
-import "../styles/global.css";
-import "../styles/reset.css";
+import "/styles/global.css";
+import "/styles/reset.css";
 ---
 
 <section>
@@ -119,6 +119,14 @@ import "../styles/reset.css";
     margin-top: 10px;
     margin-bottom: 10px;
     gap: 10px;
+  }
+  .calendar-collum1 :hover,
+  .calendar-collum2 :hover,
+  .calendar-collum3 :hover,
+  .calendar-collum4 :hover,
+  .calendar-collum5 :hover {
+    animation: var(--animation-bounce);
+    background-color: var(--red500);
   }
   .door {
     width: max-content;
