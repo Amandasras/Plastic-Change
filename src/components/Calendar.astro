@@ -113,34 +113,36 @@ import door24 from "../assets/images/julekalender/door24.svg";
   </div>
 </div>
 <style>
-  #calendar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  .calendar-collum1,
-  .calendar-collum2,
-  .calendar-collum3,
-  .calendar-collum4,
-  .calendar-collum5 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .door {
-    width: max-content;
-    height: max-content;
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .door img {
-    max-width: max-content;
-    max-height: max-content;
-    object-fit: contain;
+  @media only screen and (min-width: 768px) {
+    #calendar {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .calendar-collum1,
+    .calendar-collum2,
+    .calendar-collum3,
+    .calendar-collum4,
+    .calendar-collum5 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .door {
+      width: max-content;
+      height: max-content;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .door img {
+      max-width: max-content;
+      max-height: max-content;
+      object-fit: contain;
+    }
   }
 </style>
