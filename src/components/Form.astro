@@ -38,7 +38,10 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         </div>
         <RadioButton label="Jeg ønsker fradrag fra SKAT" radioGroup="skattefradrag" />
         <ConsentCheckBox />
-        <Button label="Gå til betaling" size="regular-wide" style="filled" />
+        <div class="buttonContainer">
+          <Button label="Gå til betaling" size="regular-wide" style="filled" />
+          <div class="betalingsPolitik"><a href="#" class="text-body-small">BetalingsPolitik</a></div>
+        </div>
       </form>
     </div>
     <div id="step3" class="hide formStep">
@@ -95,5 +98,20 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     flex-direction: column;
     gap: 24px;
     width: 100%;
+  }
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .betalingsPolitik {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .betalingsPolitik a {
+    text-decoration: none;
+    color: var(--color-text-gray500);
   }
 </style>
