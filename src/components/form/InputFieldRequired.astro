@@ -4,12 +4,11 @@ const { label, placeholder, type, autocomplete } = Astro.props;
 
 <div class="inputFieldContainer">
   <div class="label">
-    <label for="InputFieldID" class="inputLabel">{label}</label>
+    <label for={"InputField" + label} class="text-form-label-semibold">{label}</label>
     <div id="required" class="text-form-label-semibold">*</div>
   </div>
   <div class="Field">
     <input type={type} autocomplete={autocomplete} id="InputFieldID" class="inputField" placeholder={placeholder} name="userInfo" required />
-    <!-- <div id="unit" class="text-form-label-regular">{unit}</div> -->
   </div>
 </div>
 
@@ -25,13 +24,6 @@ const { label, placeholder, type, autocomplete } = Astro.props;
     display: flex;
     gap: 4px;
   }
-  .inputLabel {
-    font-family: Rubik;
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-  }
-
   #required {
     color: var(--color-text-red500);
   }
@@ -58,10 +50,7 @@ const { label, placeholder, type, autocomplete } = Astro.props;
   .inputField::placeholder {
     color: var(--color-text-gray400);
   }
-  #unit {
-    color: var(--color-text-gray500);
-    padding: 10px 20px;
-  }
+
   /* ----------- Variants ----------- */
 
   /* label styling */

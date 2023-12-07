@@ -33,14 +33,18 @@ import PaymentMethod from "./form/PaymentMethod.astro";
         <InputFieldRequired label="Efternavn" type="text" autocomplete="family-name" placeholder="" />
         <InputFieldRequired label="E-mail" type="email" autocomplete="email" placeholder="" />
         <InputFieldRequired label="Telefon" type="tel" autocomplete="tel" placeholder="" />
-        <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" />
+        <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" fontWeight="semiBold" />
 
         <!-- jeg ønsker fradrag fra SKAT -->
         <!-- giv samtykke -->
         <Button label="Gå til betaling" size="regular-wide" style="filled" />
       </form>
     </div>
-    <div id="step3" class="hide formStep"></div>
+    <div id="step3" class="hide formStep">
+      <div id="cardPayment"></div>
+      <div id="MobilePay"></div>
+    </div>
+
     <div id="step4" class="hide formStep"></div>
   </div>
 </div>
