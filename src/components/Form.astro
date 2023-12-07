@@ -24,7 +24,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         <Button label="Støt nu" size="thick" style="filled" />
       </form>
     </div>
-    <div id="step2" class="formStep">
+    <div id="step2" class="hide formStep">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <form action="">
         <AmountPicker size="small" />
@@ -44,11 +44,24 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         </div>
       </form>
     </div>
-    <div id="step3" class="hide formStep">
-      <div id="cardPayment"></div>
+    <div id="step3" class="formStep">
+      <div id="cardPayment">
+        <h2 class="text-form-title-large">Her er overskriften</h2>
+        <form action="">
+          <!-- tilføj de andre props til InputFieldRequired komponentet -->
+          <div id="cardInfo">
+            <InputFieldRequired label="Kortnummer" autocomplete="cc-number" placeholder="" inputmode="numeric" maxlength="50" pattern="[\d ]{10,30}" required />
+            <div class="flex2col">
+              <InputFieldRequired label="Udløbsdato" autocomplete="cc-name" placeholder="MM / ÅÅ" maxlength="5" required />
+              <InputFieldRequired label="Kontrolcifre" inputmode="numeric" maxlength="3" required />
+            </div>
+          </div>
+          <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
+          <hr />
+        </form>
+      </div>
       <div id="MobilePay"></div>
     </div>
-
     <div id="step4" class="hide formStep"></div>
   </div>
 </div>
@@ -93,7 +106,8 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     gap: 24px;
   }
   /* –––––––––– Step 2 –––––––––– */
-  #personalInfo {
+  #personalInfo,
+  #cardInfo {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -113,5 +127,20 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
   .betalingsPolitik a {
     text-decoration: none;
     color: var(--color-text-gray500);
+  }
+
+  .betalingsPolitik a:hover {
+    text-decoration: underline;
+  }
+
+  /* –––––––––– Step 3 –––––––––– */
+  .flex2col {
+    display: flex;
+    gap: 24px;
+  }
+
+  hr {
+    width: 100%;
+    border: 1px solid var(--color-stroke-gray300);
   }
 </style>
