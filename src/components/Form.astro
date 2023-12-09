@@ -44,9 +44,27 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         </div>
       </form>
     </div>
-    <div id="step3" class="formStep">
+    <div id="step3">
       <div id="cardPayment">
         <h2 class="text-form-title-large">Her er overskriften</h2>
+        <div class="logoAndAmount">
+          <img src="../assets/PCLogo.svg" alt="Plasticchange logo" />
+          <div class="amountContainer">
+            <p class="details">Til betaling i dag:</p>
+            <p class="amount text-form-label-regular">75,00 DKK</p>
+          </div>
+        </div>
+        <div class="monthlySubDetails">
+          <p class="text-form-label-regular">Månedligt Abonnement</p><p class="details">Vis detaljer</p>
+        </div>
+        <div class="monthlySubDetails_open hide">
+          <!-- lav indeholdet til åben menu -->
+        </div>
+        <div class="cardTyoesDetails">
+          <p class="text-form-label-regular">Betalingskort</p>
+          <!-- indsæt billeder af betalingskort -->
+          <div class="cards"><img src="" alt="" /><img src="" alt="" /><img src="" alt="" /></div>
+        </div>
         <form action="">
           <!-- tilføj de andre props til InputFieldRequired komponentet -->
           <div id="cardInfo">
@@ -56,8 +74,16 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
               <InputFieldRequired label="Kontrolcifre" inputmode="numeric" maxlength="3" required />
             </div>
           </div>
+          <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
           <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
-          <hr />
+          <div class="underPayButton">
+            <hr />
+            <div class="flexSpacebetween">
+              <!-- ret linksti her -->
+              <a href="#" id="escape" class="text-form-label-regular">&#60; Afbryd</a>
+              <div class="billwerk text-body-small"><p>Sikker betaling med</p><img src="../assets/BiLLWERK_logo.png" alt="" /></div>
+            </div>
+          </div>
         </form>
       </div>
       <div id="MobilePay"></div>
@@ -134,13 +160,93 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
   }
 
   /* –––––––––– Step 3 –––––––––– */
+  #cardPayment {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .logoAndAmount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .amountContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-end;
+  }
+  .amount {
+    color: var(--color-text-gray900);
+  }
+
+  .monthlySubDetails,
+  .cardTyoesDetails {
+    display: flex;
+    width: calc(100% - 16px x 2);
+    height: 64px;
+    padding: 0px 16px;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+  }
+  .monthlySubDetails .text-form-label-regular,
+  .cardTyoesDetails .text-form-label-regular {
+    color: var(--color-text-gray900);
+  }
+  .monthlySubDetails .details {
+    cursor: pointer;
+  }
+  .monthlySubDetails .details:hover {
+    text-decoration: underline;
+  }
+  .details {
+    color: #1a5089;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
   .flex2col {
     display: flex;
     gap: 24px;
   }
 
+  .underPayButton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
   hr {
     width: 100%;
     border: 1px solid var(--color-stroke-gray300);
+    margin: 0 0 16px 0;
+  }
+  .flexSpacebetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  #escape {
+    color: var(--color-text-gray500);
+    text-decoration: none;
+  }
+  .billwerk {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .billwerk p {
+    color: var(--color-text-gray500);
+  }
+  .billwerk img {
+    height: 10px;
+    opacity: 80%;
   }
 </style>

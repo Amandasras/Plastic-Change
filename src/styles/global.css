@@ -209,3 +209,7 @@
   font-weight: 600;
   line-height: normal;
 }
+
+p {
+  margin: 0;
+}
