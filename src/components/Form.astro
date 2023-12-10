@@ -44,26 +44,31 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         </div>
       </form>
     </div>
-    <div id="step3">
-      <div id="cardPayment">
-        <h2 class="text-form-title-large">Her er overskriften</h2>
-        <div class="logoAndAmount">
-          <img src="../assets/PCLogo.svg" alt="Plasticchange logo" />
-          <div class="amountContainer">
-            <p class="details">Til betaling i dag:</p>
-            <p class="amount text-form-label-regular">75,00 DKK</p>
+    <div id="step3" class="">
+      <h2 class="text-form-title-large">Her er overskriften</h2>
+      <div class="logoAndAmount">
+        <img src="../assets/PCLogo.svg" alt="Plasticchange logo" />
+        <div class="amountContainer">
+          <p class="details">Til betaling i dag:</p>
+          <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+          <p class="amount text-form-label-regular">XX,XX DKK</p>
+        </div>
+      </div>
+      <div id="cardPayment" class="formStep">
+        <div class="monthlySubDetails_container">
+          <div class="monthlySubDetails">
+            <p class="text-form-label-regular">Månedligt Abonnement</p><p id="showDetails" class="details">Vis detaljer</p>
           </div>
-        </div>
-        <div class="monthlySubDetails">
-          <p class="text-form-label-regular">Månedligt Abonnement</p><p class="details">Vis detaljer</p>
-        </div>
-        <div class="monthlySubDetails_open hide">
-          <!-- lav indeholdet til åben menu -->
+          <div id="monthlySubDetails_openContainer" class="hide">
+            <div class="monthlySubDetails_open">
+              <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+              <p class="text-form-label-regular">Månedligt beløb</p><p class="details">XX,XX DKK (inkl. moms)</p>
+            </div>
+          </div>
         </div>
         <div class="cardTyoesDetails">
           <p class="text-form-label-regular">Betalingskort</p>
-          <!-- indsæt billeder af betalingskort -->
-          <div class="cards"><img src="" alt="" /><img src="" alt="" /><img src="" alt="" /></div>
+          <div class="cards"><img src="../assets/dankort.png" alt="" /><img src="../assets/visa.png" alt="" /><img src="../assets/mastercard.png" alt="" /></div>
         </div>
         <form action="">
           <!-- tilføj de andre props til InputFieldRequired komponentet -->
@@ -160,6 +165,12 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
   }
 
   /* –––––––––– Step 3 –––––––––– */
+
+  #step3 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
   #cardPayment {
     display: flex;
     flex-direction: column;
@@ -169,6 +180,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   .amountContainer {
@@ -184,7 +196,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
   .monthlySubDetails,
   .cardTyoesDetails {
     display: flex;
-    width: calc(100% - 16px x 2);
+    width: 288px;
     height: 64px;
     padding: 0px 16px;
     justify-content: space-between;
@@ -203,6 +215,22 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
   }
   .monthlySubDetails .details:hover {
     text-decoration: underline;
+  }
+
+  #monthlySubDetails_openContainer {
+    width: calc(100% - 24px x 2);
+    padding: 24px 24px 32px 24px;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .monthlySubDetails_open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cards img {
+    filter: grayscale(100%);
   }
   .details {
     color: #1a5089;
@@ -250,3 +278,14 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     opacity: 80%;
   }
 </style>
+
+<script>
+  const showDetails = document.getElementById("showDetails");
+  const msOpenMenu = document.getElementById("monthlySubDetails_openContainer");
+
+  showDetails.addEventListener("click", toggleHide);
+
+  function toggleHide() {
+    msOpenMenu.classList.toggle("hide");
+  }
+</script>
