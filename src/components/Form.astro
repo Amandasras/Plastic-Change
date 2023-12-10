@@ -91,9 +91,23 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
           </div>
         </form>
       </div>
-      <div id="MobilePay"></div>
+      <div id="MobilePay">
+        <img src="../assets/mobilepayPayment.png" alt="" />
+        <button class="mobilePayButton">Fortsæt med MobilePay</button>
+      </div>
     </div>
-    <div id="step4" class="hide formStep"></div>
+    <div id="step4" class="formStep">
+      <div class="imageContainer">
+        <h2>Du er med til at redde vores planet!</h2>
+        <img src="../assets/formThankYou.png" alt="Plastikaffald i havoverfladen" />
+      </div>
+      <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
+      <p class="text-body-regular">
+        Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere og virksomheder til at
+        tage ansvar for at fremstille flere genanvendelige produkter. Dette er afgørende for at erstatte den nuværende strøm af kemikalie-tunge engangsplastmaterialer, der udgør en trussel mod vores sundhed, vores skrøbelige planet og dyrelivet.
+        <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod plastikforureningen! <br /><br />Glædelig jul ✨
+      </p>
+    </div>
   </div>
 </div>
 
@@ -144,6 +158,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     gap: 24px;
     width: 100%;
   }
+
   .buttonContainer {
     display: flex;
     flex-direction: column;
@@ -170,6 +185,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     display: flex;
     flex-direction: column;
     gap: 24px;
+    display: none;
   }
   #cardPayment {
     display: flex;
@@ -276,6 +292,61 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
   .billwerk img {
     height: 10px;
     opacity: 80%;
+  }
+  #MobilePay {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobilePayButton {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border: none;
+    border-radius: 999px;
+    background: #5479ff;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-text-white);
+    cursor: pointer;
+  }
+
+  .mobilePayButton:hover {
+    background-color: #3952c4;
+  }
+
+  /* –––––––––– Step 4 –––––––––– */
+
+  .imageContainer {
+    display: grid;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .imageContainer h2,
+  .imageContainer img {
+    grid-area: 1/2/1/2;
+  }
+
+  .imageContainer h2 {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: stretch;
+    padding: 48px 8px;
+    color: var(--color-text-white);
+
+    font-family: Campton;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 </style>
 
