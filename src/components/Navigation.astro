@@ -2,8 +2,10 @@
 import { Image } from "astro:assets";
 import logo from "../assets/Logo.svg";
 import "../styles/global.css";
+import hero from "../assets/images/juleside/HeroJuleTips.webp";
 ---
-
+<div class="container">		
+    <section class="hero">    
 <header>
     <div>
         <Image src={logo} alt="logo, plastik change" />
@@ -15,9 +17,28 @@ import "../styles/global.css";
     </ul>
 </nav>
 </header>
+<h2 class="text-display-large">En jul uden 
+    plastik på din ønskeliste</h2>
+</section>
+        </div>
+
+
 
 <style>
+   .hero {
+    background-image: url('../assets/images/juleside/HeroJuleTips.webp');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+   } 
 
+ 
+
+   h2{
+
+    margin-bottom: 190px;
+   }
 .text-form-label-regular{
     font-family: 'Rubik';
   font-size: 12px;
@@ -27,7 +48,7 @@ import "../styles/global.css";
 }
 
 header{
-        background-color: black;
+        background-color: transparent;
         display: flex;
         justify-content: space-between;
         align-items: center;
