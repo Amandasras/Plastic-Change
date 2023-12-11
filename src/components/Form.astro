@@ -101,12 +101,14 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         <h2>Du er med til at redde vores planet!</h2>
         <img src="../assets/formThankYou.png" alt="Plastikaffald i havoverfladen" />
       </div>
-      <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
-      <p class="text-body-regular">
-        Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere og virksomheder til at
-        tage ansvar for at fremstille flere genanvendelige produkter. Dette er afgørende for at erstatte den nuværende strøm af kemikalie-tunge engangsplastmaterialer, der udgør en trussel mod vores sundhed, vores skrøbelige planet og dyrelivet.
-        <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod plastikforureningen! <br /><br />Glædelig jul ✨
-      </p>
+      <div class="thankYouText">
+        <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
+        <p class="text-body-regular">
+          Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere og virksomheder til at
+          tage ansvar for at fremstille flere genanvendelige produkter. Dette er afgørende for at erstatte den nuværende strøm af kemikalie-tunge engangsplastmaterialer, der udgør en trussel mod vores sundhed, vores skrøbelige planet og dyrelivet.
+          <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod plastikforureningen! <br /><br />Glædelig jul ✨
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -347,6 +349,12 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+
+  .thankYouText {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 </style>
 
