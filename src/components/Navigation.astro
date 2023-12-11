@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/Logo.svg";
+import "../styles/global.css";
+---
+
+<header>
+    <div>
+        <Image src={logo} alt="logo, plastik change" />
+      </div>
+      <nav>
+    <ul>
+        <li><a class="text-form-label-regular" href="#">Julekalender</a></li>
+        <li><a class="text-form-label-regular" href="#">Jule tips</a></li>
+    </ul>
+</nav>
+</header>
+
+<style>
+
+.text-form-label-regular{
+    font-family: 'Rubik';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;  
+}
+
+header{
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--size-spacing-12);
+    }
+    li a{ 
+        color: var(--white);
+        text-decoration: none;  
+    }
+
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: var(--size-spacing-12);
+    }
+
+
+@media only screen and (min-width: 768px) {
+
+    
+    ul{
+        padding-right: var(--size-spacing-20);
+    }
+
+}
+</style>
+
+
