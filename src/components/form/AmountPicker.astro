@@ -1,0 +1,134 @@
+---
+import InputFieldRequired from "./InputFieldRequired.astro";
+const { size } = Astro.props;
+---
+
+<div class="amountPickerContainer" spacing-sections={size}>
+  <div class="amountPickerRadioButtons" spacing-buttons={size}>
+    <input type="radio" name={size} id={"radioButton50" + size} class="radioInput" />
+    <label for={"radioButton50" + size} class="radioLabel text-form-label-semibold" button-size={size}> 50 kr.</label>
+    <input type="radio" name={size} id={"radioButton75" + size} class="radioInput" />
+    <label for={"radioButton75" + size} class="radioLabel text-form-label-semibold" button-size={size}> 75 kr.</label>
+    <input type="radio" name={size} id={"radioButton125" + size} class="radioInput" />
+    <label for={"radioButton125" + size} class="radioLabel text-form-label-semibold" button-size={size}> 125 kr.</label>
+  </div>
+  <div class="inputFieldContainer">
+    <label for="InputFieldID" class="inputLabel">Andet beløb</label>
+    <div class="Field">
+      <input type="number" min="1" step="1" name={size} id={"InputField" + size} class="inputField" placeholder="ex: 1000" />
+      <div id="unit" class="text-form-label-regular">kr.</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .amountPickerContainer {
+    display: inline-flex;
+    flex-direction: column;
+    width: 320px;
+  }
+
+  [spacing-sections="regular"] {
+    gap: 16px;
+  }
+
+  [spacing-sections="small"] {
+    gap: 8px;
+  }
+
+  label {
+    color: var(--color-text-gray500);
+  }
+  /* ---------- Radio buttons - set amount ---------- */
+  .amountPickerRadioButtons {
+    display: inline-flex;
+    width: 320px;
+  }
+
+  [spacing-buttons="regular"] {
+    justify-content: space-between;
+  }
+
+  [spacing-buttons="small"] {
+    gap: 16px;
+  }
+
+  .radioLabel {
+    background-color: var(--color-surface-white);
+    border-radius: 50%;
+    border: 1px solid var(--color-stroke-gray300);
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  /* Skjuler default radiobutton */
+  .radioInput {
+    display: none;
+  }
+
+  .radioInput:checked + .radioLabel {
+    border: var(--color-stroke-red500);
+    background-color: var(--color-surface-red500);
+    color: var(--color-text-white);
+  }
+
+  [button-size="regular"] {
+    width: 88px;
+    height: 88px;
+  }
+
+  [button-size="small"] {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  /* ---------- input field - custom amount ---------- */
+
+  .inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 320px;
+  }
+  .inputLabel {
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .Field {
+    border-radius: 4px;
+    border: 1px solid var(--color-stroke-gray-300, #cacdd5);
+    background: var(--color-surface-white, #fff);
+
+    display: flex;
+    justify-content: space-between;
+  }
+  .inputField {
+    padding: 10px 0 10px 20px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    color: var(--color-text-gray400);
+  }
+
+  .inputField::placeholder {
+    color: var(--color-text-gray400);
+  }
+  #unit {
+    color: var(--color-text-gray500);
+    padding: 10px 20px;
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+const { size, style, label } = Astro.props;
+---
+
+<div class="button" size-variant={size} style-variant={style}>
+  <a href="#" class="button_label" label-variant={style}>{label}</a>
+</div>
+
+<style>
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 999px;
+    padding: 10px 20px;
+  }
+  .button_label {
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /* ----------- Variants ----------- */
+  /* size */
+  [size-variant="regular"] {
+    width: fit-content;
+    line-height: normal;
+  }
+  [size-variant="regular-wide"] {
+    width: calc(100% - 40px);
+    line-height: normal;
+  }
+  [size-variant="thick"] {
+    width: calc(100% - 40px);
+    line-height: 48px;
+  }
+
+  /* style */
+  [style-variant="filled"] {
+    background-color: var(--color-surface-red500);
+  }
+
+  [style-variant="filled"]:hover {
+    background-color: var(--color-surface-red600);
+  }
+  [style-variant="filled"]:disabled {
+    background-color: var(--color-surface-red300);
+  }
+
+  [style-variant="outlined"] {
+    border: 2px solid var(--color-stroke-gray500);
+  }
+  [style-variant="outlined"]:hover {
+    border: 2px solid var(--color-stroke-red500);
+  }
+
+  [style-variant="outlined"]:hover .button_label {
+    color: var(--color-text-red500);
+  }
+  [label-variant="filled"] {
+    color: var(--color-text-white);
+  }
+
+  [label-variant="outlined"] {
+    color: var(--color-text-gray500);
+  }
+</style>

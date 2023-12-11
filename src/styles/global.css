@@ -1,5 +1,10 @@
+* {
+  margin: 0;
+}
+
 :root {
   /* ----------------- primitives ----------------- */
+
   /* primitive colors */
   --red300: #ff7591;
   --red500: #ff1053;
@@ -177,6 +182,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin: 0;
+  color: var(--color-text-gray900);
 }
 .text-form-title-medium {
   font-family: Campton;
@@ -206,4 +213,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+p {
+  margin: 0;
 }

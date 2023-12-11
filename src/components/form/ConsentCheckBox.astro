@@ -1,0 +1,49 @@
+---
+const { label } = Astro.props;
+---
+
+<label for={"input" + label} class="checkBoxLabel text-body-small">
+  <input type="checkbox" name="consentCheckBox" id={"input" + label} class="checkBoxInput" />
+  <div class="checkBoxButtonCustom"></div>
+  Jeg giver mit samtykke til, at Plastic Change må opbevare og behandle mine oplysninger til brug i forbindelse med min støtte.<br />Læs mere om dette samtykke i vores privatlivspolitik.
+</label>
+
+<style>
+  .checkBoxLabel {
+    display: inline-flex;
+    cursor: pointer;
+    /* margin-right: 24px; */
+    color: var(--color-text-gray500);
+  }
+  .checkBoxInput {
+    display: none;
+  }
+
+  /* selve checkBox knappen */
+  .checkBoxButtonCustom {
+    min-width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--color-stroke-gray300);
+    box-sizing: border-box;
+    margin-right: 10px;
+  }
+  .checkBoxButtonCustom::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* border-radius: 2px; */
+    background-image: url(../../../public/assets/checkedBox.svg);
+    background: cover;
+    background-position: center;
+    transform: scale(0);
+    transition: transform 0.15s;
+  }
+  .checkBoxInput:checked + .checkBoxButtonCustom {
+    border-color: var(--color-stroke-red500);
+  }
+  .checkBoxInput:checked + .checkBoxButtonCustom::after {
+    transform: scale(1);
+  }
+</style>

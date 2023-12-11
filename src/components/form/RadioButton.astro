@@ -1,0 +1,49 @@
+---
+const { label, radioGroup } = Astro.props;
+---
+
+<label for={"input" + label} class="radioLabel text-form-label-regular">
+  <input type="radio" name={radioGroup} id={"input" + label} class="radioInput" />
+  <div class="radioButtonCustom"></div>
+  {label}
+</label>
+
+<style>
+  .radioLabel {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    /* margin-right: 24px; */
+    color: var(--color-text-gray500);
+  }
+  .radioInput {
+    display: none;
+  }
+
+  /* selve radio knappen */
+  .radioButtonCustom {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--color-stroke-gray300);
+    box-sizing: border-box;
+    padding: 3px;
+    margin-right: 10px;
+  }
+  .radioButtonCustom::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    background-color: var(--color-surface-red500);
+    transform: scale(0);
+    transition: transform 0.15s;
+  }
+  .radioInput:checked + .radioButtonCustom {
+    border-color: var(--color-stroke-red500);
+  }
+  .radioInput:checked + .radioButtonCustom::after {
+    transform: scale(1);
+  }
+</style>
