@@ -1,5 +1,10 @@
+* {
+  margin: 0;
+}
+
 :root {
   /* ----------------- primitives ----------------- */
+
   /* primitive colors */
   --red300: #ff7591;
   --red500: #ff1053;
