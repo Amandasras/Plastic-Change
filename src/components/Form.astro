@@ -6,11 +6,22 @@ import InputField from "./form/InputField.astro";
 import Button from "./Button.astro";
 import PaymentMethod from "./form/PaymentMethod.astro";
 import ConsentCheckBox from "./form/ConsentCheckBox.astro";
+
+import { Image } from "astro:assets";
+import snow from "../assets/images/form/snow.svg";
+import PlasticChangeLogo from "../assets/images/form/PCLogo.svg";
+import dankort from "../assets/images/form/dankort.png";
+import visa from "../assets/images/form/visa.png";
+import mastercard from "../assets/images/form/mastercard.png";
+import billwerk from "../assets/images/form/BiLLWERK_logo.png";
+import thankyouimage from "../assets/images/form/formThankYou.png";
+import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
+import Index from "../pages/index.astro";
 ---
 
 <div id="formWithSnow">
   <!-- skift stien til at være i src istedet for public -->
-  <img src="../../snow.svg" alt="illustration af sne på formularen" id="snow" />
+  <Image src={snow} alt="illustration af sne på formularen" id="snow" />
   <div id="form_container">
     <div id="step1" class="hide formStep">
       <h2 class="text-form-title-large">Her er overskriften</h2>
@@ -47,7 +58,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
     <div id="step3" class="">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <div class="logoAndAmount">
-        <img src="../assets/PCLogo.svg" alt="Plasticchange logo" />
+        <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
         <div class="amountContainer">
           <p class="details">Til betaling i dag:</p>
           <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
@@ -68,7 +79,7 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
         </div>
         <div class="cardTyoesDetails">
           <p class="text-form-label-regular">Betalingskort</p>
-          <div class="cards"><img src="../assets/dankort.png" alt="" /><img src="../assets/visa.png" alt="" /><img src="../assets/mastercard.png" alt="" /></div>
+          <div class="cards"><Image src={dankort} alt="" /><Image src={visa} alt="" /><Image src={mastercard} alt="" /></div>
         </div>
         <form action="">
           <!-- tilføj de andre props til InputFieldRequired komponentet -->
@@ -86,20 +97,20 @@ import ConsentCheckBox from "./form/ConsentCheckBox.astro";
             <div class="flexSpacebetween">
               <!-- ret linksti her -->
               <a href="#" id="escape" class="text-form-label-regular">&#60; Afbryd</a>
-              <div class="billwerk text-body-small"><p>Sikker betaling med</p><img src="../assets/BiLLWERK_logo.png" alt="" /></div>
+              <div class="billwerk text-body-small"><p>Sikker betaling med</p><Image src={billwerk} alt="" /></div>
             </div>
           </div>
         </form>
       </div>
       <div id="MobilePay">
-        <img src="../assets/mobilepayPayment.png" alt="" />
+        <Image src={mobilepayPayment} alt="" />
         <button class="mobilePayButton">Fortsæt med MobilePay</button>
       </div>
     </div>
     <div id="step4" class="formStep">
       <div class="imageContainer">
         <h2>Du er med til at redde vores planet!</h2>
-        <img src="../assets/formThankYou.png" alt="Plastikaffald i havoverfladen" />
+        <Image src={thankyouimage} alt="Plastikaffald i havoverfladen" />
       </div>
       <div class="thankYouText">
         <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
