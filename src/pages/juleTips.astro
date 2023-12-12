@@ -6,7 +6,7 @@ import bestik from "../assets/images/juleside/Firefly stål bestik ved siden af
 import bord from "../assets/images/juleside/julebord1.svg";
 import stof from "../assets/images/juleside/Firefly stofserviet anrettet på en æstetisk måde i mørkegrønne nuancer på en tallerken med grålige t (3).webp";
 import tupperware from "../assets/images/juleside/Firefly tupperware bokse med låg fyldt med rester fra julemaden 43042.webp";
-import juletre from "../assets/images/juleside/juletræ.webp"
+import juletre from "../assets/images/juleside/juletræ.webp";
 import "../styles/global.css";
 import "../styles/reset.css";
 ---
@@ -96,47 +96,61 @@ import "../styles/reset.css";
 </section>
 
 <section class="greensection">
-  <h3 class="text-display-medium">Køb et rødgran juletræ</h3>
-  <div ><Image class="tree" src={juletre} alt="juletræ" /></div>
-  <p class="">
-    Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2, end
-    de frigiver under deres livscyklus. Et typisk dansk juletræ har et
-    CO2-aftryk på ca. 16 kg, men det binder samtidig 18 kg CO2 i sin levetid på
-    8-10 år. Danmark, som Europas største juletræsproducent, bidrager årligt med
-    240.000 tons bundet CO2.
-  </p>
+  <div class="greendiv">
+    <h3 class="text-display-small">Køb et rødgran juletræ</h3>
+    <div><Image class="tree" src={juletre} alt="juletræ" /></div>
+    <p class="white">
+      Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2, end
+      de frigiver under deres livscyklus. Et typisk dansk juletræ har et
+      CO2-aftryk på ca. 16 kg, men det binder samtidig 18 kg CO2 i sin levetid
+      på 8-10 år. Danmark, som Europas største juletræsproducent, bidrager
+      årligt med 240.000 tons bundet CO2.
+    </p>
 
-  <ul>
-    <p>Rødgran:</p>
-    <li><p>Kompost venlig</p></li>
-    <li><p>Binder 18 kg CO2 i sin levetid</p></li>
-    <li><p>Vokster hurtigt og naturlig i Danmark</p></li>
-  </ul>
+    <ul>
+      <p class="white">Rødgran:</p>
+      <li><p class="white">Kompost venlig</p></li>
+      <li><p class="white">Binder 18 kg CO2 i sin levetid</p></li>
+      <li><p class="white">Vokster hurtigt og naturlig i Danmark</p></li>
+    </ul>
+  </div>
 </section>
 
 <style>
-/* ----------------------Juletræ-------------------------------- */
-.greensection {
-background-color: var(--color-surface-green500);
-display: flex;
+  /* ----------------------Juletræ-------------------------------- */
+  .greensection {
+    background-color: var(--color-surface-green500);
+    display: flex;
+    min-width: 325px;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: var(--size-spacing-48) 0 var(--size-spacing-48) 0;
+  }
+.white{
+  color: var(--white);
+}
+  .greendiv {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--size-spacing-12);
-}
+    gap: 30px;
+ max-width: 400px ;
+  }
 
-.tree{
-  width: 300px;
-  height: 371px;
-}
+  .tree {
+    width: 300px;
+    height: 371px;
+  }
 
-h3{
-  text-align: center;
-}
+  h3 {
+    text-align: center;
+  }
 
-/* ------------------------------------------------------------ */
+  /* ------------------------------------------------------------ */
 
-
-/*--------------------- Julebord ---------------------------- */
+  /*--------------------- Julebord ---------------------------- */
   .svgJulebord {
     display: none;
   }
@@ -204,7 +218,8 @@ h3{
     position: relative;
   }
   h2,
-  h4, h3 {
+  h4,
+  h3 {
     color: var(--white);
   }
 
