@@ -5,6 +5,10 @@
   Julen er <span class="typing-text"></span>fest
 </div>
 <style>
+  .text-display-large {
+    color: var(--white);
+    padding-bottom: var(--size-spacing-24);
+  }
   .typing-text::after {
     content: "|";
     animation: blink ease 1s infinite;
@@ -61,6 +65,11 @@
           direction = DIRECTION_BACKWARDS;
           clearInterval(wordTypeInterval);
           setTimeout(startTyping, WORD_STAY_DELAY);
+
+          // Check if it's the last word, and stop after one loop
+          if (wordIndex === words.length - 1) {
+            clearInterval(wordTypeInterval);
+          }
         }
       } else if (direction == DIRECTION_BACKWARDS) {
         letterIndex--;
