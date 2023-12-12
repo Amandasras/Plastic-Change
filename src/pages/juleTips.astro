@@ -6,6 +6,7 @@ import bestik from "../assets/images/juleside/Firefly stål bestik ved siden af
 import bord from "../assets/images/juleside/julebord1.svg";
 import stof from "../assets/images/juleside/Firefly stofserviet anrettet på en æstetisk måde i mørkegrønne nuancer på en tallerken med grålige t (3).webp";
 import tupperware from "../assets/images/juleside/Firefly tupperware bokse med låg fyldt med rester fra julemaden 43042.webp";
+import juletre from "../assets/images/juleside/juletræ.webp"
 import "../styles/global.css";
 import "../styles/reset.css";
 ---
@@ -21,12 +22,12 @@ import "../styles/reset.css";
   </section>
 </div>
 
-<h3 class="text-display-large">Et julebord naturen værdsætter</h3>
+<h3 class="text-display-medium">Et julebord naturen værdsætter</h3>
 <section id="julebord">
   <!-- julebord -->
   <div class="two-sektions">
     <div class="imgText-wrapper">
-      <Image class="imgJulebord" src={lys} alt="julebord med lys" />
+      <div><Image class="imgJulebord" src={lys} alt="julebord med lys" /></div>
       <div class="text-wrapper">
         <p class="text-display-small">
           Traditionel bordpynt af <span class="red">naturmateriale</span>
@@ -40,7 +41,9 @@ import "../styles/reset.css";
     </div>
 
     <div class="imgText-wrapper">
-      <Image class="imgJulebord" src={bestik} alt="julebord med lys" />
+      <div>
+        <Image class="imgJulebord" src={bestik} alt="julebord med lys" />
+      </div>
       <div class="text-wrapper">
         <p class="text-display-small">
           Service af <span class="red">keramik eller stål</span>
@@ -53,11 +56,12 @@ import "../styles/reset.css";
     </div>
   </div>
   <div><Image class="svgJulebord" src={bord} alt="tegnet julebord" /></div>
-  
 
   <div class="two-sektions">
     <div class="imgText-wrapper">
-      <Image class="imgJulebord" src={stof} alt="tallerken med stofserviet" />
+      <div>
+        <Image class="imgJulebord" src={stof} alt="tallerken med stofserviet" />
+      </div>
       <div class="text-wrapper">
         <p class="text-display-small">
           Brug <span class="red">stofservietter</span>
@@ -70,11 +74,13 @@ import "../styles/reset.css";
     </div>
 
     <div class="imgText-wrapper">
-      <Image
-        class="imgJulebord"
-        src={tupperware}
-        alt="tallerken med stofserviet"
-      />
+      <div>
+        <Image
+          class="imgJulebord"
+          src={tupperware}
+          alt="tallerken med stofserviet"
+        />
+      </div>
       <div class="text-wrapper">
         <p class="text-display-small">
           Tupperware <span class="red">HUSK</span>
@@ -89,16 +95,43 @@ import "../styles/reset.css";
   </div>
 </section>
 
-<style>
-  /* Julebord */
+<section class="greensection">
+  <h3 class="text-display-medium">Køb et rødgran juletræ</h3>
+  <div><Image src={juletre} alt="juletræ" /></div>
+  <p>
+    Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2, end
+    de frigiver under deres livscyklus. Et typisk dansk juletræ har et
+    CO2-aftryk på ca. 16 kg, men det binder samtidig 18 kg CO2 i sin levetid på
+    8-10 år. Danmark, som Europas største juletræsproducent, bidrager årligt med
+    240.000 tons bundet CO2.
+  </p>
 
+  <ul>
+    <p>Rødgran:</p>
+    <li><p>Kompost venlig</p></li>
+    <li><p>Binder 18 kg CO2 i sin levetid</p></li>
+    <li><p>Vokster hurtigt og naturlig i Danmark</p></li>
+  </ul>
+</section>
+
+<style>
+/* ----------------------Juletræ-------------------------------- */
+.greensection {
+background-color: var(--color-surface-green500);
+height: 100vh ;
+}
+
+
+/* ------------------------------------------------------------ */
+
+
+  /*--------------------- Julebord ---------------------------- */
   .svgJulebord {
     display: none;
   }
   .red {
     color: var(--color-text-red500);
   }
-
   #julebord {
     display: flex;
     flex-direction: column;
@@ -120,35 +153,38 @@ import "../styles/reset.css";
     align-items: flex-start;
     max-width: 300px;
   }
-  @media (min-width: 999px) {
-    .imgText-wrapper {
-      flex-direction: row;
-    }
+
+  @media (min-width: 1250px) {
     .svgJulebord {
       display: block;
       max-width: 100%;
       height: auto;
     }
+  }
+  @media (min-width: 999px) {
+    .imgText-wrapper {
+      flex-direction: row;
+    }
+
     .imgJulebord {
-      max-width: 180px;
-      height: 175px;
+      height: auto;
     }
 
     #julebord {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      gap: var(--size-spacing-12);
     }
 
-    .two-sektions{
+    .two-sektions {
       display: flex;
       flex-direction: column;
-    gap: 100px;
+      gap: 100px;
     }
-
   }
-
-  /* Hero */
+  /* ---------------------------------------------------- */
+  /*--------------- Hero--------------------------------- */
   .hero {
     background-image: url("../assets/images/juleside/HeroJuleTips.webp");
     background-size: cover;
@@ -161,5 +197,5 @@ import "../styles/reset.css";
     color: var(--white);
   }
 
-  /* --- */
+  /* ------------------------------------------------- */
 </style>
