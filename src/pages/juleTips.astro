@@ -1,7 +1,27 @@
 ---
-
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+import "../styles/reset.css";
 ---
-<div class="hero">
 
+<div class="container">
+  <section class="hero">
+    <Navigation />
 
+    <h2 class="text-display-large">En jul uden plastik på din ønskeliste</h2>
+  </section>
 </div>
+
+<style>
+  .hero {
+    background-image: url("../assets/images/juleside/HeroJuleTips.webp");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    position: relative;
+  }
+  h2 {
+    margin-bottom: 190px;
+    color: var(--white);
+  }
+</style>
