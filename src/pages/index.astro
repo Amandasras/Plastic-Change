@@ -1,7 +1,7 @@
 ---
 import Form from "../components/Form.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import HeroOverskrift from "../components/HeroOverskrift.astro";
 import "../styles/global.css";
 import "../styles/reset.css";
 ---
@@ -15,9 +15,11 @@ import "../styles/reset.css";
     <title>Astro</title>
   </head>
   <body>
-    <header></header>
-    <main>
+    <header>
       <BaseLayout />
+    </header>
+    <main>
+      <HeroOverskrift />
     </main>
     <footer></footer>
   </body>
