@@ -1,5 +1,10 @@
 ---
 import RadioButton from "./RadioButton.astro";
+import { Image } from "astro:assets";
+import dankort from "../../assets/images/form/dankort.png";
+import visa from "../../assets/images/form/visa.png";
+import mastercard from "../../assets/images/form/mastercard.png";
+import mobilepay from "../../assets/images/form/mobilepay.png";
 ---
 
 <div id="paymentMethod_container">
@@ -10,14 +15,14 @@ import RadioButton from "./RadioButton.astro";
   <div id="paymentMethods">
     <div class="MobilePay paymentType">
       <RadioButton label="MobilePay" radioGroup="PaymentInfo" />
-      <img src="../../assets/mobilepay.png" alt="mobilepay logo" />
+      <Image src={mobilepay} alt="mobilepay logo" />
     </div>
     <div class="Card paymentType">
       <RadioButton label="Betalingskort" radioGroup="PaymentInfo" />
       <div class="methods">
-        <img src="../../assets/dankort.png" alt="dankort logo" />
-        <img src="../../assets/visa.png" alt="visa logo" />
-        <img src="../../assets/mastercard.png" alt="mastercard logo" />
+        <Image src={dankort} alt="dankort logo" />
+        <Image src={visa} alt="visa logo" />
+        <Image src={mastercard} alt="mastercard logo" />
       </div>
     </div>
   </div>
