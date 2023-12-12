@@ -1,5 +1,11 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import { Image } from "astro:assets";
+import lys from "../assets/images/juleside/Firefly stor naturpynt med levende lys og tørret frugt i midten af et veldækket bord med sølvservice (1).webp";
+import bestik from "../assets/images/juleside/Firefly stål bestik ved siden af en sort keramik tallerken på et mørkt træbord zoomet ind på bestikk.webp";
+import bord from "../assets/images/juleside/julebord1.svg";
+import stof from "../assets/images/juleside/Firefly stofserviet anrettet på en æstetisk måde i mørkegrønne nuancer på en tallerken med grålige t (3).webp";
+import tupperware from "../assets/images/juleside/Firefly tupperware bokse med låg fyldt med rester fra julemaden 43042.webp";
 import "../styles/global.css";
 import "../styles/reset.css";
 ---
@@ -9,13 +15,140 @@ import "../styles/reset.css";
     <Navigation />
 
     <h2 class="text-display-large">En jul uden plastik på din ønskeliste</h2>
-    <h4 class="text-display-small">Plastikfri festligheder: Små tricks med stor effekt.</h4>
+    <h4 class="text-display-small">
+      Plastikfri festligheder: Små tricks med stor effekt.
+    </h4>
   </section>
 </div>
 
+<h3 class="text-display-large">Et julebord naturen værdsætter</h3>
+<section id="julebord">
+  <!-- julebord -->
+  <div class="two-sektions">
+    <div class="imgText-wrapper">
+      <Image class="imgJulebord" src={lys} alt="julebord med lys" />
+      <div class="text-wrapper">
+        <p class="text-display-small">
+          Traditionel bordpynt af <span class="red">naturmateriale</span>
+        </p>
+        <p class="text-body-regular">
+          er et miljøvenligt alternativ, som skaber en rustik atmosfære og
+          bidrager til at stoppe plastikudledningen inden vi kan begynde at
+          rydde op i det vi allerede har udledt.
+        </p>
+      </div>
+    </div>
 
+    <div class="imgText-wrapper">
+      <Image class="imgJulebord" src={bestik} alt="julebord med lys" />
+      <div class="text-wrapper">
+        <p class="text-display-small">
+          Service af <span class="red">keramik eller stål</span>
+        </p>
+        <p class="text-body-regular">
+          er mere bæredygtig end plastikservice på grund af længere levetid,
+          genanvendelighed og mindre miljøpåvirkning ved produktion.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div><Image class="svgJulebord" src={bord} alt="tegnet julebord" /></div>
+  
+
+  <div class="two-sektions">
+    <div class="imgText-wrapper">
+      <Image class="imgJulebord" src={stof} alt="tallerken med stofserviet" />
+      <div class="text-wrapper">
+        <p class="text-display-small">
+          Brug <span class="red">stofservietter</span>
+        </p>
+        <p class="text-body-regular">
+          frem for papirsservietter, da de kan genbruges flere gang og dermed
+          reducerer plastikforbruget, samt mindsker singleuse kulturen.
+        </p>
+      </div>
+    </div>
+
+    <div class="imgText-wrapper">
+      <Image
+        class="imgJulebord"
+        src={tupperware}
+        alt="tallerken med stofserviet"
+      />
+      <div class="text-wrapper">
+        <p class="text-display-small">
+          Tupperware <span class="red">HUSK</span>
+        </p>
+        <p class="text-body-regular">
+          er et miljøvenligt alternativ, som skaber en rustik atmosfære og
+          bidrager til at stoppe plastikudledningen inden vi kan begynde at
+          rydde op i det vi allerede har udledt.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
+  /* Julebord */
+
+  .svgJulebord {
+    display: none;
+  }
+  .red {
+    color: var(--color-text-red500);
+  }
+
+  #julebord {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--size-spacing-20);
+  }
+  .imgJulebord {
+    max-width: 300px;
+    height: 300px;
+  }
+  .imgText-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-20);
+  }
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+  }
+  @media (min-width: 999px) {
+    .imgText-wrapper {
+      flex-direction: row;
+    }
+    .svgJulebord {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .imgJulebord {
+      max-width: 180px;
+      height: 175px;
+    }
+
+    #julebord {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .two-sektions{
+      display: flex;
+      flex-direction: column;
+    gap: 100px;
+    }
+
+  }
+
+  /* Hero */
   .hero {
     background-image: url("../assets/images/juleside/HeroJuleTips.webp");
     background-size: cover;
@@ -23,7 +156,10 @@ import "../styles/reset.css";
     height: 80vh;
     position: relative;
   }
-  h2, h4 {
+  h2,
+  h4 {
     color: var(--white);
   }
+
+  /* --- */
 </style>
