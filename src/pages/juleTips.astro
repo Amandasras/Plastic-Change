@@ -25,7 +25,7 @@ import "../styles/reset.css";
 <h3 class="text-display-medium">Et julebord naturen værdsætter</h3>
 <section id="julebord">
   <!-- julebord -->
-  <div class="two-sektions">
+  <div class="two-sections">
     <div class="imgText-wrapper">
       <div><Image class="imgJulebord" src={lys} alt="julebord med lys" /></div>
       <div class="text-wrapper">
@@ -57,7 +57,7 @@ import "../styles/reset.css";
   </div>
   <div><Image class="svgJulebord" src={bord} alt="tegnet julebord" /></div>
 
-  <div class="two-sektions">
+  <div class="two-sections">
     <div class="imgText-wrapper">
       <div>
         <Image class="imgJulebord" src={stof} alt="tallerken med stofserviet" />
@@ -97,8 +97,8 @@ import "../styles/reset.css";
 
 <section class="greensection">
   <h3 class="text-display-medium">Køb et rødgran juletræ</h3>
-  <div><Image src={juletre} alt="juletræ" /></div>
-  <p>
+  <div ><Image class="tree" src={juletre} alt="juletræ" /></div>
+  <p class="">
     Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2, end
     de frigiver under deres livscyklus. Et typisk dansk juletræ har et
     CO2-aftryk på ca. 16 kg, men det binder samtidig 18 kg CO2 i sin levetid på
@@ -118,14 +118,25 @@ import "../styles/reset.css";
 /* ----------------------Juletræ-------------------------------- */
 .greensection {
 background-color: var(--color-surface-green500);
-height: 100vh ;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--size-spacing-12);
 }
 
+.tree{
+  width: 300px;
+  height: 371px;
+}
+
+h3{
+  text-align: center;
+}
 
 /* ------------------------------------------------------------ */
 
 
-  /*--------------------- Julebord ---------------------------- */
+/*--------------------- Julebord ---------------------------- */
   .svgJulebord {
     display: none;
   }
@@ -193,7 +204,7 @@ height: 100vh ;
     position: relative;
   }
   h2,
-  h4 {
+  h4, h3 {
     color: var(--white);
   }
 
