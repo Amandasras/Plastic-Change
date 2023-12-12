@@ -28,28 +28,22 @@ import door24 from "../assets/images/julekalender/door24.svg";
 
 <div id="calendar">
   <div class="calendar-collum1">
-    <div class="door" onclick="openDoor(1)">
-      <Image src={door1} alt="Door 1" />
-    </div>
-    <div class="door" 'onclick="openDoor(23)" '>
-      <Image src={door23} alt="Door 23" />
-    </div>
-    <div class="door" 'onclick="openDoor(16)" '>
+    <div class="door" onclick="openDoor(16)">
       <Image src={door16} alt="Door 16" />
-    </div>
-    <div class="door" 'onclick="openDoor(5)" '>
-      <Image src={door5} alt="Door 5" />
     </div>
     <div class="door" 'onclick="openDoor(11)" '>
       <Image src={door11} alt="Door 11" />
     </div>
+    <div class="door" 'onclick="openDoor(8)" '>
+      <Image src={door8} alt="Door 8" />
+    </div>
+    <div class="door" 'onclick="openDoor(10)" '>
+      <Image src={door10} alt="Door 10" />
+    </div>
   </div>
   <div class="calendar-collum2">
-    <div class="door" 'onclick="openDoor(14)" '>
-      <Image src={door14} alt="Door 14" />
-    </div>
-    <div class="door" 'onclick="openDoor(6)" '>
-      <Image src={door6} alt="Door 6" />
+    <div class="door" 'onclick="openDoor(18)" '>
+      <Image src={door18} alt="Door 18" />
     </div>
     <div class="door" 'onclick="openDoor(2)" '>
       <Image src={door2} alt="Door 2" />
@@ -57,35 +51,30 @@ import door24 from "../assets/images/julekalender/door24.svg";
     <div class="door" 'onclick="openDoor(9)" '>
       <Image src={door9} alt="Door 9" />
     </div>
-    <div class="door" 'onclick="openDoor(18)" '>
-      <Image src={door18} alt="Door 18" />
+    <div class="door" 'onclick="openDoor(14)" '>
+      <Image src={door14} alt="Door 14" />
     </div>
   </div>
   <div class="calendar-collum3">
+    <div class="door" 'onclick="openDoor(5)" '>
+      <Image src={door5} alt="Door 5" />
+    </div>
+    <div class="door" 'onclick="openDoor(21)" '>
+      <Image src={door21} alt="Door 21" />
+    </div>
     <div class="door" 'onclick="openDoor(19)" '>
       <Image src={door19} alt="Door 19" />
     </div>
     <div class="door" 'onclick="openDoor(3)" '>
       <Image src={door3} alt="Door 3" />
     </div>
-    <div class="door" 'onclick="openDoor(21)" '>
-      <Image src={door21} alt="Door 21" />
-    </div>
-    <div class="door" 'onclick="openDoor(13)" '>
-      <Image src={door13} alt="Door 13" />
-    </div>
   </div>
   <div class="calendar-collum4">
-    <div class="door" 'onclick="openDoor(8)" '>
-      <Image src={door8} alt="Door 8" />
-    </div>
-
-    <div class="door" 'onclick="openDoor(10)" '>
-      <Image src={door10} alt="Door 10" />
-    </div>
-
     <div class="door" 'onclick="openDoor(17)" '>
       <Image src={door17} alt="Door 17" />
+    </div>
+    <div class="door" 'onclick="openDoor(23)" '>
+      <Image src={door23} alt="Door 23" />
     </div>
     <div class="door" 'onclick="openDoor(22)" '>
       <Image src={door22} alt="Door 22" />
@@ -101,9 +90,6 @@ import door24 from "../assets/images/julekalender/door24.svg";
     <div class="door" 'onclick="openDoor(20)" '>
       <Image src={door20} alt="Door 20" />
     </div>
-    <div class="door" 'onclick="openDoor(15)" '>
-      <Image src={door15} alt="Door 15" />
-    </div>
     <div class="door" 'onclick="openDoor(4)" '>
       <Image src={door4} alt="Door 4" />
     </div>
@@ -111,10 +97,22 @@ import door24 from "../assets/images/julekalender/door24.svg";
       <Image src={door7} alt="Door 7" />
     </div>
   </div>
+  <div class="calendar-collum6">
+    <div class="door" 'onclick="openDoor(1)" '>
+      <Image src={door1} alt="Door 1" />
+    </div>
+    <div class="door" 'onclick="openDoor(6)" '>
+      <Image src={door6} alt="Door 6" />
+    </div>
+    <div class="door" 'onclick="openDoor(15)" '>
+      <Image src={door15} alt="Door 15" />
+    </div>
+    <div class="door" 'onclick="openDoor(13)" '>
+      <Image src={door13} alt="Door 13" />
+    </div>
+  </div>
 </div>
 <style>
-
-
   @media only screen and (min-width: 768px) {
     #calendar {
       display: flex;
@@ -127,7 +125,8 @@ import door24 from "../assets/images/julekalender/door24.svg";
     .calendar-collum2,
     .calendar-collum3,
     .calendar-collum4,
-    .calendar-collum5 {
+    .calendar-collum5,
+    .calendar-collum6 {
       display: flex;
       flex-direction: column;
       gap: 10px;
