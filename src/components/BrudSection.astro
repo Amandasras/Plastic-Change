@@ -7,6 +7,9 @@ import Presents from "../assets/images/brudSection/presents.webp";
 import "../styles/global.css";
 ---
 
+<div class="godeJulevaner">
+  <h2 class="text-display-medium">4 gode julevaner</h2>
+</div>
 <section id="brudSection">
   <div class="border_img">
     <article class="card">
@@ -49,7 +52,20 @@ import "../styles/global.css";
   </div>
 </section>
 <style>
+  .godeJulevaner {
+    margin: var(--size-spacing-48) 0 var(--size-spacing-20) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-gray900);
+  }
   #brudSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .border_img {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -57,6 +73,8 @@ import "../styles/global.css";
   .card {
     display: grid;
     position: relative;
+    width: 50vw;
+    height: fit-content;
   }
   .card_content {
     display: flex;
@@ -72,8 +90,9 @@ import "../styles/global.css";
   }
 
   .card img {
-    max-width: 100%;
-    height: auto;
+    width: 50vw;
+    height: fit-content;
+    object-fit: cover;
   }
 
   @media (min-width: 800px) {
@@ -83,19 +102,22 @@ import "../styles/global.css";
       justify-content: center;
       width: 100vw;
     }
-
-    .card:hover {
-      transform: scale(104%);
-      transition: 0.3s ease-in-out;
-    }
     .border_img {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      margin: var(--size-spacing-64);
-      /* width: 100%; */
+      margin: 0 var(--size-spacing-64) var(--size-spacing-64)
+        var(--size-spacing-64);
       overflow: hidden;
       border-radius: var(--border-size-4);
       border-radius: var(--border-size-4);
+    }
+    .card,
+    .card img {
+      width: 100%;
+    }
+    .card:hover {
+      transform: scale(104%);
+      transition: 0.3s ease-in-out;
     }
   }
 </style>
