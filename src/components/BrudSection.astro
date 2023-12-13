@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import ChristmasTable from "../assets/images/brudSection/christmasTable.webp";
+import Ornament from "../assets/images/brudSection/ornament.webp";
+import Pinetree from "../assets/images/brudSection/pinetree.webp";
+import Presents from "../assets/images/brudSection/presents.webp";
+import "../styles/global.css";
+---
+
+<section id="brudSection">
+  <div class="border_img">
+    <article class="card">
+      <div class="card_thumb">
+        <Image src={ChristmasTable} alt="Julebord" />
+      </div>
+      <div class="card_content">
+        <p class="text-body-small">Hvad kan du gøre?</p>
+        <p class="text-display-small">Gode råd til julebordet</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card_thumb">
+        <Image src={Ornament} alt="Julepynt" />
+      </div>
+      <div class="card_content">
+        <p class="text-body-small">Hvad kan du gøre?</p>
+        <p class="text-display-small">Gode råd til julepynten</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card_thumb">
+        <Image src={Pinetree} alt="Grantræ" />
+      </div>
+      <div class="card_content">
+        <p class="text-body-small">Hvad kan du gøre?</p>
+        <p class="text-display-small">Gode råd til juletræet</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card_thumb">
+        <Image src={Presents} alt="Gaver" />
+      </div>
+      <div class="card_content">
+        <p class="text-body-small">Hvad kan du gøre?</p>
+        <p class="text-display-small">Gode råd til gaveindpakning</p>
+      </div>
+    </article>
+  </div>
+</section>
+<style>
+  #brudSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    display: grid;
+    position: relative;
+  }
+  .card_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--color-text-white);
+    padding: var(--size-spacing-20);
+    gap: var(--size-spacing-8);
+  }
+  .card_thumb,
+  .card_content {
+    grid-area: 1/2;
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 800px) {
+    #brudSection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+    }
+
+    .card:hover {
+      transform: scale(104%);
+      transition: 0.3s ease-in-out;
+    }
+    .border_img {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin: var(--size-spacing-64);
+      /* width: 100%; */
+      overflow: hidden;
+      border-radius: var(--border-size-4);
+      border-radius: var(--border-size-4);
+    }
+  }
+</style>
