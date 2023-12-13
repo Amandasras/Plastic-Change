@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import CalenderSection from "../components/CalenderSection.astro";
 import Form from "../components/Form.astro";
 import Landingpage from "../components/Landingpage.astro";
@@ -7,34 +8,24 @@ import "../styles/global.css";
 import "../styles/reset.css";
 ---
 
-<html lang="dk">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <header>
-      <div class="hero_container">
-        <section class="hero_index">
-          <Navigation />
-          <div class="hero_tekst">
-            <h4 class="text-title-uppercase">Kampagne</h4>
-            <Landingpage />
-            <h2 class="text-display-small">
-              Støt os med et julebidrag i kampen mod plastikforureningen på verdensplan. <br />Herunder har vi samlet en guide med god råd til, <br /> hvordan Du kan mindske Dit eget forbrug i juletiden.
-            </h2>
-          </div>
-        </section>
-      </div>
-      <CalenderSection />
-    </header>
-    <main></main>
-    <footer></footer>
-  </body>
-</html>
+<BaseLayout>
+  <header>
+    <div class="hero_container">
+      <section class="hero_index">
+        <Navigation />
+        <div class="hero_tekst">
+          <h4 class="text-title-uppercase">Kampagne</h4>
+          <Landingpage />
+          <h2 class="text-display-small">
+            Støt os med et julebidrag i kampen mod plastikforureningen på verdensplan. <br />Herunder har vi samlet en guide med god råd til, <br /> hvordan Du kan mindske Dit eget forbrug i juletiden.
+          </h2>
+        </div>
+      </section>
+    </div>
+    <CalenderSection />
+  </header>
+  <main></main>
+</BaseLayout>
 
 <style>
   .hero_index {
