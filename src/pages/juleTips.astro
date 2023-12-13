@@ -8,9 +8,11 @@ import stof from "../assets/images/juleside/Firefly stofserviet anrettet på en
 import tupperware from "../assets/images/juleside/Firefly tupperware bokse med låg fyldt med rester fra julemaden 43042.webp";
 import juletre from "../assets/images/juleside/juletræ.webp";
 import heroJuletips from "../assets/images/juleside/HeroJuleTips.webp";
+import liste from "../assets/images/juleside/juleListe.svg";
 import "../styles/global.css";
 import "../styles/reset.css";
 ---
+
 <html lang="dk">
   <head>
     <meta charset="utf-8" />
@@ -19,188 +21,190 @@ import "../styles/reset.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-<div class="container">
-  <section class="hero">
-    <Navigation />
+  <div class="container">
+    <section class="hero">
+      <Navigation />
 
-    <h1 class="text-display-large">En jul uden plastik på din ønskeliste</h1>
-    <p class="text-display-small">
-      Plastikfri festligheder: Små tricks med stor effekt.
-    </p>
-  </section>
-</div>
-
-<h2 class="text-display-medium">Et julebord naturen værdsætter</h2>
-<section id="julebord">
-  <!-- julebord -->
-  <div class="two-sections">
-    <div class="imgText-wrapper">
-      <div><Image class="imgJulebord" src={lys} alt="julebord med lys" /></div>
-      <div class="text-wrapper">
-        <p class="text-display-small">
-          Traditionel bordpynt af <span class="red">naturmateriale</span>
-        </p>
-        <p class="text-body-regular">
-          er et miljøvenligt alternativ, som skaber en rustik atmosfære og
-          bidrager til at stoppe plastikudledningen inden vi kan begynde at
-          rydde op i det vi allerede har udledt.
-        </p>
-      </div>
-    </div>
-
-    <div class="imgText-wrapper">
-      <div>
-        <Image class="imgJulebord" src={bestik} alt="julebord med lys" />
-      </div>
-      <div class="text-wrapper">
-        <p class="text-display-small">
-          Service af <span class="red">keramik eller stål</span>
-        </p>
-        <p class="text-body-regular">
-          er mere bæredygtig end plastikservice på grund af længere levetid,
-          genanvendelighed og mindre miljøpåvirkning ved produktion.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div><Image class="svgJulebord" src={bord} alt="tegnet julebord" /></div>
-
-  <div class="two-sections">
-    <div class="imgText-wrapper">
-      <div>
-        <Image class="imgJulebord" src={stof} alt="tallerken med stofserviet" />
-      </div>
-      <div class="text-wrapper">
-        <p class="text-display-small">
-          Brug <span class="red">stofservietter</span>
-        </p>
-        <p class="text-body-regular">
-          frem for papirsservietter, da de kan genbruges flere gang og dermed
-          reducerer plastikforbruget, samt mindsker singleuse kulturen.
-        </p>
-      </div>
-    </div>
-
-    <div class="imgText-wrapper">
-      <div>
-        <Image
-          class="imgJulebord"
-          src={tupperware}
-          alt="tallerken med stofserviet"
-        />
-      </div>
-      <div class="text-wrapper">
-        <p class="text-display-small">
-          Tupperware <span class="red">HUSK</span>
-        </p>
-        <p class="text-body-regular">
-          er et miljøvenligt alternativ, som skaber en rustik atmosfære og
-          bidrager til at stoppe plastikudledningen inden vi kan begynde at
-          rydde op i det vi allerede har udledt.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="greensection">
-  <h2 class="text-display-medium white" id="h2first" >Køb et rødgran juletræ</h2>
-  <div class="greendiv"> 
-    <div><Image class="tree" src={juletre} alt="juletræ" /></div>
-    <div class="textbox">
-      <h2 class="text-display-medium white" id="h2">Køb et rødgran juletræ</h2>
-      <p class="white">
-        Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2,
-        end de frigiver under deres livscyklus. Et typisk dansk juletræ har et
-        CO2-aftryk på ca. 16 kg, men det binder samtidig 18 kg CO2 i sin levetid
-        på 8-10 år. Danmark, som Europas største juletræsproducent, bidrager
-        årligt med 240.000 tons bundet CO2.
+      <h1 class="text-display-large">En jul uden plastik på din ønskeliste</h1>
+      <p class="text-display-small">
+        Plastikfri festligheder: Små tricks med stor effekt.
       </p>
-
-      <ul>
-        <p class="white">Rødgran:</p>
-        <li><p class="white">Kompost venlig</p></li>
-        <li><p class="white">Binder 18 kg CO2 i sin levetid</p></li>
-        <li><p class="white">Vokster hurtigt og naturlig i Danmark</p></li>
-      </ul>
-    </div>
+    </section>
   </div>
-</section>
 
-<style>
-  /* ----------------------Juletræ-------------------------------- */
-  #h2{
-    display: none;
-  }
-  .greensection {
-    background-color: var(--color-surface-green500);
-    display: flex;
-    flex-direction: column;
-    min-width: 325px;
-    max-width: 999px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: var(--size-spacing-48) 0 var(--size-spacing-48) 0;
-  }
-  .white {
-    color: var(--white);
-  }
-  .greendiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    max-width: 300px;
-  }
+  <h2 class="text-display-medium">Et julebord naturen værdsætter</h2>
+  <section id="julebord">
+    <!-- julebord -->
 
-  .tree {
-    width: 100%;
-    height: auto;
-  }
+    <div class="two-sections">
+      <div class="imgText-wrapper">
+        <div>
+          <Image class="imgJulebord" src={lys} alt="julebord med lys" />
+        </div>
+        <div class="text-wrapper">
+          <p class="text-display-small">
+            Traditionel bordpynt af <span class="red">naturmateriale</span>
+          </p>
+          <p class="text-body-regular">
+            er et miljøvenligt alternativ, som skaber en rustik atmosfære og
+            bidrager til at stoppe plastikudledningen inden vi kan begynde at
+            rydde op i det vi allerede har udledt.
+          </p>
+        </div>
+      </div>
 
-  h2 {
-    text-align: center;
-  }
+      <div class="imgText-wrapper">
+        <div>
+          <Image class="imgJulebord" src={bestik} alt="julebord med lys" />
+        </div>
+        <div class="text-wrapper">
+          <p class="text-display-small">
+            Service af <span class="red">keramik eller stål</span>
+          </p>
+          <p class="text-body-regular">
+            er mere bæredygtig end plastikservice på grund af længere levetid,
+            genanvendelighed og mindre miljøpåvirkning ved produktion.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div><Image class="svgJulebord" src={bord} alt="tegnet julebord" /></div>
 
-  .greendiv h2 {
-    order: -1;
-  }
+    <div class="two-sections">
+      <div class="imgText-wrapper">
+        <div>
+          <Image
+            class="imgJulebord"
+            src={stof}
+            alt="tallerken med stofserviet"
+          />
+        </div>
+        <div class="text-wrapper">
+          <p class="text-display-small">
+            Brug <span class="red">stofservietter</span>
+          </p>
+          <p class="text-body-regular">
+            frem for papirsservietter, da de kan genbruges flere gang og dermed
+            reducerer plastikforbruget, samt mindsker singleuse kulturen.
+          </p>
+        </div>
+      </div>
 
-  .textbox {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-spacing-40);
-  }
+      <div class="imgText-wrapper">
+        <div>
+          <Image
+            class="imgJulebord"
+            src={tupperware}
+            alt="tallerken med stofserviet"
+          />
+        </div>
+        <div class="text-wrapper">
+          <p class="text-display-small">
+            Tupperware <span class="red">HUSK</span>
+          </p>
+          <p class="text-body-regular">
+            er et miljøvenligt alternativ, som skaber en rustik atmosfære og
+            bidrager til at stoppe plastikudledningen inden vi kan begynde at
+            rydde op i det vi allerede har udledt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---------------------------------->
 
-  @media (min-width: 999px) {
+  <section class="greensection">
+    <!-- rødgran -->
 
-    #h2first{
+    <h2 class="text-display-medium hideDesktop">Køb et rødgran juletræ</h2>
+    <div class="greendiv">
+      <div><Image class="tree" src={juletre} alt="juletræ" /></div>
+      <div class="textbox">
+        <h2 class="text-display-medium hideMobil">Køb et rødgran juletræ</h2>
+        <p class="white">
+          Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2,
+          end de frigiver under deres livscyklus. Et typisk dansk juletræ har et
+          CO2-aftryk på ca. 16 kg, men det binder samtidig 18 kg CO2 i sin
+          levetid på 8-10 år. Danmark, som Europas største juletræsproducent,
+          bidrager årligt med 240.000 tons bundet CO2.
+        </p>
+
+        <ul>
+          <p class="white">Rødgran:</p>
+          <li><p class="white">Kompost venlig</p></li>
+          <li><p class="white">Binder 18 kg CO2 i sin levetid</p></li>
+          <li><p class="white">Vokster hurtigt og naturlig i Danmark</p></li>
+        </ul>
+      </div>
+    </div>
+  </section><!---------------------------------->
+
+  <section class="greensection">
+    <!-- gavepapir -->
+    <h2 class="text-display-medium hideMobil">
+      Brug genbrugs martialer til at pakke julegaverne ind
+    </h2>
+    <div class="greendiv">
+      <div><Image class="tree hideDesktop" src={liste} alt="juletræ" /></div>
+      <div class="textbox">
+        <h2 class="text-display-medium hideDesktop">
+          Brug genbrugs martialer til at pakke julegaverne ind
+        </h2>
+        <p class="white">
+          Nogle julegaveindpakningspapirer og bånd kan have en plastikcoating
+          eller indeholde plastikfibre. For at reducere plastikaffaldet kan du
+          vælge genanvendeligt indpakningspapir eller alternative
+          indpakningsmaterialer.
+        </p>
+
+        <p class="white">
+          Brug stof fra dit gammlt tøj du ikke bruger mere. Gem dine gamle
+          aviser/reklamer og pak dine gaver ind med det. Eller gå ned i
+          genbrugen og køb en gammel bog som du kan bruge som gave papir.
+        </p>
+      </div>
+      <div><Image class="tree hideMobil" src={liste} alt="juletræ" /></div>
+    </div>
+  </section><!---------------------------------->
+
+  <style>
+    /* ----------------------Juletræ-------------------------------- */
+    .hideMobil {
       display: none;
     }
-    #h2{
-    display: block;
-  }
-    .greensection {
-      background-color: var(--color-surface-green500);
-      max-width: 100%;
-      gap: 10px;
-      padding: var(--size-spacing-48);
-    }
 
-    .greendiv {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .hideDesktop {
+      display: block;
+    }
+    .greensection {
+      background-color: var(--color-surface-green700);
+      display: flex;
+      flex-direction: column;
       min-width: 325px;
-      max-width: none;
-      justify-items: center;
+      max-width: 999px;
       justify-content: center;
       align-items: center;
+      gap: 10px;
+      padding: var(--size-spacing-48) 0 var(--size-spacing-48) 0;
+    }
+    .white {
+      color: var(--white);
+    }
+    .greendiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      max-width: 300px;
     }
 
     .tree {
-      max-width: 471px;
-      max-height: 561px;
+      width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      text-align: center;
     }
 
     .textbox {
@@ -208,80 +212,117 @@ import "../styles/reset.css";
       flex-direction: column;
       gap: var(--size-spacing-40);
     }
-  }
 
-  /* ------------------------------------------------------------ */
+    @media (min-width: 999px) {
+      .h2first {
+        display: none;
+      }
+      .h2 {
+        display: block;
+      }
+      .greensection {
+        background-color: var(--color-surface-green500);
+        max-width: 100%;
+        gap: 10px;
+        padding: var(--size-spacing-48);
+      }
 
-  /*--------------------- Julebord ---------------------------- */
-  .svgJulebord {
-    display: none;
-  }
-  .red {
-    color: var(--color-text-red500);
-  }
-  #julebord {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--size-spacing-20);
-  }
-  .imgJulebord {
-    max-width: 300px;
-    height: 300px;
-  }
-  .imgText-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-spacing-20);
-  }
-  .text-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 300px;
-  }
+      .greendiv {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 325px;
+        max-width: none;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+      }
 
-  @media (min-width: 1250px) {
+      .tree {
+        max-width: 471px;
+        max-height: 561px;
+      }
+
+      .textbox {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-spacing-40);
+      }
+    }
+
+    /* ------------------------------------------------------------ */
+
+    /*--------------------- Julebord ---------------------------- */
     .svgJulebord {
-      display: block;
-      max-width: 100%;
-      height: auto;
+      display: none;
     }
-  }
-  @media (min-width: 999px) {
-    .imgText-wrapper {
-      flex-direction: row;
+    .red {
+      color: var(--color-text-red500);
     }
-
-    .imgJulebord {
-      height: auto;
-    }
-
     #julebord {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: var(--size-spacing-12);
+      flex-direction: column;
+      align-items: center;
+      padding: var(--size-spacing-20);
     }
-
-    .two-sektions {
+    .imgJulebord {
+      max-width: 300px;
+      height: 300px;
+    }
+    .imgText-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 100px;
+      gap: var(--size-spacing-20);
     }
-  }
-  /* ---------------------------------------------------- */
-  /*--------------- Hero--------------------------------- */
-  .hero {
-    background-image: url("../assets/images/juleside/HeroJuleTips.webp");
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    position: relative;
-  }
-  h1 {
-    color: var(--white);
-  }
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 300px;
+    }
 
-  /* ------------------------------------------------- */
-</style>
+    @media (min-width: 1250px) {
+      .svgJulebord {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    @media (min-width: 999px) {
+      .imgText-wrapper {
+        flex-direction: row;
+      }
+
+      .imgJulebord {
+        height: auto;
+      }
+
+      #julebord {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--size-spacing-12);
+      }
+
+      .two-sektions {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+      }
+    }
+    /* ---------------------------------------------------- */
+    /*--------------- Hero--------------------------------- */
+    .hero {
+      background-image: url("../assets/images/juleside/HeroJuleTips.webp");
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+    }
+    h1 {
+      color: var(--white);
+    }
+
+    /* ------------------------------------------------- */
+  </style>
+
+</html>
