@@ -1,9 +1,11 @@
 ---
+import BrudSection from "../components/BrudSection.astro";
 import Form from "../components/Form.astro";
 import Landingpage from "../components/Landingpage.astro";
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 import "../styles/reset.css";
+import { Image } from "astro:assets";
 ---
 
 <html lang="dk">
@@ -31,7 +33,9 @@ import "../styles/reset.css";
         </section>
       </div>
     </header>
-    <main></main>
+    <main>
+      <BrudSection />
+    </main>
     <footer></footer>
   </body>
 </html>
