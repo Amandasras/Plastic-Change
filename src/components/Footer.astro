@@ -1,4 +1,169 @@
 ---
+import { Image } from "astro:assets";
+import PlasticChangeLogo from "../assets/images/form/PCLogo.svg";
+import Facebook from "../assets/images/so-me/facebook.svg";
+import FacebookHover from "../assets/images/so-me/facebookHover.svg";
+import Insta from "../assets/images/so-me/insta.svg";
+import InstaHover from "../assets/images/so-me/instaHover.svg";
+import Linkedin from "../assets/images/so-me/linkedin.svg";
+import LinkedinHover from "../assets/images/so-me/linkedinHover.svg";
+import X from "../assets/images/so-me/x.svg";
+import XHover from "../assets/images/so-me/xHover.svg";
+import Youtube from "../assets/images/so-me/youtube.svg";
+import YoutubeHover from "../assets/images/so-me/youtubeHover.svg";
 ---
 
-<footer></footer>
+<footer>
+  <div class="contact_container">
+    <Image src={PlasticChangeLogo} alt="" />
+    <div class="contactInfo">
+      <div class="mail_container">
+        <p class="textGray text-body-small">Mail:</p>
+        <p class="textRed text-body-small">info@plasticchange.org</p>
+      </div>
+      <div class="tel_container">
+        <p class="textGray text-body-small">Tlf:</p>
+        <p class="textRed text-body-small">+45 42 66 72 46</p>
+      </div>
+    </div>
+    <div class="telTime_container">
+      <p class="textGray text-body-small">Telefon åbningstider:</p>
+      <p class="textRed text-body-small">Mandag - Fredag</p>
+      <p class="textRed text-body-small">10:00 - 15:00</p>
+    </div>
+  </div>
+
+  <div class="donate_container">
+    <p class="textBlack text-form-label-semibold">Støt nu</p>
+    <p class="textGray text-body-small">Giv et bidrag</p>
+    <p class="textGray text-body-small">Bliv medlem</p>
+    <p class="textGray text-body-small">Lav et testanmente</p>
+    <p class="textGray text-body-small">Støt som virkshomed</p>
+  </div>
+
+  <div class="SoMe_container">
+    <div class="facebook_container">
+      <Image src={Facebook} alt="" class="facebook" />
+      <Image src={FacebookHover} alt="" class="facebookHover" />
+    </div>
+    <div class="x_container">
+      <Image src={X} alt="" class="x" />
+      <Image src={XHover} alt="" class="xHover" />
+    </div>
+    <div class="linkedin_container">
+      <Image src={Linkedin} alt="" class="linkedin" />
+      <Image src={LinkedinHover} alt="" class="linkedinHover" />
+    </div>
+    <div class="youtube_container">
+      <Image src={Youtube} alt="" class="youtube" />
+      <Image src={YoutubeHover} alt="" class="youtubeHover" />
+    </div>
+    <div class="insta_container">
+      <Image src={Insta} alt="" class="insta" />
+      <Image src={InstaHover} alt="" class="instaHover" />
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100vw;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 24px;
+  }
+  .textBlack {
+    color: var(--color-text-gray900);
+  }
+  .textGray {
+    color: var(--color-text-gray500);
+  }
+  .textRed {
+    color: var(--color-text-red500);
+  }
+  /* ---------- Contact ---------- */
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mail_container,
+  .tel_container {
+    display: flex;
+    gap: 4px;
+  }
+
+  .tel_container {
+    width: 100%;
+  }
+  .telTime_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* ---------- Donate ---------- */
+  .donate_container {
+    display: none;
+  }
+
+  /* ---------- SoMe ---------- */
+  .SoMe_container {
+    display: flex;
+    gap: 32px;
+  }
+
+  .instaHover,
+  .xHover,
+  .linkedinHover,
+  .youtubeHover,
+  .facebookHover {
+    display: none;
+  }
+
+  .insta_container:hover .insta,
+  .x_container:hover .x,
+  .linkedin_container:hover .linkedin,
+  .youtube_container:hover .youtube,
+  .facebook_container:hover .facebook {
+    display: none;
+  }
+
+  .insta_container:hover .instaHover,
+  .x_container:hover .xHover,
+  .linkedin_container:hover .linkedinHover,
+  .youtube_container:hover .youtubeHover,
+  .facebook_container:hover .facebookHover {
+    display: block;
+  }
+
+  @media (min-width: 700px) {
+    footer {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+      align-items: flex-start;
+    }
+
+    .contact_container {
+      align-items: flex-start;
+    }
+
+    .donate_container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-top: 76px;
+    }
+  }
+</style>
