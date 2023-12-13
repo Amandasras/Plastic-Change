@@ -1,0 +1,263 @@
+---
+import { Image } from "astro:assets";
+import door1 from "../assets/images/julekalender/door1.svg";
+import door2 from "../assets/images/julekalender/door2.svg";
+import door3 from "../assets/images/julekalender/door3.svg";
+import door4 from "../assets/images/julekalender/door4.svg";
+import door5 from "../assets/images/julekalender/door5.svg";
+import door6 from "../assets/images/julekalender/door6.svg";
+import door7 from "../assets/images/julekalender/door7.svg";
+import door8 from "../assets/images/julekalender/door8.svg";
+import door9 from "../assets/images/julekalender/door9.svg";
+import door10 from "../assets/images/julekalender/door10.svg";
+import door11 from "../assets/images/julekalender/door11.svg";
+import door12 from "../assets/images/julekalender/door12.svg";
+import door13 from "../assets/images/julekalender/door13.svg";
+import door14 from "../assets/images/julekalender/door14.svg";
+import door15 from "../assets/images/julekalender/door15.svg";
+import door16 from "../assets/images/julekalender/door16.svg";
+import door17 from "../assets/images/julekalender/door17.svg";
+import door18 from "../assets/images/julekalender/door18.svg";
+import door19 from "../assets/images/julekalender/door19.svg";
+import door20 from "../assets/images/julekalender/door20.svg";
+import door21 from "../assets/images/julekalender/door21.svg";
+import door22 from "../assets/images/julekalender/door22.svg";
+import door23 from "../assets/images/julekalender/door23.svg";
+import door24 from "../assets/images/julekalender/door24.svg";
+
+// Function to open the door and display the pop-up
+function openDoor(doorNumber) {
+  const doorContent = getDoorContent(doorNumber);
+
+  // Update the content of the pop-up
+  document.querySelector(".openDoor").innerHTML = doorContent;
+
+  // Show the pop-up
+  document.querySelector(".openDoor_container").style.display = "flex";
+}
+
+// Function to close the pop-up
+function closeDoor() {
+  document.querySelector(".openDoor_container").style.display = "none";
+}
+
+// Function to get the content based on the door clicked
+function getDoorContent(doorNumber) {
+  // You can customize this function to return the content for each door
+  switch (doorNumber) {
+    case 1:
+      return "Content for Door 1";
+    case 2:
+      return "Content for Door 2";
+    // Add cases for other doors
+    default:
+      return "Default content";
+  }
+}
+---
+
+<section id="calender_container">
+  <section id="calender_container">
+    <div id="calendar">
+      <div class="calender-row1">
+        <div class="calendar-collum1">
+          <div class="door" onclick="openDoor(16)">
+            <Image src={door16} alt="Door 16" />
+          </div>
+          <div class="door" 'onclick="openDoor(11)" '>
+            <Image src={door11} alt="Door 11" />
+          </div>
+          <div class="door" 'onclick="openDoor(8)" '>
+            <Image src={door8} alt="Door 8" />
+          </div>
+          <div class="door" 'onclick="openDoor(10)" '>
+            <Image src={door10} alt="Door 10" />
+          </div>
+        </div>
+        <div class="calendar-collum2">
+          <div class="door" 'onclick="openDoor(18)" '>
+            <Image src={door18} alt="Door 18" />
+          </div>
+          <div class="door" 'onclick="openDoor(2)" '>
+            <Image src={door2} alt="Door 2" />
+          </div>
+          <div class="door" 'onclick="openDoor(9)" '>
+            <Image src={door9} alt="Door 9" />
+          </div>
+          <div class="door" 'onclick="openDoor(14)" '>
+            <Image src={door14} alt="Door 14" />
+          </div>
+        </div>
+        <div class="calendar-collum3">
+          <div class="door" 'onclick="openDoor(5)" '>
+            <Image src={door5} alt="Door 5" />
+          </div>
+          <div class="door" 'onclick="openDoor(21)" '>
+            <Image src={door21} alt="Door 21" />
+          </div>
+          <div class="door" 'onclick="openDoor(19)" '>
+            <Image src={door19} alt="Door 19" />
+          </div>
+          <div class="door" 'onclick="openDoor(3)" '>
+            <Image src={door3} alt="Door 3" />
+          </div>
+        </div>
+      </div>
+      <div class="calender-row2">
+        <div class="calendar-collum4">
+          <div class="door" 'onclick="openDoor(17)" '>
+            <Image src={door17} alt="Door 17" />
+          </div>
+          <div class="door" 'onclick="openDoor(23)" '>
+            <Image src={door23} alt="Door 23" />
+          </div>
+          <div class="door" 'onclick="openDoor(22)" '>
+            <Image src={door22} alt="Door 22" />
+          </div>
+          <div class="door" 'onclick="openDoor(24)" '>
+            <Image src={door24} alt="Door 24" />
+          </div>
+        </div>
+        <div class="calendar-collum5">
+          <div class="door" 'onclick="openDoor(12)" '>
+            <Image src={door12} alt="Door 12" />
+          </div>
+          <div class="door" 'onclick="openDoor(20)" '>
+            <Image src={door20} alt="Door 20" />
+          </div>
+          <div class="door" 'onclick="openDoor(4)" '>
+            <Image src={door4} alt="Door 4" />
+          </div>
+          <div class="door" 'onclick="openDoor(7)" '>
+            <Image src={door7} alt="Door 7" />
+          </div>
+        </div>
+        <div class="calendar-collum6">
+          <div class="door" 'onclick="openDoor(1)" '>
+            <Image src={door1} alt="Door 1" />
+          </div>
+          <div class="door" 'onclick="openDoor(6)" '>
+            <Image src={door6} alt="Door 6" />
+          </div>
+          <div class="door" 'onclick="openDoor(15)" '>
+            <Image src={door15} alt="Door 15" />
+          </div>
+          <div class="door" 'onclick="openDoor(13)" '>
+            <Image src={door13} alt="Door 13" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="openDoor_container">
+      <div class="openDoor"></div>
+    </div>
+  </section>
+</section>
+
+<style>
+  #calender_container {
+    position: relative;
+  }
+  #calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .calender-row1,
+  .calender-row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  .calendar-collum1,
+  .calendar-collum2,
+  .calendar-collum3,
+  .calendar-collum4,
+  .calendar-collum5,
+  .calendar-collum6 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .door {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .door img {
+    height: max-content;
+    object-fit: contain;
+  }
+  @media only screen and (min-width: 601px) {
+    #calendar {
+      flex-direction: row;
+      gap: 10px;
+    }
+    .calender-row1,
+    .calender-row2 {
+      gap: 10px;
+    }
+    .calendar-collum1,
+    .calendar-collum2,
+    .calendar-collum3,
+    .calendar-collum4,
+    .calendar-collum5,
+    .calendar-collum6 {
+      gap: 10px;
+    }
+  }
+  @media only screen and (min-width: 1100px) {
+    .door img {
+      width: 160px;
+      height: max-content;
+      object-fit: contain;
+    }
+  }
+
+  /* ----------- Open låge ----------- */
+
+  .openDoor_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+  }
+
+  .openDoor {
+    width: 600px;
+    height: 300px;
+    background-color: aliceblue;
+  }
+</style>
+
+<script>
+  // Add an event listener to each door for opening the pop-up
+  const doors = document.querySelectorAll(".door");
+  doors.forEach((door) => {
+    door.addEventListener("click", () => {
+      const doorNumber = door.dataset.doorNumber;
+      openDoor(doorNumber);
+    });
+  });
+
+  // Add an event listener to close the pop-up when clicking outside it
+  document.addEventListener("click", (event) => {
+    if (!document.querySelector(".openDoor_container").contains(event.target)) {
+      closeDoor();
+    }
+  });
+</script>
