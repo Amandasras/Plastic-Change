@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+import Emballage from "../assets/images/infographics/Emballage.svg";
+import Gavepapir from "../assets/images/infographics/Gavepapir.svg";
+import Mad from "../assets/images/infographics/Mad.svg";
+import MadMobile from "../assets/images/infographics/MadMobile.svg";
+import Plastik from "../assets/images/infographics/plastik.svg";
+import PlastikMobile from "../assets/images/infographics/PlastikMobile.svg";
+import Plastikposer from "../assets/images/infographics/Plastikposer.svg";
+import Tekstiler from "../assets/images/infographics/tekstiler.svg";
+import TekstilerMobile from "../assets/images/infographics/TekstilerMobile.svg";
+import Streg1 from "../assets/images/infographics/Streg1.svg";
+import Streg2 from "../assets/images/infographics/Streg2.svg";
+import Streg3 from "../assets/images/infographics/Streg3.svg";
+import Streg4 from "../assets/images/infographics/Streg4.svg";
+import Streg5 from "../assets/images/infographics/Streg5.svg";
+---
+
+<section class="Infographic_section">
+  <h2 class="text-display-medium">Jamen, hvad er problemet?</h2>
+  <div class="Infographic_container">
+    <!-- Tiløj alt tekster -->
+    <div class="Plastik">
+      <Image src={Plastik} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året" class="InfoDesktop Info" />
+      <Image src={PlastikMobile} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året." class="InfoMobile Info" />
+    </div>
+    <Image src={Streg1} alt="En streg" class="Line" />
+    <div class="Emballage">
+      <Image src={Emballage} alt="Det svarer til 27 kilo plastikemballage pr. person årligt." class="Info" />
+    </div>
+    <Image src={Streg2} alt="En streg" class="Line" />
+    <div class="Plastikposer">
+      <Image src={Plastikposer} alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år." class="Info" />
+    </div>
+    <Image src={Streg3} alt="En streg" class="Line" />
+    <div class="Gavepapir">
+      <Image src={Gavepapir} alt="I Danmark bruger vi 100.000 tons gavepapir årligt." class="Info" />
+    </div>
+    <Image src={Streg4} alt="En streg" class="Line" />
+    <div class="Tekstiler">
+      <Image src={Tekstiler} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoDesktop Info" />
+      <Image src={TekstilerMobile} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoMobile Info" />
+    </div>
+    <Image src={Streg5} alt="En streg" class="Line" />
+    <div class="Mad">
+      <Image src={Mad} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoDesktop Info" />
+      <Image src={MadMobile} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoMobile Info" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .Infographic_section {
+    background: linear-gradient(180deg, rgba(220, 236, 241, 0.9) 26.04%, rgba(212, 230, 236, 0.9) 100%), url("../../public/assets/backgroundImages/plasticOcean.jpg") center/cover no-repeat, lightgray 100%;
+    padding: 32px;
+  }
+
+  h2 {
+    color: var(--color-text-gray900);
+    text-align: center;
+    width: 100%;
+  }
+
+  .Infographic_container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .Plastik,
+  .Emballage,
+  .Mad,
+  .Plastikposer,
+  .Tekstiler,
+  .Gavepapir {
+    display: flex;
+  }
+
+  .Plastik,
+  .Plastikposer,
+  .Tekstiler {
+    justify-content: center;
+  }
+  .Gavepapir {
+    justify-content: right;
+  }
+  .InfoDesktop {
+    display: none;
+  }
+  .Line {
+    object-fit: cover;
+    width: 100%;
+    /* height: 55px; */
+  }
+
+  @media (min-width: 500px) {
+    .Infographic_container {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-rows: repeat(12, auto);
+      gap: 0;
+    }
+
+    .Plastik,
+    .Emballage,
+    .Mad,
+    .Plastikposer,
+    .Tekstiler,
+    .Gavepapir {
+      height: 100%;
+    }
+    .Info {
+      height: 100%;
+    }
+    .Plastik {
+      grid-column: 1 / span 4;
+      grid-row: 1 / span 2;
+    }
+
+    .Emballage {
+      grid-column: 5 / span 2;
+      grid-row: 3 / span 3;
+    }
+
+    .Plastikposer {
+      grid-column: 2 / span 2;
+      grid-row: 5 / span 3;
+    }
+    .Gavepapir {
+      grid-column: 1 / span 2;
+      grid-row: 8 / span 3;
+    }
+
+    .Tekstiler {
+      grid-column: 4 / span 4;
+      grid-row: 10 / span 2;
+    }
+
+    .Mad {
+      grid-column: 8 / span 4;
+      grid-row: 11 / span 2;
+    }
+    .Line {
+      display: none;
+    }
+
+    .InfoMobile {
+      display: none;
+    }
+    .InfoDesktop {
+      display: block;
+    }
+  }
+  @media (min-width: 700px) {
+    .Infographic_section {
+      padding: 48px 48px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .Infographic_section {
+      padding: 48px 64px;
+    }
+  }
+</style>
