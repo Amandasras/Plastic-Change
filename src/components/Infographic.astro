@@ -21,30 +21,30 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
   <div class="Infographic_container">
     <!-- Tiløj alt tekster -->
     <div class="Plastik">
-      <Image src={Plastik} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året" class="InfoDesktop" />
-      <Image src={PlastikMobile} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året." class="InfoMobile" />
+      <Image src={Plastik} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året" class="InfoDesktop Info" />
+      <Image src={PlastikMobile} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året." class="InfoMobile Info" />
     </div>
     <Image src={Streg1} alt="En streg" class="Line" />
     <div class="Emballage">
-      <Image src={Emballage} alt="Det svarer til 27 kilo plastikemballage pr. person årligt." />
+      <Image src={Emballage} alt="Det svarer til 27 kilo plastikemballage pr. person årligt." class="Info" />
     </div>
     <Image src={Streg2} alt="En streg" class="Line" />
     <div class="Plastikposer">
-      <Image src={Plastikposer} alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år." />
+      <Image src={Plastikposer} alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år." class="Info" />
     </div>
     <Image src={Streg3} alt="En streg" class="Line" />
     <div class="Gavepapir">
-      <Image src={Gavepapir} alt="I Danmark bruger vi 100.000 tons gavepapir årligt." class="Gavepapir" />
+      <Image src={Gavepapir} alt="I Danmark bruger vi 100.000 tons gavepapir årligt." class="Info" />
     </div>
     <Image src={Streg4} alt="En streg" class="Line" />
     <div class="Tekstiler">
-      <Image src={Tekstiler} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoDesktop" />
-      <Image src={TekstilerMobile} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoMobile" />
+      <Image src={Tekstiler} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoDesktop Info" />
+      <Image src={TekstilerMobile} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoMobile Info" />
     </div>
     <Image src={Streg5} alt="En streg" class="Line" />
     <div class="Mad">
-      <Image src={Mad} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoDesktop" />
-      <Image src={MadMobile} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoMobile" />
+      <Image src={Mad} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoDesktop Info" />
+      <Image src={MadMobile} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoMobile Info" />
     </div>
   </div>
 </section>
@@ -94,16 +94,72 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
   }
 
   @media (min-width: 500px) {
+    .Infographic_container {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-rows: repeat(12, auto);
+      gap: 0;
+    }
+
+    .Plastik,
+    .Emballage,
+    .Mad,
+    .Plastikposer,
+    .Tekstiler,
+    .Gavepapir {
+      height: 100%;
+    }
+    .Info {
+      height: 100%;
+    }
+    .Plastik {
+      grid-column: 1 / span 4;
+      grid-row: 1 / span 2;
+    }
+
+    .Emballage {
+      grid-column: 5 / span 2;
+      grid-row: 3 / span 3;
+    }
+
+    .Plastikposer {
+      grid-column: 2 / span 2;
+      grid-row: 5 / span 3;
+    }
+    .Gavepapir {
+      grid-column: 1 / span 2;
+      grid-row: 8 / span 3;
+    }
+
+    .Tekstiler {
+      grid-column: 4 / span 4;
+      grid-row: 10 / span 2;
+    }
+
+    .Mad {
+      grid-column: 8 / span 4;
+      grid-row: 11 / span 2;
+    }
     .Line {
       display: none;
     }
-  }
-  @media (min-width: 900px) {
+
     .InfoMobile {
       display: none;
     }
     .InfoDesktop {
       display: block;
+    }
+  }
+  @media (min-width: 700px) {
+    .Infographic_section {
+      padding: 48px 48px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .Infographic_section {
+      padding: 48px 64px;
     }
   }
 </style>
