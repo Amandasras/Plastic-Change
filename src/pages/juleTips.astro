@@ -11,13 +11,14 @@ import liste from "../assets/images/juleside/plastfriGavepapir.svg";
 import "../styles/global.css";
 import "../styles/reset.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CalenderSection from "../components/CalenderSection.astro";
 ---
 
 <BaseLayout> 
 <header>
   <div class="container">
-    <section class="hero">
-      <!-- Hero -->
+    <section class="hero">  <!-- Hero -->
+     
       <Navigation />
      <div class="hero_tekst">
       <h4 class="text-title-uppercase white1">Kampagne</h4>
@@ -31,9 +32,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </header>
   <!-- ------------------------- -->
 <main>
-  <h2 class="text-display-medium">Et julebord naturen værdsætter</h2>
-  <section id="julebord">
-    <!------- julebord -------->
+  <h2 class="text-display-medium">Et julebord naturen værdsætter</h2> 
+  <section id="julebord">  <!------- julebord -------->
+   
 
     <div class="two-sections">
       <div class="imgText-wrapper">
@@ -112,8 +113,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
   <!---------------------------------->
 
-  <section class="greensection">
-    <!-- rødgran -->
+  <section class="greensection">  <!-- juletræ -->
+   
 
     <h2 class="text-display-medium hideDesktop white">
       Køb et rødgran juletræ
@@ -142,8 +143,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section><!---------------------------------->
 
-  <section class="greensection">
-    <!-- gavepapir -->
+  
+
+  <section class="greensection">  <!-- gavepapir -->
+   
     <h2 class="text-display-medium hideDesktop white">
       Brug genbrugs martialer til at pakke julegaverne ind
     </h2>
@@ -181,11 +184,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </div>
   </section><!---------------------------------->
+
+  <CalenderSection/>
+
 </main>
 </BaseLayout>
   <style>
-    /* ----------------------Juletræ/Julepapir-------------------------------- */
-
+    /* ----------------------Juletræ/Gavepapir-------------------------------- */
     li {
       color: var(--white);
     }
@@ -296,8 +301,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       padding: var(--size-spacing-20);
     }
     .imgJulebord {
-      max-width: 300px;
-      height: 300px;
+      max-width: 200px;
+      height: 200px;
     }
     .imgText-wrapper {
       display: flex;
@@ -310,6 +315,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       align-items: flex-start;
       max-width: 300px;
     }
+   
+    
 
     @media (min-width: 1250px) {
       .svgJulebord {
