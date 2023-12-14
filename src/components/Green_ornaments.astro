@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import Julepynt from "../assets/images/juleside/julepynt3.webp";
+---
+
+<section>
+  <div class="max-width">
+    <div class="graphic">
+      <Image src={Julepynt} alt="Julepynt" />
+    </div>
+    <div class="list">
+      <ol>
+        <p class="text-body-regular">1. Stofservietter og naturmaterialer</p>
+        <p class="text-body-regular">2. Stofservietter og naturmaterialer</p>
+        <p class="text-body-regular">3. Stofservietter og naturmaterialer</p>
+        <p class="text-body-regular">2. Stofservietter og naturmaterialer</p>
+        <p class="text-body-regular">2. Stofservietter og naturmaterialer</p>
+        <p class="text-body-regular">2. Stofservietter og naturmaterialer</p>
+        <p class="text-body-regular">2. Stofservietter og naturmaterialer</p>
+        <!-- find nummeret liste -->
+      </ol>
+    </div>
+  </div>
+</section>
+<style>
+  /* section {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  } */
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .max-width {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 300px; */
+  }
+
+  /* alt undtaget overskrift fylder max-width 300px
+  top-bottom sections 48
+  bottom margin overskrift 20 */
+  .graphic {
+    margin: var(--size-spacing-48);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+</style>
