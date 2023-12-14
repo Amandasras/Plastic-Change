@@ -32,7 +32,7 @@ import CalenderSection from "../components/CalenderSection.astro";
 </header>
   <!-- ------------------------- -->
 <main>
-  <h2 class="text-display-medium">Et julebord naturen værdsætter</h2> 
+  <h2 class="text-display-medium h2bord">Et julebord naturen værdsætter</h2> 
   <section id="julebord">  <!------- julebord -------->
    
 
@@ -301,21 +301,26 @@ import CalenderSection from "../components/CalenderSection.astro";
       padding: var(--size-spacing-20);
     }
     .imgJulebord {
-      max-width: 200px;
-      height: 200px;
+      max-width: 300px;
+      height: 300px;
     }
     .imgText-wrapper {
       display: flex;
       flex-direction: column;
       gap: var(--size-spacing-20);
+      margin-bottom: var(--size-spacing-32);
     }
     .text-wrapper {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       max-width: 300px;
-    }
    
+    }
+   .h2bord{
+    padding: var(--size-spacing-48);
+    text-align: center;
+   }
     
 
     @media (min-width: 1250px) {
@@ -331,8 +336,10 @@ import CalenderSection from "../components/CalenderSection.astro";
       }
 
       .imgJulebord {
-        height: auto;
+        max-width: 200px;
+      height: 200px;
       }
+
 
       #julebord {
         display: flex;
@@ -350,7 +357,7 @@ import CalenderSection from "../components/CalenderSection.astro";
     /* ---------------------------------------------------- */
     /*--------------- Hero--------------------------------- */
     .hero {
-      background-image: url("../assets/images/juleside/HeroJuleTips.webp");
+      background-image: url("../assets/Hero_juletips.webp");
       background-size: cover;
       background-position: center;
       height: 80vh;
