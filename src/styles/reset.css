@@ -14,17 +14,10 @@ html {
   -webkit-font-smoothing: antialiased;
 
   block-size: 100%;
-
-  color: var(--gray-7);
-
-  font-family: var(--font-sans);
-
-  line-height: var(--font-lineheight-3);
 }
 
 body {
   min-block-size: 100%;
-
 }
 
 img,
