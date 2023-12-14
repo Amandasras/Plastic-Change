@@ -104,7 +104,7 @@
 
 @font-face {
   font-family: "Champton";
-  src: local(Champton), url(../assets/fonts/CamptonBold.otf) format("opentype"),
+  src: url(../assets/fonts/CamptonBold.otf) format("opentype"),
     url(../assets/fonts/CamptonMedium.otf) format("opentype"),
     url(../assets/fonts/CamptonSemiBold.otf) format("opentype");
 }
