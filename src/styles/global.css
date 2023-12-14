@@ -104,8 +104,8 @@
 
 @font-face {
   font-family: "Champton";
-  src: url('public/fonts/CamptonBold.otf') format("opentype"), 
-    url(public/fonts/CamptonMedium.otf) format("opentype"), 
+  src: url("public/fonts/CamptonBold.otf") format("opentype"),
+    url(public/fonts/CamptonMedium.otf) format("opentype"),
     url(../assets/fonts/CamptonSemiBold.otf) format("opentype");
 }
 /* display */
@@ -126,6 +126,13 @@
 }
 
 .text-display-small {
+  font-family: Campton;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.text-display-small_sort {
   font-family: Campton;
   font-size: 24px;
   font-style: normal;
