@@ -5,7 +5,7 @@ import logo from "../assets/Logo.svg";
 
 <header>
   <div>
-   <a href="#"><Image src={logo} alt="logo, plastik change" /></a> 
+   <a href="/"><Image src={logo} alt="logo, plastik change" /></a> 
   </div>
   <nav>
     <ul>
@@ -16,6 +16,10 @@ import logo from "../assets/Logo.svg";
 </header>
 
 <style>
+
+  a:hover {
+color: var(--color-text-red500);
+  }
   header {
     background-color: transparent;
     display: flex;
@@ -32,12 +36,13 @@ import logo from "../assets/Logo.svg";
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: var(--size-spacing-12);
+    gap: var(--size-spacing-20);
   }
 
   @media only screen and (min-width: 768px) {
     ul {
       padding-right: var(--size-spacing-20);
+      gap: var(--size-spacing-32);
     }
   }
 </style>

@@ -24,6 +24,7 @@ html {
 
 body {
   min-block-size: 100%;
+  overflow: hidden;
 }
 
 img,

@@ -7,34 +7,30 @@ import bord from "../assets/images/juleside/julebord1.svg";
 import stof from "../assets/images/juleside/Firefly stofserviet anrettet på en æstetisk måde i mørkegrønne nuancer på en tallerken med grålige t (3).webp";
 import tupperware from "../assets/images/juleside/Firefly tupperware bokse med låg fyldt med rester fra julemaden 43042.webp";
 import juletre from "../assets/images/juleside/juletræ.webp";
-import heroJuletips from "../assets/images/juleside/HeroJuleTips.webp";
 import liste from "../assets/images/juleside/plastfriGavepapir.svg";
 import "../styles/global.css";
 import "../styles/reset.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="dk">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-
+<BaseLayout> 
+<header>
   <div class="container">
     <section class="hero">
       <!-- Hero -->
       <Navigation />
-
-      <h1 class="text-display-large">En jul uden plastik på din ønskeliste</h1>
-      <p class="text-display-small">
+     <div class="hero_tekst">
+      <h4 class="text-title-uppercase white1">Kampagne</h4>
+      <h1 class="text-display-large white1">En jul uden plastik på din ønskeliste</h1>
+      <p class="text-display-small white1">
         Plastikfri festligheder: Små tricks med stor effekt.
       </p>
+    </div>
     </section>
   </div>
+</header>
   <!-- ------------------------- -->
-
+<main>
   <h2 class="text-display-medium">Et julebord naturen værdsætter</h2>
   <section id="julebord">
     <!------- julebord -------->
@@ -185,9 +181,10 @@ import "../styles/reset.css";
       </div>
     </div>
   </section><!---------------------------------->
-
+</main>
+</BaseLayout>
   <style>
-    /* ----------------------Juletræ-------------------------------- */
+    /* ----------------------Juletræ/Julepapir-------------------------------- */
 
     li {
       color: var(--white);
@@ -214,6 +211,9 @@ import "../styles/reset.css";
     .white {
       color: var(--white);
       max-width: 60ch;
+    }
+    .white1{
+      color: var(--white);
     }
     .greendiv {
       display: flex;
@@ -352,6 +352,33 @@ import "../styles/reset.css";
     h1 {
       color: var(--white);
     }
+
+  .hero_tekst {
+    padding: var(--size-spacing-24);
+    padding-top: var(--size-spacing-24);
+    font-size: var();
+  }
+  .text-title-uppercase {
+
+    padding-bottom: var(--size-spacing-24);
+  }
+  .text-display-small {
+  
+    max-width: 40ch;
+  }
+  @media only screen and (min-width: 768px) {
+ 
+    .hero_tekst {
+      padding: var(--size-spacing-24);
+      padding-top: var(--size-spacing-64);
+    }
+    .text-title-uppercase {
+      padding-bottom: var(--size-spacing-32);
+    }
+    .text-display-small {
+      max-width: 40ch;
+    }
+  }
 
     /* ------------------------------------------------- */
   </style>
