@@ -1,0 +1,159 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import julepynt from "../assets/images/juleside/julepynt3.webp";
+---
+
+<section>
+  <div class="max-width">
+    <div class="title">
+      <div class="title_color">
+        <h2 class="text-display-medium green">Grøn</h2>
+
+        <h2 class="text-display-medium">julepynt</h2>
+      </div>
+      <h3 class="text-body-regular">
+        Vær kreativ og lav dit eget julepynt, brug genbrugsmaterialer
+      </h3>
+    </div>
+    <div class="content">
+      <div class="graphic">
+        <Image src={julepynt} alt="Julepynt" />
+      </div>
+      <div class="list">
+        <ol>
+          <li class="text-body-regular">Stofservietter og naturmaterialer</li>
+          <li class="text-body-regular">Genbrug stof eller avispapir</li>
+          <li class="text-body-regular">
+            Lav ny julepynt ud af gamle bøger eller avispapir
+          </li>
+          <li class="text-body-regular">
+            Køb julekugler lavet af glas, træ, papir eller stof
+          </li>
+          <li class="text-body-regular">
+            Tør frugter og lav det om til flot juletræspynt eller udsmyk dine
+            juledekorationer
+          </li>
+          <li class="text-body-regular">
+            Hjemmebagte julesmåkager, som spiselig juletræspynt
+          </li>
+          <li class="text-body-regular">
+            Bind dine julegaver ind i jute, bomuldssnor eller genbrugte
+            materialer
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* alt undtaget overskrift fylder max-width 300px
+  top-bottom sections 48
+  bottom margin overskrift 20 */
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .max-width {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: var(--size-spacing-48) 0 var(--size-spacing-48) 0;
+  }
+
+  h2 {
+    margin-bottom: var(--size-spacing-12);
+    color: var(--color-text-gray900);
+  }
+  .title_color {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-spacing-12);
+  }
+  .green {
+    color: var(--color-text-red500);
+  }
+  h3 {
+    margin-bottom: var(--size-spacing-20);
+    color: var(--color-text-gray500);
+  }
+
+  .graphic {
+    margin-bottom: var(--size-spacing-20);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  ol {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-12);
+  }
+  li {
+    color: var(--color-text-gray900);
+  }
+
+  @media (min-width: 800px) {
+    section {
+      display: flex;
+      justify-content: center;
+      margin: var(--size-spacing-48) 0 var(--size-spacing-48) 0;
+    }
+    .max-width {
+      max-width: 100%;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title_color {
+      display: flex;
+      flex-direction: row;
+      gap: var(--size-spacing-24);
+    }
+    h3 {
+      margin: 0;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      margin: var(--size-spacing-20) 0 var(--size-spacing-48) 0;
+      /* display: flex;
+      flex-direction: row;
+      max-width: 100%;
+      align-items: space-around;
+      margin: var(--size-spacing-48) 0 var(--size-spacing-48) 0; */
+    }
+    .graphic {
+      grid-column: 2/4;
+      grid-row: 1/4;
+    }
+    .list {
+      grid-column: 4/6;
+      grid-row: 1/4;
+      padding-left: var(--size-spacing-32);
+    }
+
+    ol {
+      padding-top: var(--size-spacing-48);
+      padding-inline-start: var(--size-spacing-20);
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-spacing-32);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+</style>
