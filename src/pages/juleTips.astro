@@ -116,11 +116,11 @@ import "../styles/reset.css";
   <section class="greensection">
     <!-- rødgran -->
 
-    <h2 class="text-display-medium hideDesktop">Køb et rødgran juletræ</h2>
+    <h2 class="text-display-medium hideMobil white">Køb et rødgran juletræ</h2>
     <div class="greendiv">
       <div><Image class="tree" src={juletre} alt="juletræ" /></div>
       <div class="textbox">
-        <h2 class="text-display-medium hideMobil">Køb et rødgran juletræ</h2>
+        <h2 class="text-display-medium hideDesktop white">Køb et rødgran juletræ</h2>
         <p class="white">
           Juletræer har en positiv indvirkning på miljøet ved at binde mere CO2,
           end de frigiver under deres livscyklus. Et typisk dansk juletræ har et
@@ -141,13 +141,13 @@ import "../styles/reset.css";
 
   <section class="greensection">
     <!-- gavepapir -->
-    <h2 class="text-display-medium hideMobil">
+    <h2 class="text-display-medium hideMobil white">
       Brug genbrugs martialer til at pakke julegaverne ind
     </h2>
     <div class="greendiv">
-      <div><Image class="tree hideDesktop" src={liste} alt="juletræ" /></div>
+      <div class="hideMobil" ><Image class="tree hideMobil" src={liste} alt="julemandens artig-liste" /></div>
       <div class="textbox">
-        <h2 class="text-display-medium hideDesktop">
+        <h2 class="text-display-medium hideDesktop white">
           Brug genbrugs martialer til at pakke julegaverne ind
         </h2>
         <p class="white">
@@ -163,7 +163,7 @@ import "../styles/reset.css";
           genbrugen og køb en gammel bog som du kan bruge som gave papir.
         </p>
       </div>
-      <div><Image class="tree hideMobil" src={liste} alt="juletræ" /></div>
+      <div><Image class="tree" src={liste} alt="julemandens artig-liste" /></div>
     </div>
   </section><!---------------------------------->
 
@@ -214,6 +214,10 @@ import "../styles/reset.css";
     }
 
     @media (min-width: 999px) {
+
+      h2 {
+      text-align: left;
+    }
       .h2first {
         display: none;
       }
