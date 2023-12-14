@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/Logo.svg";
+import Button from "./Button.astro";
 ---
 
 <header>
@@ -11,6 +12,7 @@ import logo from "../assets/Logo.svg";
     <ul>
       <li><a class="text-form-label-semibold" href="kalender">Julekalender</a></li>
       <li><a class="text-form-label-semibold" href="juleTips">Jule tips</a></li>
+      <li> <Button label="Støt" size="regular" style="filled"/> </li>
     </ul>
   </nav>
 </header>
@@ -41,6 +43,7 @@ color: var(--color-text-red500);
     display: flex;
     flex-direction: row;
     gap: var(--size-spacing-20);
+    align-items: center;
   }
 
   @media only screen and (min-width: 768px) {
