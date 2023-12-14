@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import Emballage from "../assets/images/infographics/Emballage.svg";
+import Gavepapir from "../assets/images/infographics/Gavepapir.svg";
+import Mad from "../assets/images/infographics/Mad.svg";
+import MadMobile from "../assets/images/infographics/MadMobile.svg";
+import Plastik from "../assets/images/infographics/plastik.svg";
+import PlastikMobile from "../assets/images/infographics/PlastikMobile.svg";
+import Plastikposer from "../assets/images/infographics/Plastikposer.svg";
+import Tekstiler from "../assets/images/infographics/tekstiler.svg";
+import TekstilerMobile from "../assets/images/infographics/TekstilerMobile.svg";
+import Streg1 from "../assets/images/infographics/Streg1.svg";
+import Streg2 from "../assets/images/infographics/Streg2.svg";
+import Streg3 from "../assets/images/infographics/Streg3.svg";
+import Streg4 from "../assets/images/infographics/Streg4.svg";
+import Streg5 from "../assets/images/infographics/Streg5.svg";
+---
+
+<section class="Infographic_section">
+  <h2 class="text-display-medium">Jamen, hvad er problemet?</h2>
+  <div class="Infographic_container">
+    <!-- Tiløj alt tekster -->
+    <div class="Plastik">
+      <Image src={Plastik} alt="" class="InfoDesktop" />
+      <Image src={PlastikMobile} alt="" class="InfoMobile" />
+    </div>
+    <Image src={Streg1} alt="En streg" class="Line" />
+    <div class="Emballage">
+      <Image src={Emballage} alt="" />
+    </div>
+    <Image src={Streg2} alt="En streg" class="Line" />
+    <div class="Plastikposer">
+      <Image src={Plastikposer} alt="" />
+    </div>
+    <Image src={Streg3} alt="En streg" class="Line" />
+    <div class="Gavepapir">
+      <Image src={Gavepapir} alt="" class="Gavepapir" />
+    </div>
+    <Image src={Streg4} alt="En streg" class="Line" />
+    <div class="Tekstiler">
+      <Image src={Tekstiler} alt="" class="InfoDesktop" />
+      <Image src={TekstilerMobile} alt="" class="InfoMobile" />
+    </div>
+    <Image src={Streg5} alt="En streg" class="Line" />
+    <div class="Mad">
+      <Image src={Mad} alt="" class="InfoDesktop" />
+      <Image src={MadMobile} alt="" class="InfoMobile" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .Infographic_section {
+    background: linear-gradient(180deg, rgba(220, 236, 241, 0.3) 26.04%, #d4e6ec 100%);
+    padding: 32px;
+  }
+  h2 {
+    color: var(--color-text-gray900);
+    text-align: center;
+    width: 100%;
+  }
+
+  .Infographic_container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .Plastik,
+  .Emballage,
+  .Mad,
+  .Plastikposer,
+  .Tekstiler,
+  .Gavepapir {
+    display: flex;
+  }
+
+  .Plastik,
+  .Plastikposer,
+  .Tekstiler {
+    justify-content: center;
+  }
+  .Gavepapir {
+    justify-content: right;
+  }
+  .InfoDesktop {
+    display: none;
+  }
+  .Line {
+    object-fit: cover;
+    width: 100%;
+    /* height: 55px; */
+  }
+
+  @media (min-width: 500px) {
+    .Line {
+      display: none;
+    }
+  }
+  @media (min-width: 900px) {
+    .InfoMobile {
+      display: none;
+    }
+    .InfoDesktop {
+      display: block;
+    }
+  }
+</style>
