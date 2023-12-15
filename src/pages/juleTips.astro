@@ -16,48 +16,44 @@ import CalenderSection from "../components/CalenderSection.astro";
 import GreenOrnaments from "../components/Green_ornaments.astro";
 ---
 
-<BaseLayout>
-  <header>
-    <div class="container">
-      <section class="hero">
-        <!-- Hero -->
+<BaseLayout> 
+<header>
+  <div class="container">
+    <section class="hero">  <!-- Hero -->
+     
+      <Navigation />
+     <div class="hero_tekst">
+      <h4 class="text-title-uppercase white1">Kampagne</h4>
+      <h1 class="text-display-large white1">En jul uden plastik på din ønskeliste</h1>
+      <p class="text-display-small white1">
+        Plastikfri festligheder: Små tricks med stor effekt.
+      </p>
+    </div>
+    </section>
+  </div>
+</header>
+  <!-- ------------------------- -->
+<main>
+  <h2 class="text-display-medium h2bord">Et julebord naturen værdsætter</h2> 
+  <section id="julebord">  <!------- julebord -------->
+   
 
-        <Navigation />
-        <div class="hero_tekst">
-          <h4 class="text-title-uppercase white1">Kampagne</h4>
-          <h1 class="text-display-large white1">
-            En jul uden plastik på din ønskeliste
-          </h1>
-          <p class="text-display-small white1">
-            Plastikfri festligheder: Små tricks med stor effekt.
+    <div class="two-sections">
+      <div class="imgText-wrapper">
+        <div>
+          <Image class="imgJulebord" src={lys} alt="julebord med lys" />
+        </div>
+        <div class="text-wrapper">
+          <p class="text-display-small">
+            Traditionel bordpynt af <span class="red">naturmateriale</span>
+          </p>
+          <p class="text-body-regular">
+            er et miljøvenligt alternativ, som skaber en rustik atmosfære og
+            bidrager til at stoppe plastikudledningen inden vi kan begynde at
+            rydde op i det vi allerede har udledt.
           </p>
         </div>
-      </section>
-    </div>
-  </header>
-  <!-- ------------------------- -->
-  <main>
-    <GreenOrnaments />
-    <h2 class="text-display-medium h2bord">Et julebord naturen værdsætter</h2>
-    <section id="julebord">
-      <!------- julebord -------->
-
-      <div class="two-sections">
-        <div class="imgText-wrapper">
-          <div>
-            <Image class="imgJulebord" src={lys} alt="julebord med lys" />
-          </div>
-          <div class="text-wrapper">
-            <p class="text-display-small">
-              Traditionel bordpynt af <span class="red">naturmateriale</span>
-            </p>
-            <p class="text-body-regular">
-              er et miljøvenligt alternativ, som skaber en rustik atmosfære og
-              bidrager til at stoppe plastikudledningen inden vi kan begynde at
-              rydde op i det vi allerede har udledt.
-            </p>
-          </div>
-        </div>
+      </div>
 
         <div class="imgText-wrapper">
           <div>
@@ -97,28 +93,28 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
           </div>
         </div>
 
-        <div class="imgText-wrapper">
-          <div>
-            <Image
-              class="imgJulebord"
-              src={tupperware}
-              alt="tallerken med stofserviet"
-            />
-          </div>
-          <div class="text-wrapper">
-            <p class="text-display-small">
-              Tupperware <span class="red">HUSK</span>
-            </p>
-            <p class="text-body-regular">
-              er et miljøvenligt alternativ, som skaber en rustik atmosfære og
-              bidrager til at stoppe plastikudledningen inden vi kan begynde at
-              rydde op i det vi allerede har udledt.
-            </p>
-          </div>
+      <div class="imgText-wrapper">
+        <div>
+          <Image
+            class="imgJulebord"
+            src={tupperware}
+            alt="tallerken med stofserviet"
+          />
+        </div>
+        <div class="text-wrapper">
+          <p class="text-display-small">
+            Tupperware <span class="red">HUSK</span>
+          </p>
+          <p class="text-body-regular">
+            er et miljøvenligt alternativ, som skaber en rustik atmosfære og
+            bidrager til at stoppe plastikudledningen inden vi kan begynde at
+            rydde op i det vi allerede har udledt.
+          </p>
         </div>
       </div>
-    </section>
-    <!---------------------------------->
+    </div>
+  </section>
+  <!---------------------------------->
 
     <section class="greensection">
       <!-- juletræ -->
@@ -202,14 +198,14 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
     <CalenderSection />
   </main>
 </BaseLayout>
-<style>
-  /* ----------------------Juletræ/Gavepapir-------------------------------- */
-  li {
-    color: var(--white);
-  }
-  .hideMobil {
-    display: none;
-  }
+  <style>
+    /* ----------------------Juletræ/Gavepapir-------------------------------- */
+    li {
+      color: var(--white);
+    }
+    .hideMobil {
+      display: none;
+    }
 
   .hideDesktop {
     display: block;
@@ -300,36 +296,37 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
 
   /* ------------------------------------------------------------ */
 
-  /*--------------------- Julebord ---------------------------- */
-  .svgJulebord {
-    display: none;
-  }
-  .red {
-    color: var(--color-text-red500);
-  }
-  #julebord {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--size-spacing-20);
-  }
-  .imgJulebord {
-    max-width: 300px;
-    height: 300px;
-  }
-  .imgText-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-spacing-20);
-    margin-bottom: var(--size-spacing-32);
-  }
-  .text-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 300px;
-  }
-  .h2bord {
+    /*--------------------- Julebord ---------------------------- */
+    .svgJulebord {
+      display: none;
+    }
+    .red {
+      color: var(--color-text-red500);
+    }
+    #julebord {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--size-spacing-20);
+    }
+    .imgJulebord {
+      max-width: 300px;
+      height: 300px;
+    }
+    .imgText-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-spacing-20);
+      margin-bottom: var(--size-spacing-32);
+    }
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 300px;
+   
+    }
+   .h2bord{
     padding: var(--size-spacing-48);
     text-align: center;
   }
@@ -358,24 +355,24 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
       gap: var(--size-spacing-12);
     }
 
-    .two-sektions {
-      display: flex;
-      flex-direction: column;
-      gap: 100px;
+      .two-sektions {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+      }
     }
-  }
-  /* ---------------------------------------------------- */
-  /*--------------- Hero--------------------------------- */
-  .hero {
-    background-image: url("../assets/Hero_juletips.webp");
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    position: relative;
-  }
-  h1 {
-    color: var(--white);
-  }
+    /* ---------------------------------------------------- */
+    /*--------------- Hero--------------------------------- */
+    .hero {
+      background-image: url("../assets/Hero_juletips.webp");
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+    }
+    h1 {
+      color: var(--white);
+    }
 
   .hero_tekst {
     padding: var(--size-spacing-24);
@@ -383,12 +380,14 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
     font-size: var();
   }
   .text-title-uppercase {
+
     padding-bottom: var(--size-spacing-24);
   }
   .text-display-small {
     max-width: 40ch;
   }
   @media only screen and (min-width: 768px) {
+ 
     .hero_tekst {
       padding: var(--size-spacing-24);
       padding-top: var(--size-spacing-64);
@@ -401,5 +400,8 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
     }
   }
 
-  /* ------------------------------------------------- */
-</style>
+    /* ------------------------------------------------- */
+  </style>
+
+
+</html>

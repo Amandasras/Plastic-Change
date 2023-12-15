@@ -13,7 +13,7 @@ import Infographic from "../components/Infographic.astro";
 <BaseLayout>
   <header>
     <div class="hero_container">
-      <section class="hero_index">
+      <section class="hero_index sticky-hero">
         <Navigation />
         <div class="hero_tekst">
           <h4 class="text-title-uppercase">Kampagne</h4>
@@ -32,7 +32,33 @@ import Infographic from "../components/Infographic.astro";
   </main>
 </BaseLayout>
 
+<script>
+
+import { gsap } from "gsap";    
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".hero_index" , {
+      scrollTrigger: {
+        trigger: ".hero_container",
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        pinSpacing: false
+      },
+    });
+
+</script>
+
 <style>
+  .hero_container{
+    height: 80vh; /* Juster højden efter behov */
+  position: relative;
+  overflow: hidden; 
+  }
+  
   .hero_index {
     background-image: url("../assets/Juleskrald_Plastic_Change_darker.webp");
     background-size: cover;
