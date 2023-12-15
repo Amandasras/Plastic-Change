@@ -22,7 +22,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
   <Image src={snow} alt="illustration af sne på formularen" id="snow" />
   <div id="form_container">
     <!-- STEP 1 -->
-    <div class="formStep">
+    <div class="tab">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <form action="">
         <div id="radioButtonContainer">
@@ -31,11 +31,13 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
         </div>
         <AmountPicker size="regular" />
         <!-- <InputFieldRequired label="Andet beløb" labelThickness="thick" placeholder="ex: 1000" unit="kr." name="amountPicker" /> -->
-        <Button label="Støt nu" size="thick" style="filled" />
+        <div id="Button1">
+          <Button label="Støt nu" size="thick" style="filled" />
+        </div>
       </form>
     </div>
     <!-- STEP 2 -->
-    <div class="formStep">
+    <div class="tab">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <form action="">
         <AmountPicker size="small" />
@@ -56,8 +58,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
       </form>
     </div>
     <!-- STEP 3 - MOBILEPAY -->
-    <!-- Step3MobilePay -->
-    <div class="formStep">
+    <div class="tab">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <div class="logoAndAmount">
         <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
@@ -73,8 +74,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
       </div>
     </div>
     <!-- STEP 4 - CARD-->
-    <!--Step3cardPayment  -->
-    <div class="formStep">
+    <div class="tab">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <div class="logoAndAmount">
         <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
@@ -121,7 +121,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
       </form>
     </div>
     <!-- STEP 4 -->
-    <div class="formStep">
+    <div class="tab">
       <div class="imageContainer">
         <h2>Du er med til at redde vores planet!</h2>
         <Image src={thankyouimage} alt="Plastikaffald i havoverfladen" />
@@ -162,21 +162,22 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     background-color: var(--color-surface-white);
   }
 
-  .formStep,
+  .tab,
   form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
   }
-  .hide {
-    display: none;
-  }
 
   /* –––––––––– Step 1 –––––––––– */
   #radioButtonContainer {
     display: flex;
     gap: 24px;
+  }
+
+  #Button1 {
+    width: 100%;
   }
   /* –––––––––– Step 2 –––––––––– */
   #personalInfo,
@@ -209,17 +210,6 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
 
   /* –––––––––– Step 3 –––––––––– */
 
-  #step3 {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    display: none;
-  }
-  .Step3cardPayment {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
   .logoAndAmount {
     display: flex;
     justify-content: space-between;
@@ -389,15 +379,70 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     flex-direction: column;
     gap: 16px;
   }
+
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
 </style>
 
 <script>
-  const showDetails = document.getElementById("showDetails");
-  const msOpenMenu = document.getElementById("monthlySubDetails_openContainer");
+  var currentTab: number = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+  console.log("script virker");
 
-  showDetails.addEventListener("click", toggleHide);
+  document.addEventListener("DOMContentLoaded", function () {
+    // Dette script udføres kun, når DOM'en er fuldt indlæst
 
-  function toggleHide() {
-    msOpenMenu.classList.toggle("hide");
+    // Tilføj en event listener til #Button1
+    var button1 = document.getElementById("Button1");
+    if (button1) {
+      button1.addEventListener("click", function () {
+        nextPrev(1); // Go to the next tab when Button1 is clicked
+      });
+    }
+  });
+
+  function showTab(n: number) {
+    // This function will display the specified tab of the form ...
+    var x: HTMLCollectionOf<Element> = document.getElementsByClassName("tab");
+    for (var i = 0; i < x.length; i++) {
+      (x[i] as HTMLElement).style.display = "none";
+    }
+    (x[n] as HTMLElement).style.display = "block";
+
+    // ... and run a function that displays the correct step indicator:
+    fixStepIndicator(n);
+  }
+
+  function nextPrev(n: number) {
+    console.log("knap er klikket");
+    // This function will figure out which tab to display
+    var x: HTMLCollectionOf<Element> = document.getElementsByClassName("tab");
+    // Exit the function if any field in the current tab is invalid:
+    if (n == 1 && !validateForm()) return false;
+    // Hide the current tab:
+    (x[currentTab] as HTMLElement).style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+    // If you have reached the end of the form...
+    if (currentTab >= x.length) {
+      // You may want to add custom logic here or leave it empty
+      console.log("End of form reached.");
+      return false;
+    }
+    // Otherwise, display the correct tab:
+    showTab(currentTab);
+  }
+
+  function validateForm() {
+    // Add your form validation logic here
+    // Return true if the form is valid, otherwise return false
+    // Example: return true if all required fields are filled, else return false
+    return true;
+  }
+
+  function fixStepIndicator(n: number) {
+    // Add your implementation of fixStepIndicator here
   }
 </script>
