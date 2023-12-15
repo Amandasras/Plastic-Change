@@ -2,18 +2,44 @@
 ---
 
 <div class="text-display-large">
-  Julen er <span class="typing-text"></span>fest
+  Julen er <span class="typing-text">hjerternes</span> fest
 </div>
+<!-- <div class="text-display-large">
+  Julen er <span class="typing-text">hjerternes</span><span class="hidden"
+    >forbrugens</span
+  > fest
+</div> -->
 
 <style>
+  /* --------------denne style passer til js hvor hjerternes står der fra starten */
   .text-display-large {
     color: var(--white);
     padding-bottom: var(--size-spacing-24);
+  }
+  .typing-text {
+    animation: fade ease 2.2s;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+
+    100% {
+      opacity: 0;
+    }
   }
   .typing-text::after {
     content: "|";
     animation: blink ease 1s infinite;
     color: var(--red500);
+  }
+
+  .typing-text.finished::after {
+    display: none;
+    /* Skjul cursoren efter animationen er færdig */
   }
 
   @keyframes blink {
@@ -32,13 +58,15 @@
   const text = document.querySelector(".typing-text");
 
   // make a words array
-  const words = ["hjerternes", "forbrugens"];
+  const words = ["forbrugens "];
 
-  // start typing effect
-  setTyper(text, words);
+  // start typing effect with delay
+  setTimeout(() => {
+    setTyper(text, words);
+  }, 2000); // Tilføj det ønskede delay i millisekunder før animationen starter
 
   function setTyper(element, words) {
-    const LETTER_TYPE_DELAY = 75;
+    const LETTER_TYPE_DELAY = 125;
     const WORD_STAY_DELAY = 2000;
 
     const DIRECTION_FORWARDS = 0;
@@ -49,14 +77,21 @@
     var letterIndex = 0;
 
     var wordTypeInterval;
+    var animationComplete = false;
 
     startTyping();
 
     function startTyping() {
       wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
+      text.classList.add("show");
     }
 
     function typeLetter() {
+      if (animationComplete) {
+        clearInterval(wordTypeInterval);
+        return;
+      }
+
       const word = words[wordIndex];
 
       if (direction == DIRECTION_FORWARDS) {
@@ -69,7 +104,8 @@
 
           // Check if it's the last word, and stop after one loop
           if (wordIndex === words.length - 1) {
-            clearInterval(wordTypeInterval);
+            animationComplete = true; // Mark animation as complete
+            element.classList.add("finished"); // Tilføj klassen 'finished'
           }
         }
       } else if (direction == DIRECTION_BACKWARDS) {
