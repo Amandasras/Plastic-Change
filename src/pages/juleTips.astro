@@ -19,7 +19,7 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
 <BaseLayout> 
 <header>
   <div class="container">
-    <section class="hero">  <!-- Hero -->
+    <section class="hero stickyhero">  <!-- Hero -->
      
       <Navigation />
      <div class="hero_tekst">
@@ -34,8 +34,9 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
 </header>
   <!-- ------------------------- -->
 <main>
+  <div class="container_julebord">
   <h2 class="text-display-medium h2bord">Et julebord naturen værdsætter</h2> 
-  <section id="julebord">  <!------- julebord -------->
+  <section id="julebord" >  <!------- julebord -------->
    
 
     <div class="two-sections">
@@ -114,6 +115,7 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
       </div>
     </div>
   </section>
+</div>
   <!---------------------------------->
 
     <section class="greensection">
@@ -198,7 +200,88 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
     <CalenderSection />
   </main>
 </BaseLayout>
+
+<script>
+  import { gsap } from "gsap";    
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".hero" , {
+     scrollTrigger: {
+       trigger: ".container",
+       start: "top top",
+       end: "bottom top",
+       pin: true,
+       pinSpacing: false
+     },
+   });
+</script>
+
+
   <style>
+
+     /*--------------- Hero--------------------------------- */
+
+     .container_julebord{
+      position: relative;
+      z-index: 1;
+      background-color: var(--white);
+    }
+ 
+     
+  .sticky-hero {
+    position: relative; 
+}
+
+.container{
+  height: 80vh; /* Juster højden efter behov */
+  position: relative;
+  overflow: hidden; 
+}
+     .hero {
+      background-image: url("../assets/Hero_juletips.webp");
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+
+    }
+    h1 {
+      color: var(--white);
+    }
+
+  .hero_tekst {
+    padding: var(--size-spacing-24);
+    padding-top: var(--size-spacing-24);
+    font-size: var();
+  }
+  .text-title-uppercase {
+
+    padding-bottom: var(--size-spacing-24);
+  }
+  .text-display-small {
+    max-width: 40ch;
+  }
+  @media only screen and (min-width: 768px) {
+ 
+    .hero_tekst {
+      padding: var(--size-spacing-24);
+      padding-top: var(--size-spacing-64);
+    }
+    .text-title-uppercase {
+      padding-bottom: var(--size-spacing-32);
+    }
+    .text-display-small {
+      max-width: 40ch;
+    }
+  }
+
+    /* ------------------------------------------------- */
+
+
+
     /* ----------------------Juletræ/Gavepapir-------------------------------- */
     li {
       color: var(--white);
@@ -362,45 +445,7 @@ import GreenOrnaments from "../components/Green_ornaments.astro";
       }
     }
     /* ---------------------------------------------------- */
-    /*--------------- Hero--------------------------------- */
-    .hero {
-      background-image: url("../assets/Hero_juletips.webp");
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      position: relative;
-    }
-    h1 {
-      color: var(--white);
-    }
 
-  .hero_tekst {
-    padding: var(--size-spacing-24);
-    padding-top: var(--size-spacing-24);
-    font-size: var();
-  }
-  .text-title-uppercase {
-
-    padding-bottom: var(--size-spacing-24);
-  }
-  .text-display-small {
-    max-width: 40ch;
-  }
-  @media only screen and (min-width: 768px) {
- 
-    .hero_tekst {
-      padding: var(--size-spacing-24);
-      padding-top: var(--size-spacing-64);
-    }
-    .text-title-uppercase {
-      padding-bottom: var(--size-spacing-32);
-    }
-    .text-display-small {
-      max-width: 40ch;
-    }
-  }
-
-    /* ------------------------------------------------- */
   </style>
 
 
