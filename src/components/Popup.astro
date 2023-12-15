@@ -1,32 +1,133 @@
 ---
-
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+import ornament from "../assets/images/brudSection/julepynt.png";
 ---
 
-<section >
-<div class="container">
+<section class="container">
+  <div class="popup_indhold">
+    <p class="dato text-display-large white">1. december</p>
 
+    <div class="indhold_container">
+    <Image class="ornament" src={ornament} alt="Julepynt" />
+<div class="text_containter">
+    <p class="text-display-small white">Dagens tip:</p>
+
+    <p class="text-body-regular white ">
+      Spred juleglæden med bæredygtig julepynt! Sæt stjernen på toppen ved at
+      vælge pynt lavet af naturens egne skatte som træ, glas, papir eller stof.
+      <br />
+      Skab dine egne magiske dekorationer ved at trylle med genanvendelige materialer
+      eller naturens finurlige gaver som kogler, grene og tørrede blomster.
+      <br />
+      <span> Få næste tip i morgen!</span>
+    </p>
+    <p class="text-form-label-semibold white">
+      Tilmeld dig julekalenderen på mail og vær med i konkurrencen om en
+      glampingtur!
+    </p>
+</div>
 </div>
 
+    <div class="Field">
+      <input
+        type="email"
+        min="1"
+        step="1"
+        name="regular"
+        id="inputfieldRegular"
+        class="inputField"
+        autocomplete="email"
+        placeholder="ex: Anne@hansen.dk"
+      />
+      <div id="unit" class="text-form-label-regular">
+        <Button label="Tilmeld" size="small" style="filled" />
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-
-.container{
-background-image: url("../assets/backgroundImages/Popup1.svg");
-width: 100vw;
-height: 100vh 
-}    
-
-
-@media (min-width: 800px){
-    .container{
-background-image: url("../assets/backgroundImages/Popup1.svg");
-background-position: center;
-background-size: cover;
-
-width: 930px;
-height: 590px;
+.indhold_container{
+    display: flex;
+ gap: var(--size-spacing-32);
 }
 
+.popup_indhold{
+    display: flex;
+    flex-direction: column;
 }
+
+  .white{
+    color: var(--white);
+  }
+
+  .container {
+    background-image: url("../assets/backgroundImages/Popup2.svg");
+    width: 300px;
+    height: 779px;
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--size-spacing-24);
+  }
+
+  @media (min-width: 800px) {
+    .container {
+      background-image: url("../assets/backgroundImages/Popup1.svg");
+      background-position: center;
+      background-size: cover;
+
+      width: 930px;
+      height: 590px;
+    }
+  }
+
+    /* ---------- input field ---------- */
+
+    .emailSignUp_container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+  .inputLabel {
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .Field {
+    border-radius: 999px;
+    border: 1px solid var(--color-stroke-gray-300, #cacdd5);
+    background: var(--color-surface-white, #fff);
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .inputField {
+    padding: 10px 0 10px 20px;
+    border-radius: 999px;
+    border: none;
+    width: 100%;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    color: var(--color-text-gray400);
+  }
+
+  .inputField::placeholder {
+    color: var(--color-text-gray400);
+  }
+  #unit {
+    color: var(--color-text-gray500);
+    padding: 8px;
+  }
 </style>
