@@ -6,6 +6,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 import "../styles/reset.css";
 import Button from "../components/Button.astro";
+import Glamping from "../assets/images/julekalender/glamping_ferie.webp";
 ---
 
 <BaseLayout>
@@ -17,11 +18,7 @@ import Button from "../components/Button.astro";
         <div class="hero_tekst">
           <h4 class="text-title-uppercase">Kampagne</h4>
           <h1 class="text-display-large">Årets julekalender</h1>
-          <p class="text-display-small">
-            Åben dagens magiske julelåge og tag del i bæredygtig glæde! Reducer
-            plastikforbruget med daglige opgaver og spred julestemning med
-            omtanke!
-          </p>
+          <p class="text-display-small">Åben dagens magiske julelåge og tag del i bæredygtig glæde! Reducer plastikforbruget med daglige opgaver og spred julestemning med omtanke!</p>
         </div>
       </section>
     </div>
@@ -30,48 +27,35 @@ import Button from "../components/Button.astro";
     <section class="vind_en_glamping">
       <div class="glamping_container">
         <div class="glmaping_overskrifter">
-          <h2 class="text-display-medium">
-            Vind en glamping tur ved tilmelding af julekalenderen
-          </h2>
-          <p class="text-form-label-semibold">
-            Når du tilmelder dig vores julekalender på mail er du samtidig med i
-            konkurrencen om at vinde en mindeværdig oplevelse ude i naturen
-            sammen med en du holder af.
-          </p>
+          <h2 class="text-display-medium">Vind en glamping tur ved tilmelding af julekalenderen</h2>
+          <p class="text-form-label-semibold">Når du tilmelder dig vores julekalender på mail er du samtidig med i konkurrencen om at vinde en mindeværdig oplevelse ude i naturen sammen med en du holder af.</p>
         </div>
         <div class="glamping_content">
           <div class="glaming_tekst">
             <p class="text-body-regular">
-              Hvis du ikke ønsker at deltage i konkurrencen, men stadig vil
-              bidrage til at bekæmpe plastikforurening, er der også en løsning
-              for dig. Åbn dagens låge og opdag, hvilket lille tiltag du kan
-              implementere i dag for at gøre en forskel. Vores julekalender
-              rummer 24 små, men kraftfulde forslag til, hvordan du kan være med
-              til at reducere plastikforbruget og gøre en positiv indvirkning på
-              miljøet.
+              Hvis du ikke ønsker at deltage i konkurrencen, men stadig vil bidrage til at bekæmpe plastikforurening, er der også en løsning for dig. Åbn dagens låge og opdag, hvilket lille tiltag du kan implementere i dag for at gøre en forskel.
+              Vores julekalender rummer 24 små, men kraftfulde forslag til, hvordan du kan være med til at reducere plastikforbruget og gøre en positiv indvirkning på miljøet.
             </p>
             <br />
             <br />
             <p class="text-body-regular tekst">
-              Derudover vil vi afsløre den heldige vinder af glamping turen i
-              den 24. låge. Så uanset om du er interesseret i at vinde en
-              spændende glamping tur eller bare ønsker at bidrage til en vigtig
-              sag, har vores julekalender noget for enhver smag. Tilmeld dig
-              nyhedsbrevet eller åbn dagens låge – det er din mulighed for at
-              gøre en forskel og være en del af kampen mod plastikforurening!
+              Derudover vil vi afsløre den heldige vinder af glamping turen i den 24. låge. Så uanset om du er interesseret i at vinde en spændende glamping tur eller bare ønsker at bidrage til en vigtig sag, har vores julekalender noget for enhver
+              smag. Tilmeld dig nyhedsbrevet eller åbn dagens låge – det er din mulighed for at gøre en forskel og være en del af kampen mod plastikforurening!
             </p>
           </div>
+          <Image src={Glamping} alt="Billedet af et glampingtelt" class="glamping_img" />
         </div>
       </div>
     </section>
     <Calendar />
-    <div class="se_dagens_button">
-      <Button label="Se dagens låge" size="thick" style="filled" />
+    <div class="button_container">
+      <div class="se_dagens_button">
+        <Button label="Se dagens låge" size="thick" style="filled" />
+      </div>
     </div>
   </main>
 </BaseLayout>
 
-<!-- Style -->
 <style>
   /* -----Hero----- */
   .hero {
@@ -97,18 +81,23 @@ import Button from "../components/Button.astro";
     max-width: 40ch;
     color: var(--white);
   }
+  .button_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .se_dagens_button {
     padding-top: var(--size-spacing-24);
-    max-width: 320px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
   }
 
   /* ---------------------- */
   /* ---------Vind en glamping section------------ */
   .vind_en_glamping {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    min-width: 325px;
-    max-width: 800px;
     justify-content: center;
     align-items: center;
     padding: var(--size-spacing-32);
@@ -117,11 +106,11 @@ import Button from "../components/Button.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%;
+    max-width: 940px;
   }
-  .glamping_billede {
-    max-width: 320px;
-    max-height: 320px;
+  .glamping_img {
+    object-fit: contain;
+    height: fit-content;
   }
   .glmaping_overskrifter {
     display: flex;
@@ -154,9 +143,7 @@ import Button from "../components/Button.astro";
       max-width: 40ch;
     }
     /* Glamping  */
-    .vind_en_glamping {
-      max-width: 1134px;
-    }
+
     .glamping_billede {
       max-width: 520px;
       max-height: 520px;
@@ -171,7 +158,6 @@ import Button from "../components/Button.astro";
     }
     .glamping_container {
       align-items: flex-start;
-      max-width: 100%;
     }
     .glmaping_overskrifter {
       max-width: 80ch;
