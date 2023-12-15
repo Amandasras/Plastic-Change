@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import thankyouimage from "../../assets/images/form/formThankYou.png";
+---
+
+<div class="formStep step4 hide">
+  <div class="imageContainer">
+    <h2>Du er med til at redde vores planet!</h2>
+    <Image src={thankyouimage} alt="Plastikaffald i havoverfladen" />
+  </div>
+  <div class="thankYouText">
+    <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
+    <p class="text-body-regular">
+      Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere og virksomheder til at tage
+      ansvar for at fremstille flere genanvendelige produkter. Dette er afgørende for at erstatte den nuværende strøm af kemikalie-tunge engangsplastmaterialer, der udgør en trussel mod vores sundhed, vores skrøbelige planet og dyrelivet.
+      <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod plastikforureningen! <br /><br />Glædelig jul ✨
+    </p>
+  </div>
+</div>
+
+<style>
+  .formStep,
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  /* –––––––––– Step 4 –––––––––– */
+
+  .imageContainer {
+    display: grid;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .imageContainer h2,
+  .imageContainer img {
+    grid-area: 1/2/1/2;
+  }
+
+  .imageContainer h2 {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: stretch;
+    padding: 48px 8px;
+    color: var(--color-text-white);
+
+    font-family: Campton;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .thankYouText {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  /* –––––––––– Hide –––––––––– */
+  .hide {
+    display: none;
+  }
+</style>

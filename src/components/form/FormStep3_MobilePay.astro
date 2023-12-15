@@ -1,0 +1,177 @@
+---
+import { Image } from "astro:assets";
+import PlasticChangeLogo from "../../assets/images/form/PCLogo.svg";
+import mobilepayPayment from "../../assets/images/form/mobilepayPayment.png";
+---
+
+<div class="formStep step3 hide">
+  <h2 class="text-form-title-large">Her er overskriften</h2>
+  <div class="logoAndAmount">
+    <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
+    <div class="amountContainer">
+      <p class="details">Til betaling i dag:</p>
+      <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+      <p class="amount text-form-label-regular">XX,XX DKK</p>
+    </div>
+  </div>
+  <div id="MobilePay">
+    <Image src={mobilepayPayment} alt="" />
+    <button class="mobilePayButton">Fortsæt med MobilePay</button>
+  </div>
+</div>
+
+<style>
+  .formStep,
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  /* –––––––––– Step 3 –––––––––– */
+
+  #step3 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    display: none;
+  }
+  #cardPayment {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .logoAndAmount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .amountContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-end;
+  }
+  .amount {
+    color: var(--color-text-gray900);
+  }
+
+  .monthlySubDetails,
+  .cardTyoesDetails {
+    display: flex;
+    width: 288px;
+    height: 64px;
+    padding: 0px 16px;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+  }
+  .monthlySubDetails .text-form-label-regular,
+  .cardTyoesDetails .text-form-label-regular {
+    color: var(--color-text-gray900);
+  }
+  .monthlySubDetails .details {
+    cursor: pointer;
+  }
+  .monthlySubDetails .details:hover {
+    text-decoration: underline;
+  }
+
+  #monthlySubDetails_openContainer {
+    width: calc(100% - 24px x 2);
+    padding: 24px 24px 32px 24px;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .monthlySubDetails_open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cards img {
+    filter: grayscale(100%);
+  }
+  .details {
+    color: #1a5089;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+  .flex2col {
+    display: flex;
+    gap: 24px;
+  }
+
+  .underPayButton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  hr {
+    width: 100%;
+    border: 1px solid var(--color-stroke-gray300);
+    margin: 0 0 16px 0;
+  }
+  .flexSpacebetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  #escape {
+    color: var(--color-text-gray500);
+    text-decoration: none;
+  }
+  .billwerk {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .billwerk p {
+    color: var(--color-text-gray500);
+  }
+  .billwerk img {
+    height: 10px;
+    opacity: 80%;
+  }
+  #MobilePay {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobilePayButton {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border: none;
+    border-radius: 999px;
+    background: #5479ff;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-text-white);
+    cursor: pointer;
+  }
+
+  .mobilePayButton:hover {
+    background-color: #3952c4;
+  }
+
+  /* –––––––––– Hide –––––––––– */
+  .hide {
+    display: none;
+  }
+</style>

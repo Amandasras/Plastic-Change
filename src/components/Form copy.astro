@@ -1,0 +1,381 @@
+---
+import RadioButton from "./form/RadioButton.astro";
+import AmountPicker from "./form/AmountPicker.astro";
+import InputFieldRequired from "./form/InputFieldRequired.astro";
+import InputField from "./form/InputField.astro";
+import Button from "./Button.astro";
+import PaymentMethod from "./form/PaymentMethod.astro";
+import ConsentCheckBox from "./form/ConsentCheckBox.astro";
+
+import { Image } from "astro:assets";
+import snow from "../assets/images/form/snow.svg";
+import PlasticChangeLogo from "../assets/images/form/PCLogo.svg";
+import dankort from "../assets/images/form/dankort.png";
+import visa from "../assets/images/form/visa.png";
+import mastercard from "../assets/images/form/mastercard.png";
+import billwerk from "../assets/images/form/BiLLWERK_logo.png";
+import thankyouimage from "../assets/images/form/formThankYou.png";
+import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
+import FormStep1 from "./form/FormStep1.astro";
+---
+
+<div id="formWithSnow">
+  <!-- skift stien til at være i src istedet for public -->
+  <Image src={snow} alt="illustration af sne på formularen" id="snow" />
+  <div id="form_container">
+    <div id="step1" class="formStep">
+      <h2 class="text-form-title-large">Her er overskriften</h2>
+      <form action="">
+        <div id="radioButtonContainer">
+          <RadioButton label="Månedligt" radioGroup="PaymentInfo" />
+          <RadioButton label="Én gang" radioGroup="PaymentInfo" />
+        </div>
+        <AmountPicker size="regular" />
+        <!-- <InputFieldRequired label="Andet beløb" labelThickness="thick" placeholder="ex: 1000" unit="kr." name="amountPicker" /> -->
+        <Button label="Støt nu" size="thick" style="filled" />
+      </form>
+    </div>
+    <div id="step2" class="hide formStep">
+      <h2 class="text-form-title-large">Her er overskriften</h2>
+      <form action="">
+        <AmountPicker size="small" />
+        <PaymentMethod />
+        <div id="personalInfo">
+          <InputFieldRequired label="Fornavn" type="text" autocomplete="given-name" placeholder="" />
+          <InputFieldRequired label="Efternavn" type="text" autocomplete="family-name" placeholder="" />
+          <InputFieldRequired label="E-mail" type="email" autocomplete="email" placeholder="" />
+          <InputFieldRequired label="Telefon" type="tel" autocomplete="tel" placeholder="" />
+          <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" fontWeight="semiBold" />
+        </div>
+        <RadioButton label="Jeg ønsker fradrag fra SKAT" radioGroup="skattefradrag" />
+        <ConsentCheckBox />
+        <div class="buttonContainer">
+          <Button label="Gå til betaling" size="regular-wide" style="filled" />
+          <div class="betalingsPolitik"><a href="#" class="text-body-small">BetalingsPolitik</a></div>
+        </div>
+      </form>
+    </div>
+    <div id="step3" class="">
+      <h2 class="text-form-title-large">Her er overskriften</h2>
+      <div class="logoAndAmount">
+        <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
+        <div class="amountContainer">
+          <p class="details">Til betaling i dag:</p>
+          <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+          <p class="amount text-form-label-regular">XX,XX DKK</p>
+        </div>
+      </div>
+      <div id="cardPayment" class="formStep">
+        <div class="monthlySubDetails_container">
+          <div class="monthlySubDetails">
+            <p class="text-form-label-regular">Månedligt Abonnement</p><p id="showDetails" class="details">Vis detaljer</p>
+          </div>
+          <div id="monthlySubDetails_openContainer" class="hide">
+            <div class="monthlySubDetails_open">
+              <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+              <p class="text-form-label-regular">Månedligt beløb</p><p class="details">XX,XX DKK (inkl. moms)</p>
+            </div>
+          </div>
+        </div>
+        <div class="cardTyoesDetails">
+          <p class="text-form-label-regular">Betalingskort</p>
+          <div class="cards"><Image src={dankort} alt="" /><Image src={visa} alt="" /><Image src={mastercard} alt="" /></div>
+        </div>
+        <form action="">
+          <!-- tilføj de andre props til InputFieldRequired komponentet -->
+          <div id="cardInfo">
+            <InputFieldRequired label="Kortnummer" autocomplete="cc-number" placeholder="" inputmode="numeric" maxlength="50" pattern="[\d ]{10,30}" required />
+            <div class="flex2col">
+              <InputFieldRequired label="Udløbsdato" autocomplete="cc-name" placeholder="MM / ÅÅ" maxlength="5" required />
+              <InputFieldRequired label="Kontrolcifre" inputmode="numeric" maxlength="3" required />
+            </div>
+          </div>
+          <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+          <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
+          <div class="underPayButton">
+            <hr />
+            <div class="flexSpacebetween">
+              <!-- ret linksti her -->
+              <a href="#" id="escape" class="text-form-label-regular">&#60; Afbryd</a>
+              <div class="billwerk text-body-small"><p>Sikker betaling med</p><Image src={billwerk} alt="" /></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="MobilePay">
+        <Image src={mobilepayPayment} alt="" />
+        <button class="mobilePayButton">Fortsæt med MobilePay</button>
+      </div>
+    </div>
+    <div id="step4" class="formStep hide">
+      <div class="imageContainer">
+        <h2>Du er med til at redde vores planet!</h2>
+        <Image src={thankyouimage} alt="Plastikaffald i havoverfladen" />
+      </div>
+      <div class="thankYouText">
+        <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
+        <p class="text-body-regular">
+          Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere og virksomheder til at
+          tage ansvar for at fremstille flere genanvendelige produkter. Dette er afgørende for at erstatte den nuværende strøm af kemikalie-tunge engangsplastmaterialer, der udgør en trussel mod vores sundhed, vores skrøbelige planet og dyrelivet.
+          <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod plastikforureningen! <br /><br />Glædelig jul ✨
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #formWithSnow {
+    width: 432.27px;
+    position: relative;
+  }
+  #snow {
+    width: 432.27px;
+    position: absolute;
+    z-index: 2;
+  }
+  #form_container {
+    position: absolute;
+    top: 75px;
+    justify-self: center;
+    margin-left: calc((432.27px - 384px) / 2);
+    margin-right: calc((432.27px - 384px) / 2);
+    padding: var(--size-spacing-64) var(--size-spacing-32);
+
+    width: 384px;
+    border-radius: 11px;
+    background-color: var(--color-surface-white);
+  }
+
+  .formStep,
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  .hide {
+    display: none;
+  }
+
+  /* –––––––––– Step 1 –––––––––– */
+  #radioButtonContainer {
+    display: flex;
+    gap: 24px;
+  }
+  /* –––––––––– Step 2 –––––––––– */
+  #personalInfo,
+  #cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .betalingsPolitik {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .betalingsPolitik a {
+    text-decoration: none;
+    color: var(--color-text-gray500);
+  }
+
+  .betalingsPolitik a:hover {
+    text-decoration: underline;
+  }
+
+  /* –––––––––– Step 3 –––––––––– */
+
+  #step3 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    display: none;
+  }
+  #cardPayment {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .logoAndAmount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .amountContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-end;
+  }
+  .amount {
+    color: var(--color-text-gray900);
+  }
+
+  .monthlySubDetails,
+  .cardTyoesDetails {
+    display: flex;
+    width: 288px;
+    height: 64px;
+    padding: 0px 16px;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+  }
+  .monthlySubDetails .text-form-label-regular,
+  .cardTyoesDetails .text-form-label-regular {
+    color: var(--color-text-gray900);
+  }
+  .monthlySubDetails .details {
+    cursor: pointer;
+  }
+  .monthlySubDetails .details:hover {
+    text-decoration: underline;
+  }
+
+  #monthlySubDetails_openContainer {
+    width: calc(100% - 24px x 2);
+    padding: 24px 24px 32px 24px;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .monthlySubDetails_open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cards img {
+    filter: grayscale(100%);
+  }
+  .details {
+    color: #1a5089;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+  .flex2col {
+    display: flex;
+    gap: 24px;
+  }
+
+  .underPayButton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  hr {
+    width: 100%;
+    border: 1px solid var(--color-stroke-gray300);
+    margin: 0 0 16px 0;
+  }
+  .flexSpacebetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  #escape {
+    color: var(--color-text-gray500);
+    text-decoration: none;
+  }
+  .billwerk {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .billwerk p {
+    color: var(--color-text-gray500);
+  }
+  .billwerk img {
+    height: 10px;
+    opacity: 80%;
+  }
+  #MobilePay {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobilePayButton {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border: none;
+    border-radius: 999px;
+    background: #5479ff;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-text-white);
+    cursor: pointer;
+  }
+
+  .mobilePayButton:hover {
+    background-color: #3952c4;
+  }
+
+  /* –––––––––– Step 4 –––––––––– */
+
+  .imageContainer {
+    display: grid;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .imageContainer h2,
+  .imageContainer img {
+    grid-area: 1/2/1/2;
+  }
+
+  .imageContainer h2 {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: stretch;
+    padding: 48px 8px;
+    color: var(--color-text-white);
+
+    font-family: Campton;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .thankYouText {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+</style>
+
+<script>
+  const showDetails = document.getElementById("showDetails");
+  const msOpenMenu = document.getElementById("monthlySubDetails_openContainer");
+
+  showDetails.addEventListener("click", toggleHide);
+
+  function toggleHide() {
+    msOpenMenu.classList.toggle("hide");
+  }
+</script>

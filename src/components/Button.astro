@@ -13,6 +13,7 @@ const { size, style, label } = Astro.props;
     align-items: flex-start;
     border-radius: 999px;
     padding: 10px 20px;
+    cursor: pointer;
   }
   .button_label {
     font-family: Rubik;
@@ -30,11 +31,11 @@ const { size, style, label } = Astro.props;
     line-height: normal;
   }
   [size-variant="regular-wide"] {
-    width: calc(100% - 40px);
+    width: 100%;
     line-height: normal;
   }
   [size-variant="thick"] {
-    width: calc(100% - 40px);
+    width: 100%;
     line-height: 48px;
   }
 
@@ -49,6 +50,10 @@ const { size, style, label } = Astro.props;
 
   [style-variant="filled"]:hover {
     background-color: var(--color-surface-red600);
+  }
+
+  [style-variant="filled"]:active {
+    background-color: var(--color-surface-red300);
   }
   [style-variant="filled"]:disabled {
     background-color: var(--color-surface-red300);
