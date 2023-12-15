@@ -7,16 +7,13 @@ import FormStep4 from "./form/FormStep4.astro";
 
 import { Image } from "astro:assets";
 import snow from "../assets/images/form/snow.svg";
+import FormSteps from "./FormSteps.astro";
 ---
 
 <div id="formWithSnow">
   <Image src={snow} alt="illustration af sne på formularen" id="snow" />
   <div id="form_container">
-    <FormStep1 />
-    <FormStep2 />
-    <FormStep3Card />
-    <FormStep3MobilePay />
-    <FormStep4 />
+    <FormSteps />
   </div>
 </div>
 
@@ -41,14 +38,6 @@ import snow from "../assets/images/form/snow.svg";
     width: 384px;
     border-radius: 11px;
     background-color: var(--color-surface-white);
-  }
-
-  .formStep,
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
   }
 </style>
 
