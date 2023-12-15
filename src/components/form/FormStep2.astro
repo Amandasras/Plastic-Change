@@ -1,0 +1,74 @@
+---
+import RadioButton from "../form/RadioButton.astro";
+import AmountPicker from "../form/AmountPicker.astro";
+import InputFieldRequired from "../form/InputFieldRequired.astro";
+import InputField from "../form/InputField.astro";
+import Button from "../Button.astro";
+import PaymentMethod from "../form/PaymentMethod.astro";
+import ConsentCheckBox from "../form/ConsentCheckBox.astro";
+---
+
+<div class="formStep step2 hide">
+  <h2 class="text-form-title-large">Her er overskriften</h2>
+  <form action="">
+    <AmountPicker size="small" />
+    <PaymentMethod />
+    <div id="personalInfo">
+      <InputFieldRequired label="Fornavn" type="text" autocomplete="given-name" placeholder="" />
+      <InputFieldRequired label="Efternavn" type="text" autocomplete="family-name" placeholder="" />
+      <InputFieldRequired label="E-mail" type="email" autocomplete="email" placeholder="" />
+      <InputFieldRequired label="Telefon" type="tel" autocomplete="tel" placeholder="" />
+      <InputField label="Postnr." type="" autocomplete="postal-code" placeholder="" fontWeight="semiBold" />
+    </div>
+    <RadioButton label="Jeg ønsker fradrag fra SKAT" radioGroup="skattefradrag" />
+    <ConsentCheckBox />
+    <div class="buttonContainer">
+      <Button label="Gå til betaling" size="regular-wide" style="filled" />
+      <div class="betalingsPolitik"><a href="#" class="text-body-small">BetalingsPolitik</a></div>
+    </div>
+  </form>
+</div>
+
+<style>
+  .formStep,
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  /* –––––––––– Step 2 –––––––––– */
+  #personalInfo,
+  #cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .betalingsPolitik {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .betalingsPolitik a {
+    text-decoration: none;
+    color: var(--color-text-gray500);
+  }
+
+  .betalingsPolitik a:hover {
+    text-decoration: underline;
+  }
+
+  /* –––––––––– Hide –––––––––– */
+  .hide {
+    display: none;
+  }
+</style>
