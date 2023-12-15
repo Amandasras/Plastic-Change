@@ -52,13 +52,15 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
         <RadioButton label="Jeg ønsker fradrag fra SKAT" radioGroup="skattefradrag" />
         <ConsentCheckBox />
         <div class="buttonContainer">
-          <Button label="Gå til betaling" size="regular-wide" style="filled" />
+          <div id="Button2">
+            <Button label="Gå til betaling" size="regular-wide" style="filled" />
+          </div>
           <div class="betalingsPolitik"><a href="#" class="text-body-small">BetalingsPolitik</a></div>
         </div>
       </form>
     </div>
     <!-- STEP 3 - MOBILEPAY -->
-    <div class="tab">
+    <div class="hide">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <div class="logoAndAmount">
         <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
@@ -70,10 +72,10 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
       </div>
       <div id="MobilePay">
         <Image src={mobilepayPayment} alt="" />
-        <button class="mobilePayButton">Fortsæt med MobilePay</button>
+        <button id="Button3_Mobilepay" class="mobilePayButton">Fortsæt med MobilePay</button>
       </div>
     </div>
-    <!-- STEP 4 - CARD-->
+    <!-- STEP 3 - CARD-->
     <div class="tab">
       <h2 class="text-form-title-large">Her er overskriften</h2>
       <div class="logoAndAmount">
@@ -109,7 +111,9 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
           </div>
         </div>
         <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
-        <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
+        <div id="Button3_card">
+          <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
+        </div>
         <div class="underPayButton">
           <hr />
           <div class="flexSpacebetween">
@@ -170,15 +174,19 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     gap: 32px;
   }
 
+  #Button1,
+  #Button2,
+  #Button3_card,
+  #Button3_Mobilepay {
+    width: 100%;
+  }
+
   /* –––––––––– Step 1 –––––––––– */
   #radioButtonContainer {
     display: flex;
     gap: 24px;
   }
 
-  #Button1 {
-    width: 100%;
-  }
   /* –––––––––– Step 2 –––––––––– */
   #personalInfo,
   #cardInfo {
@@ -381,16 +389,13 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
   }
 
   /* Hide all steps by default: */
-  .tab {
+  .tab,
+  .hide {
     display: none;
   }
 </style>
 
 <script>
-  var currentTab: number = 0; // Current tab is set to be the first tab (0)
-  showTab(currentTab); // Display the current tab
-  console.log("script virker");
-
   document.addEventListener("DOMContentLoaded", function () {
     // Dette script udføres kun, når DOM'en er fuldt indlæst
 
@@ -398,10 +403,38 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     var button1 = document.getElementById("Button1");
     if (button1) {
       button1.addEventListener("click", function () {
-        nextPrev(1); // Go to the next tab when Button1 is clicked
+        showTab(1); // Gå til næste trin, når Button1 klikkes
+      });
+    }
+
+    // Tilføj en event listener til #Button2
+    var button2 = document.getElementById("Button2");
+    if (button2) {
+      button2.addEventListener("click", function () {
+        showTab(2); // Gå til næste trin, når Button2 klikkes (Tab nummer 4)
+      });
+    }
+
+    // Tilføj en event listener til #Button3_card
+    var button3Card = document.getElementById("Button3_card");
+    if (button3Card) {
+      button3Card.addEventListener("click", function () {
+        showTab(3); // Gå til næste trin, når Button3_card klikkes (Tab nummer 5)
+      });
+    }
+
+    // Tilføj en event listener til #escape
+    var escapeButton = document.getElementById("escape");
+    if (escapeButton) {
+      escapeButton.addEventListener("click", function () {
+        showTab(0); // Vis tab 1, når escape klikkes
       });
     }
   });
+
+  var currentTab: number = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+  console.log("script virker");
 
   function showTab(n: number) {
     // This function will display the specified tab of the form ...
@@ -409,40 +442,6 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     for (var i = 0; i < x.length; i++) {
       (x[i] as HTMLElement).style.display = "none";
     }
-    (x[n] as HTMLElement).style.display = "block";
-
-    // ... and run a function that displays the correct step indicator:
-    fixStepIndicator(n);
-  }
-
-  function nextPrev(n: number) {
-    console.log("knap er klikket");
-    // This function will figure out which tab to display
-    var x: HTMLCollectionOf<Element> = document.getElementsByClassName("tab");
-    // Exit the function if any field in the current tab is invalid:
-    if (n == 1 && !validateForm()) return false;
-    // Hide the current tab:
-    (x[currentTab] as HTMLElement).style.display = "none";
-    // Increase or decrease the current tab by 1:
-    currentTab = currentTab + n;
-    // If you have reached the end of the form...
-    if (currentTab >= x.length) {
-      // You may want to add custom logic here or leave it empty
-      console.log("End of form reached.");
-      return false;
-    }
-    // Otherwise, display the correct tab:
-    showTab(currentTab);
-  }
-
-  function validateForm() {
-    // Add your form validation logic here
-    // Return true if the form is valid, otherwise return false
-    // Example: return true if all required fields are filled, else return false
-    return true;
-  }
-
-  function fixStepIndicator(n: number) {
-    // Add your implementation of fixStepIndicator here
+    (x[n] as HTMLElement).style.display = "flex";
   }
 </script>
