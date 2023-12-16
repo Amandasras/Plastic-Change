@@ -24,12 +24,15 @@ import door21 from "../assets/images/julekalender/door21.svg";
 import door22 from "../assets/images/julekalender/door22.svg";
 import door23 from "../assets/images/julekalender/door23.svg";
 import door24 from "../assets/images/julekalender/door24.svg";
----
+import Popup from "./Popup.astro";
 
+---
+<div class="container">
+  <Popup id="popup"/>
 <div id="calendar">
   <div class="calender-row1">
     <div class="calendar-collum1">
-      <div class="door" onclick="openDoor(16)">
+      <div class="door" onclick="openDoor(16)" >
         <Image src={door16} alt="Door 16" />
       </div>
       <div class="door" 'onclick="openDoor(11)" '>
@@ -116,7 +119,18 @@ import door24 from "../assets/images/julekalender/door24.svg";
     </div>
   </div>
 </div>
+</div>
+
+<button @click="handleToggle()">Skift synlighed</button>
+
 <style>
+.container{
+position: relative;
+}
+
+#popup {
+    pointer-events: auto;
+  }
   .door {
     width: fit-content;
     height: fit-content;
