@@ -8,6 +8,8 @@ import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 import "../styles/reset.css";
 import Infographic from "../components/Infographic.astro";
+import { Image } from "astro:assets";
+import arrow from "../assets/images/forside/icons8-arrow-48.png";
 ---
 
 <BaseLayout>
@@ -18,79 +20,117 @@ import Infographic from "../components/Infographic.astro";
         <div class="hero_tekst">
           <h4 class="text-title-uppercase">Kampagne</h4>
           <Landingpage />
+
           <h2 class="text-display-small">
-            Støt os med et julebidrag i kampen mod plastikforureningen på verdensplan. <br />Herunder har vi samlet en guide med god råd til, <br /> hvordan Du kan mindske Dit eget forbrug i juletiden.
+            Bliv en del af forandringen: Støt plastikstop i julen <br /> – Én donation
+            ad gangen!
           </h2>
+
+          <h2 class="text-display-small readMore">
+            Læs mere om at reducere dit plastikforbrug i juletiden
+          </h2>
+
+          <!-- Find/få tips til at reducere dit plastikforbrug i juletiden -->
+        </div>
+        <div class="arrow">
+          <Image
+            class="arrowI"
+            src={arrow}
+            alt="Pil som peger ned mod resten af siden"
+          />
         </div>
       </section>
     </div>
+    <main>
+      <Infographic />
+      <CalenderSection />
+      <BrudSection />
+    </main>
   </header>
-  <main>
-    <Infographic />
-    <CalenderSection />
-    <BrudSection />
-  </main>
-</BaseLayout>
 
-<script>
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { gsap } from "gsap";    
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
-
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.to(".hero_index" , {
+    gsap.to(".hero_index", {
       scrollTrigger: {
         trigger: ".hero_container",
         start: "top top",
         end: "bottom top",
         pin: true,
-        pinSpacing: false
+        pinSpacing: false,
       },
     });
+  </script>
 
-</script>
+  <style>
+    .hero_container {
+      height: 80vh; /* Juster højden efter behov */
+      position: relative;
+      overflow: hidden;
+    }
 
-<style>
-  .hero_container{
-    height: 80vh; /* Juster højden efter behov */
-  position: relative;
-  overflow: hidden; 
-  }
-  
-  .hero_index {
-    background-image: url("../assets/Juleskrald_Plastic_Change_darker.webp");
-    background-size: cover;
-    background-position: left;
-    height: 80vh;
-    position: relative;
-  }
-  .hero_tekst {
-    padding: var(--size-spacing-24);
-    padding-top: var(--size-spacing-24);
-    font-size: var();
-  }
-  .text-title-uppercase {
-    color: var(--white);
-    padding-bottom: var(--size-spacing-24);
-  }
-  .text-display-small {
-    color: var(--white);
-    max-width: 40ch;
-  }
-  @media only screen and (min-width: 768px) {
+    .hero_index {
+      background-image: url("../assets/Juleskrald_Plastic_Change_darker.webp");
+      background-size: cover;
+      background-position: left;
+      height: 80vh;
+      position: relative;
+    }
     .hero_tekst {
       padding: var(--size-spacing-24);
-      padding-top: var(--size-spacing-64);
+      padding-top: var(--size-spacing-24);
+      font-size: var();
     }
     .text-title-uppercase {
       color: var(--white);
-      padding-bottom: var(--size-spacing-32);
+      padding-bottom: var(--size-spacing-24);
     }
     .text-display-small {
       color: var(--white);
       max-width: 40ch;
     }
-  }
-</style>
+
+    .readMore {
+      margin-top: 10rem;
+    }
+
+    .arrow {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      /* margin: var(--size-spacing-12) 0 0 var(--size-spacing-64); */
+    }
+    .arrowI {
+      transform: rotate(-45deg);
+    }
+
+    @media only screen and (min-width: 768px) {
+      .hero_tekst {
+        padding: var(--size-spacing-24);
+        padding-top: var(--size-spacing-64);
+      }
+      .text-title-uppercase {
+        color: var(--white);
+        padding-bottom: var(--size-spacing-32);
+      }
+      .text-display-small {
+        color: var(--white);
+        max-width: 40ch;
+      }
+      .arrow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        /* margin: var(--size-spacing-12) 0 0 var(--size-spacing-64); */
+      }
+      .arrowI {
+        transform: rotate(-45deg);
+        grid-column: 2/3;
+      }
+    }
+  </style>
+</BaseLayout>
