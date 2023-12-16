@@ -22,44 +22,56 @@ import kemiIllustration from "../assets/images/ditBidrag/skadeligplastik-kemi.pn
   </div>
   <h2 class="text-display-medium">Dit bidrag går bandt andet til at:</h2>
   <div class="cards">
-    <div class="cardContainer">
-      <div class="ditBidragCard">
+    <div class="cardContainer" id="hav">
+      <div id="havCard" class="ditBidragCard">
         <Image src={havIllustration} alt="illustration af en fisk" class="illustration" />
         <h3 class="text-display-small">Beskytte naturen og havet mod plastikforurening</h3>
       </div>
-      <div class="ditBidragCardOpen">
+      <div class="ditBidragCardOpen" id="havOpen">
         <p class="text-body-regular">Hvert år ender mindst 15 millioner tons plastik i havet. Det svarer omtrent til, at der hvert minut bliver tømt to lastbiler med plastik ud i havet.</p>
         <p class="text-body-regular">Kun 10 plastikprodukter udgør 75% af alt plastikaffald der ender i havet, hvor størstedelen er engangsplastik fra fødevareemballage.</p>
       </div>
     </div>
-    <div class="cardContainer">
-      <div class="ditBidragCard">
+    <div class="cardContainer" id="klima">
+      <div id="klimaCard" class="ditBidragCard">
         <Image src={klimaIllustration} alt="illustration fod med klimaaftrykket" class="illustration" />
         <h3 class="text-display-small">Mindske klimaaftryk</h3>
       </div>
-      <div class="ditBidragCardOpen">
-        <p class="text-body-regular">Hvert år ender mindst 15 millioner tons plastik i havet. Det svarer omtrent til, at der hvert minut bliver tømt to lastbiler med plastik ud i havet.</p>
-        <p class="text-body-regular">Kun 10 plastikprodukter udgør 75% af alt plastikaffald der ender i havet, hvor størstedelen er engangsplastik fra fødevareemballage.</p>
+      <div id="klimaOpen" class="ditBidragCardOpen">
+        <p class="text-body-regular">I dag udleder plastikproduktionen mere CO2 end hele den globale flyindustri, og produktionen forventes at firedobles inden 2050.</p>
+        <p class="text-body-regular">
+          Vi kan spare kloden for 3,7 mio. tons CO2 årligt i Europa de næste 9 år, hvis vi sætter mål om genbrug på 50% af vores emballager inden 2030. Det svarer til hvad det nuværende antal personbiler i Hovedstadsområdet, Region Sjælland, Aarhus,
+          Odense, Aalborg og Bornholm vil udlede årligt.
+        </p>
       </div>
     </div>
-    <div class="cardContainer">
-      <div class="ditBidragCard">
+    <div class="cardContainer" id="ressourcer">
+      <div id="ressourcerCard" class="ditBidragCard">
         <Image src={ressourcerIllustration} alt="illustration jordens ressourcer" class="illustration" />
         <h3 class="text-display-small">Skåne Jordens ressourcer</h3>
       </div>
-      <div class="ditBidragCardOpen">
-        <p class="text-body-regular">Hvert år ender mindst 15 millioner tons plastik i havet. Det svarer omtrent til, at der hvert minut bliver tømt to lastbiler med plastik ud i havet.</p>
-        <p class="text-body-regular">Kun 10 plastikprodukter udgør 75% af alt plastikaffald der ender i havet, hvor størstedelen er engangsplastik fra fødevareemballage.</p>
+      <div id="ressourcerOpen" class="ditBidragCardOpen">
+        <p class="text-body-regular">
+          Alt for meget plastik smides ud og brændes af efter være brugt i ganske få minutter. I Danmark bruger vi hvert år omkring 130 millioner engangskopper alene til kaffen. Kopperne bruges i gennemsnit i blot 15 minutter, hvorefter de bliver til
+          affald.
+        </p>
+        <p class="text-body-regular">
+          På Europæisk plan kan vi spare 10 milliarder kubikmeter vand årligt ved at sætte mål for genbrug på 50% af vores emballager. Det svarer til et vandforbrug på 4 mio. olympiske swimmingpools om året – altså 1,1 swimmingpool per dansker ml.
+          18-64 år.
+        </p>
       </div>
     </div>
-    <div class="cardContainer">
-      <div class="ditBidragCard">
+    <div class="cardContainer" id="kemi">
+      <div id="kemiCard" class="ditBidragCard">
         <Image src={kemiIllustration} alt="illustration farlig kemi" class="illustration" />
         <h3 class="text-display-small">Beskytte folkesundheden mod skadelig kemi</h3>
       </div>
-      <div class="ditBidragCardOpen">
-        <p class="text-body-regular">Hvert år ender mindst 15 millioner tons plastik i havet. Det svarer omtrent til, at der hvert minut bliver tømt to lastbiler med plastik ud i havet.</p>
-        <p class="text-body-regular">Kun 10 plastikprodukter udgør 75% af alt plastikaffald der ender i havet, hvor størstedelen er engangsplastik fra fødevareemballage.</p>
+      <div id="kemiOpen" class="ditBidragCardOpen">
+        <p class="text-body-regular">Op mod 12.000 forskellige typer kemikalier bruges i emballage og andre former for fødevarekontaktmateriale.</p>
+        <p class="text-body-regular">
+          Flere af disse kemikalier er farlige for menneskers helbred, og kan føre til kræft, hjertesygdom, inflammatorisk tarmsygdom, kronisk inflammatorisk ledsygdom, genotoksicitet, kroniske sygdomme (såsom åreforkalkning, diabetes,
+          hjerte-kar-sygdomme) og autoimmune sygdomme.
+        </p>
       </div>
     </div>
   </div>
@@ -122,9 +134,6 @@ import kemiIllustration from "../assets/images/ditBidrag/skadeligplastik-kemi.pn
     border-left: 2px solid var(--color-surface-red700);
     background: var(--color-surface-red600);
   }
-  .ditBidragCard:hover {
-    background: var(--color-surface-red700);
-  }
 
   .illustration {
     width: 220px;
@@ -134,20 +143,146 @@ import kemiIllustration from "../assets/images/ditBidrag/skadeligplastik-kemi.pn
     text-align: center;
     max-width: 280px;
   }
-  .ditBidragCard p {
+  .ditBidragCardOpen p {
     max-width: 280px;
   }
 
   /* Cards open */
   .ditBidragCardOpen {
     background: var(--color-surface-red700);
-    display: flex;
     flex-direction: column;
     gap: 32px;
     align-items: center;
     padding-bottom: 32px;
     padding-right: 16px;
     padding-left: 16px;
+  }
+
+  #havOpen,
+  #klimaOpen,
+  #ressourcerOpen,
+  #kemiOpen {
     display: none;
   }
+  @media (min-width: 500px) {
+    .cards {
+      width: 100%;
+    }
+    .ditBidragCard h3 {
+      max-width: 320px;
+    }
+  }
+  @media (min-width: 700px) {
+    .ditBidragCard {
+      align-items: flex-start;
+      padding: 0 32px 20px 32px;
+    }
+    .ditBidragCard h3 {
+      text-align: left;
+    }
+    .ditBidragCardOpen {
+      padding-left: 32px;
+      align-items: flex-start;
+    }
+    .ditBidragCardOpen p {
+      max-width: 65ch;
+    }
+  }
+  @media (min-width: 900px) {
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ditBidragCardOpen p {
+      max-width: 280px;
+
+      font-weight: 500;
+      font-family: Campton;
+      font-size: 24px;
+    }
+    .ditBidragCard {
+      align-items: center;
+      padding: 0 0 20px;
+      height: 324px;
+    }
+    .ditBidragCard h3 {
+      text-align: center;
+      height: 100%;
+    }
+    .ditBidragCardOpen {
+      padding-left: 32px;
+      align-items: center;
+      height: 100%;
+    }
+    .ditBidragCard:hover {
+      background: var(--color-surface-red700);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .cards {
+      display: flex;
+    }
+    .cardContainer {
+      width: 100%;
+    }
+    .ditBidragCard h3,
+    .ditBidragCardOpen p {
+      width: 260px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .ditBidragCard h3,
+    .ditBidragCardOpen p {
+      width: 280px;
+    }
+  }
 </style>
+
+<script>
+  const havCard = document.getElementById("hav");
+  const havCardBackground = document.getElementById("havCard");
+  const havCardOpen = document.getElementById("havOpen");
+  const klimaCard = document.getElementById("klima");
+  const klimaCardBackground = document.getElementById("klimaCard");
+  const klimaCardOpen = document.getElementById("klimaOpen");
+  const ressourcerCard = document.getElementById("ressourcer");
+  const ressourcerCardBackground = document.getElementById("ressourcerCard");
+  const ressourcerCardOpen = document.getElementById("ressourcerOpen");
+  const kemiCard = document.getElementById("kemi");
+  const kemiCardBackground = document.getElementById("kemiCard");
+  const kemiCardOpen = document.getElementById("kemiOpen");
+
+  havCard.addEventListener("click", function () {
+    if (havCardOpen.style.display === "none" || havCardOpen.style.display === "") {
+      havCardOpen.style.display = "flex";
+    } else {
+      havCardOpen.style.display = "none";
+    }
+  });
+
+  klimaCard.addEventListener("click", function () {
+    if (klimaCardOpen.style.display === "none" || klimaCardOpen.style.display === "") {
+      klimaCardOpen.style.display = "flex";
+    } else {
+      klimaCardOpen.style.display = "none";
+    }
+  });
+
+  ressourcerCard.addEventListener("click", function () {
+    if (ressourcerCardOpen.style.display === "none" || ressourcerCardOpen.style.display === "") {
+      ressourcerCardOpen.style.display = "flex";
+    } else {
+      ressourcerCardOpen.style.display = "none";
+    }
+  });
+
+  kemiCard.addEventListener("click", function () {
+    if (kemiCardOpen.style.display === "none" || kemiCardOpen.style.display === "") {
+      kemiCardOpen.style.display = "flex";
+    } else {
+      kemiCardOpen.style.display = "none";
+    }
+  });
+</script>
