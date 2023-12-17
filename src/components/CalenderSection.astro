@@ -8,15 +8,14 @@ import door1 from "../assets/images/julekalender/door1.svg";
   <h2 class="text-display-medium">
     Følg med i årets julekalender.<br />Tilmeld dig og vind en glamping tur
   </h2>
-  <a href="/kalender/">
+  <a href="/kalender">
     <Image src={door1} alt="dagens låge" class="CalenderDoor" />
   </a>
-  <Button
-    id="open_the_day"
-    label="Åben dagens låge"
-    size="regular"
-    style="filled"
-  />
+
+  <a href="/kalender">
+    <Button label="Åben dagens låge" size="regular" style="filled" />
+  </a>
+
   <p class="text-title-uppercase">eller</p>
   <div class="emailSignUp_container">
     <p class="text-form-label-semibold">
@@ -42,13 +41,7 @@ import door1 from "../assets/images/julekalender/door1.svg";
     </div>
   </div>
 </section>
-<script>
-  document
-    .getElementById("open_the_day")
-    .addEventListener("click", function () {
-      window.location.href = "/kalender/";
-    });
-</script>
+
 <style>
   .CalenderSection {
     width: 100vw;
