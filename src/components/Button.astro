@@ -1,9 +1,9 @@
 ---
-const { size, style, label } = Astro.props;
+const { size, style, label, href } = Astro.props;
 ---
 
 <div class="button" size-variant={size} style-variant={style}>
-  <a href="#" class="button_label" label-variant={style}>{label}</a>
+  <a href={href} class="button_label" label-variant={style}>{label}</a>
 </div>
 
 <style>

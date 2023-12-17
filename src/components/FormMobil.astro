@@ -16,7 +16,7 @@ import mastercard from "../assets/images/form/mastercard.png";
 import billwerk from "../assets/images/form/BiLLWERK_logo.png";
 import thankyouimage from "../assets/images/form/formThankYou.png";
 import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
-const {handleButtonClick} = Astro.props
+const { handleButtonClick } = Astro.props;
 ---
 
 <!-- STEP 1 -->
@@ -34,7 +34,8 @@ const {handleButtonClick} = Astro.props
     </div>
     <div id="les_mere">
       <p class="text-form-label-regular">Hvad går dit bidrag til?</p>
-   <a href="#calenderSection"><Button label="Læs om det her" size="regular" style="outlined" onclick={handleButtonClick}/></a> 
+     <Button href="#DitBidrag" label="Læs om det her" size="regular" style="outlined"/> 
+      <!-- <a href="#calenderSection"><Button label="Læs om det her" size="regular" style="outlined" onclick={handleButtonClick}/></a>  -->
     </div>
   </form>
 </div>
@@ -200,14 +201,13 @@ const {handleButtonClick} = Astro.props
 </div>
 
 <style>
-
-#les_mere{
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: var(--size-spacing-12);
-align-self: stretch;
-margin-top: var(--size-spacing-16);
+  #les_mere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-spacing-12);
+    align-self: stretch;
+    margin-top: var(--size-spacing-16);
   }
   #formWithSnow {
     width: 432.27px;
