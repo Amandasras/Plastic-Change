@@ -21,30 +21,66 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
   <div class="Infographic_container">
     <!-- Tiløj alt tekster -->
     <div class="Plastik opacity">
-      <Image src={Plastik} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året" class="InfoDesktop Info" />
-      <Image src={PlastikMobile} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året." class="InfoMobile Info" />
+      <Image
+        src={Plastik}
+        alt="I Danmark forbuger vi ca. 350.000 tons plastik om året"
+        class="InfoDesktop Info"
+      />
+      <Image
+        src={PlastikMobile}
+        alt="I Danmark forbuger vi ca. 350.000 tons plastik om året."
+        class="InfoMobile Info"
+      />
     </div>
     <Image src={Streg1} alt="En streg" class="Line" />
     <div class="Emballage opacity1">
-      <Image src={Emballage} alt="Det svarer til 27 kilo plastikemballage pr. person årligt." class="Info" />
+      <Image
+        src={Emballage}
+        alt="Det svarer til 27 kilo plastikemballage pr. person årligt."
+        class="Info"
+      />
     </div>
     <Image src={Streg2} alt="En streg" class="Line" />
     <div class="Plastikposer opacity2">
-      <Image src={Plastikposer} alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år." class="Info" />
+      <Image
+        src={Plastikposer}
+        alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år."
+        class="Info"
+      />
     </div>
     <Image src={Streg3} alt="En streg" class="Line" />
     <div class="Gavepapir opacity3">
-      <Image src={Gavepapir} alt="I Danmark bruger vi 100.000 tons gavepapir årligt." class="Info" />
+      <Image
+        src={Gavepapir}
+        alt="I Danmark bruger vi 100.000 tons gavepapir årligt."
+        class="Info"
+      />
     </div>
     <Image src={Streg4} alt="En streg" class="Line" />
     <div class="Tekstiler opacity4">
-      <Image src={Tekstiler} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoDesktop Info" />
-      <Image src={TekstilerMobile} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoMobile Info" />
+      <Image
+        src={Tekstiler}
+        alt="Vi smider 90.000 tons tøj ud hvert år i Danmark"
+        class="InfoDesktop Info"
+      />
+      <Image
+        src={TekstilerMobile}
+        alt="Vi smider 90.000 tons tøj ud hvert år i Danmark"
+        class="InfoMobile Info"
+      />
     </div>
     <Image src={Streg5} alt="En streg" class="Line" />
     <div class="Mad opacity5">
-      <Image src={Mad} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoDesktop Info" />
-      <Image src={MadMobile} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoMobile Info" />
+      <Image
+        src={Mad}
+        alt=" og vi smider ca. 700.000 tons mad ud årligt."
+        class="InfoDesktop Info"
+      />
+      <Image
+        src={MadMobile}
+        alt=" og vi smider ca. 700.000 tons mad ud årligt."
+        class="InfoMobile Info"
+      />
     </div>
   </div>
 </section>
@@ -127,16 +163,25 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
       opacity: 1,
       scrollTrigger: {
         trigger: ".opacity5", // Elementet, der fungerer som trigger
-        start: "top top", // Startposition i forhold til trigger
-        end: "bottom top", // Slutposition i forhold til trigger
+        start: "top 80%", // Startposition i forhold til trigger
+        end: "bottom 20%", // Slutposition i forhold til trigger
       },
     }
   );
+
+
 </script>
 
 <style>
   .Infographic_section {
-    background: linear-gradient(180deg, rgba(220, 236, 241, 0.9) 26.04%, rgba(212, 230, 236, 0.9) 100%), url("../../public/assets/backgroundImages/plasticOcean.jpg") center/cover no-repeat, lightgray 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(220, 236, 241, 0.9) 26.04%,
+        rgba(212, 230, 236, 0.9) 100%
+      ),
+      url("../../public/assets/backgroundImages/plasticOcean.jpg") center/cover
+        no-repeat,
+      lightgray 100%;
     padding: 20vh 32px 32px;
     position: relative;
     z-index: 1;
