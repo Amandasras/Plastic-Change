@@ -43,11 +43,10 @@ import FormMobil from "../components/FormMobil.astro";
   <main>
     <div class="info_sektion_mobli_view">
       <div class="form_plasering_mobil">
-        <div class="form_container_mobil"><FormMobil /></div>
+        <div id="form_container_mobil"><FormMobil /></div>
       </div>
       <Infographic />
     </div>
-    <a href="#calenderSection">Test</a>
     <CalenderSection />
     <BrudSection />
     <DitBidrag id="calenderSection" />
@@ -86,7 +85,7 @@ import FormMobil from "../components/FormMobil.astro";
   .form_plasering_desktop {
     display: none;
   }
-  .form_container_mobil {
+  #form_container_mobil {
     width: fit-content;
     height: fit-content;
     z-index: 5;
