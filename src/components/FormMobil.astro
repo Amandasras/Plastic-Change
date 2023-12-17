@@ -18,201 +18,181 @@ import thankyouimage from "../assets/images/form/formThankYou.png";
 import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
 ---
 
-
-  <!-- STEP 1 -->
-  <div class="tab">
-    <h2 class="text-form-title-large">Her er overskriften</h2>
-    <form action="">
-      <div id="radioButtonContainer">
-        <RadioButton label="Månedligt" radioGroup="PaymentInfo" />
-        <RadioButton label="Én gang" radioGroup="PaymentInfo" />
-      </div>
-      <AmountPicker size="regular" />
-      <!-- <InputFieldRequired label="Andet beløb" labelThickness="thick" placeholder="ex: 1000" unit="kr." name="amountPicker" /> -->
-      <div id="Button1">
-        <Button label="Støt nu" size="thick" style="filled" />
-      </div>
-    </form>
-  </div>
-  <!-- STEP 2 -->
-  <div class="tab">
-    <h2 class="text-form-title-large">Her er overskriften</h2>
-    <form action="">
-      <AmountPicker size="small" />
-      <PaymentMethod />
-      <div id="personalInfo">
-        <InputFieldRequired
-          label="Fornavn"
-          type="text"
-          autocomplete="given-name"
-          placeholder=""
-        />
-        <InputFieldRequired
-          label="Efternavn"
-          type="text"
-          autocomplete="family-name"
-          placeholder=""
-        />
-        <InputFieldRequired
-          label="E-mail"
-          type="email"
-          autocomplete="email"
-          placeholder=""
-        />
-        <InputFieldRequired
-          label="Telefon"
-          type="tel"
-          autocomplete="tel"
-          placeholder=""
-        />
-        <InputField
-          label="Postnr."
-          type=""
-          autocomplete="postal-code"
-          placeholder=""
-          fontWeight="semiBold"
-        />
-      </div>
-      <RadioButton
-        label="Jeg ønsker fradrag fra SKAT"
-        radioGroup="skattefradrag"
+<!-- STEP 1 -->
+<div class="step">
+  <h2 class="text-form-title-large">Her er overskriften</h2>
+  <form action="">
+    <div id="radioButtonContainer">
+      <RadioButton label="Månedligt" radioGroup="PaymentInfo" />
+      <RadioButton label="Én gang" radioGroup="PaymentInfo" />
+    </div>
+    <AmountPicker size="regular" />
+    <!-- <InputFieldRequired label="Andet beløb" labelThickness="thick" placeholder="ex: 1000" unit="kr." name="amountPicker" /> -->
+    <div id="Button1">
+      <Button label="Støt nu" size="thick" style="filled" />
+    </div>
+  </form>
+</div>
+<!-- STEP 2 -->
+<div class="step">
+  <h2 class="text-form-title-large">Her er overskriften</h2>
+  <form action="">
+    <AmountPicker size="small" />
+    <PaymentMethod />
+    <div id="personalInfo">
+      <InputFieldRequired
+        label="Fornavn"
+        type="text"
+        autocomplete="given-name"
+        placeholder=""
       />
-      <ConsentCheckBox />
-      <div class="buttonContainer">
-        <div id="Button2">
-          <Button label="Gå til betaling" size="regular-wide" style="filled" />
-        </div>
-        <div class="betalingsPolitik">
-          <a href="#" class="text-body-small">BetalingsPolitik</a>
-        </div>
+      <InputFieldRequired
+        label="Efternavn"
+        type="text"
+        autocomplete="family-name"
+        placeholder=""
+      />
+      <InputFieldRequired
+        label="E-mail"
+        type="email"
+        autocomplete="email"
+        placeholder=""
+      />
+      <InputFieldRequired
+        label="Telefon"
+        type="tel"
+        autocomplete="tel"
+        placeholder=""
+      />
+      <InputField
+        label="Postnr."
+        type=""
+        autocomplete="postal-code"
+        placeholder=""
+        fontWeight="semiBold"
+      />
+    </div>
+    <RadioButton
+      label="Jeg ønsker fradrag fra SKAT"
+      radioGroup="skattefradrag"
+    />
+    <ConsentCheckBox />
+    <div class="buttonContainer">
+      <div id="Button2">
+        <Button label="Gå til betaling" size="regular-wide" style="filled" />
       </div>
-    </form>
-  </div>
-  <!-- STEP 3 - MOBILEPAY -->
-  <div class="hide">
-    <h2 class="text-form-title-large">Her er overskriften</h2>
-    <div class="logoAndAmount">
-      <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
-      <div class="amountContainer">
-        <p class="details">Til betaling i dag:</p>
-        <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
-        <p class="amount text-form-label-regular">XX,XX DKK</p>
+      <div class="betalingsPolitik">
+        <a href="#" class="text-body-small">BetalingsPolitik</a>
       </div>
     </div>
-    <div id="MobilePay">
-      <Image src={mobilepayPayment} alt="" />
-      <button id="Button3_Mobilepay" class="mobilePayButton"
-        >Fortsæt med MobilePay</button
-      >
-    </div>
-  </div>
-  <!-- STEP 3 - CARD-->
-  <div class="tab">
-    <h2 class="text-form-title-large">Her er overskriften</h2>
-    <div class="logoAndAmount">
-      <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
-      <div class="amountContainer">
-        <p class="details">Til betaling i dag:</p>
-        <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
-        <p class="amount text-form-label-regular">XX,XX DKK</p>
-      </div>
-    </div>
-    <div class="monthlySubDetails_container">
-      <div class="monthlySubDetails">
-        <p class="text-form-label-regular">Månedligt Abonnement</p><p
-          id="showDetails"
-          class="details"
-        >
-          Vis detaljer
-        </p>
-      </div>
-      <div id="monthlySubDetails_openContainer" class="hide">
-        <div class="monthlySubDetails_open">
-          <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
-          <p class="text-form-label-regular">Månedligt beløb</p><p
-            class="details"
-          >
-            XX,XX DKK (inkl. moms)
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="cardTyoesDetails">
-      <p class="text-form-label-regular">Betalingskort</p>
-      <div class="cards">
-        <Image src={dankort} alt="" /><Image src={visa} alt="" /><Image
-          src={mastercard}
-          alt=""
-        />
-      </div>
-    </div>
-    <form action="">
-      <!-- tilføj de andre props til InputFieldRequired komponentet -->
-      <div id="cardInfo">
-        <InputFieldRequired
-          label="Kortnummer"
-          autocomplete="cc-number"
-          placeholder=""
-          inputmode="numeric"
-          maxlength="50"
-          pattern="[\d ]{10,30}"
-          required
-        />
-        <div class="flex2col">
-          <InputFieldRequired
-            label="Udløbsdato"
-            autocomplete="cc-name"
-            placeholder="MM / ÅÅ"
-            maxlength="5"
-            required
-          />
-          <InputFieldRequired
-            label="Kontrolcifre"
-            inputmode="numeric"
-            maxlength="3"
-            required
-          />
-        </div>
-      </div>
+  </form>
+</div>
+
+<!-- STEP 3 - CARD-->
+<div class="step">
+  <h2 class="text-form-title-large">Her er overskriften</h2>
+  <div class="logoAndAmount">
+    <Image src={PlasticChangeLogo} alt="Plasticchange logo" />
+    <div class="amountContainer">
+      <p class="details">Til betaling i dag:</p>
       <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
-      <div id="Button3_card">
-        <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
-      </div>
-      <div class="underPayButton">
-        <hr />
-        <div class="flexSpacebetween">
-          <!-- ret linksti her -->
-          <a href="#" id="escape" class="text-form-label-regular"
-            >&#60; Afbryd</a
-          >
-          <div class="billwerk text-body-small">
-            <p>Sikker betaling med</p><Image src={billwerk} alt="" />
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <!-- STEP 4 -->
-  <div class="tab">
-    <div class="imageContainer">
-      <h2>Du er med til at redde vores planet!</h2>
-      <Image src={thankyouimage} alt="Plastikaffald i havoverfladen" />
+      <p class="amount text-form-label-regular">XX,XX DKK</p>
     </div>
-    <div class="thankYouText">
-      <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
-      <p class="text-body-regular">
-        Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte
-        kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen
-        fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere
-        og virksomheder til at tage ansvar for at fremstille flere
-        genanvendelige produkter. Dette er afgørende for at erstatte den
-        nuværende strøm af kemikalie-tunge engangsplastmaterialer, der udgør en
-        trussel mod vores sundhed, vores skrøbelige planet og dyrelivet.
-        <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod
-        plastikforureningen! <br /><br />Glædelig jul ✨
+  </div>
+  <div class="monthlySubDetails_container">
+    <div class="monthlySubDetails">
+      <p class="text-form-label-regular">Månedligt Abonnement</p><p
+        id="showDetails"
+        class="details"
+      >
+        Vis detaljer
       </p>
     </div>
+    <div id="monthlySubDetails_openContainer" class="hide">
+      <div class="monthlySubDetails_open">
+        <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+        <p class="text-form-label-regular">Månedligt beløb</p><p
+          class="details"
+        >
+          XX,XX DKK (inkl. moms)
+        </p>
+      </div>
+    </div>
   </div>
+  <div class="cardTyoesDetails">
+    <p class="text-form-label-regular">Betalingskort</p>
+    <div class="cards">
+      <Image src={dankort} alt="" /><Image src={visa} alt="" /><Image
+        src={mastercard}
+        alt=""
+      />
+    </div>
+  </div>
+  <form action="">
+    <!-- tilføj de andre props til InputFieldRequired komponentet -->
+    <div id="cardInfo">
+      <InputFieldRequired
+        label="Kortnummer"
+        autocomplete="cc-number"
+        placeholder=""
+        inputmode="numeric"
+        maxlength="50"
+        pattern="[\d ]{10,30}"
+        required
+      />
+      <div class="flex2col">
+        <InputFieldRequired
+          label="Udløbsdato"
+          autocomplete="cc-name"
+          placeholder="MM / ÅÅ"
+          maxlength="5"
+          required
+        />
+        <InputFieldRequired
+          label="Kontrolcifre"
+          inputmode="numeric"
+          maxlength="3"
+          required
+        />
+      </div>
+    </div>
+    <!-- skal kunne skifte label afhængigt af abonnement vs enkelt beløb -->
+    <div id="Button3_card">
+      <Button label="Betal XX,XX DKK" size="regular-wide" style="filled" />
+    </div>
+    <div class="underPayButton">
+      <hr />
+      <div class="flexSpacebetween">
+        <!-- ret linksti her -->
+        <a href="#" id="escape" class="text-form-label-regular">&#60; Afbryd</a>
+        <div class="billwerk text-body-small">
+          <p>Sikker betaling med</p><Image src={billwerk} alt="" />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- STEP 4 -->
+<div class="step">
+  <div class="imageContainer">
+    <h2>Du er med til at redde vores planet!</h2>
+    <Image src={thankyouimage} alt="Plastikaffald i havoverfladen" />
+  </div>
+  <div class="thankYouText">
+    <h3 class="text-form-title-medium">Tusind tak for din støtte!</h3>
+    <p class="text-body-regular">
+      Det kan godt være, du ikke selv kan mærke det - men din gavmilde støtte
+      kommer til at gøre en stor forskel! <br /><br />Takket være opbakningen
+      fra mennesker som DIG kan vi stå stærkere i kampen for at få politikere og
+      virksomheder til at tage ansvar for at fremstille flere genanvendelige
+      produkter. Dette er afgørende for at erstatte den nuværende strøm af
+      kemikalie-tunge engangsplastmaterialer, der udgør en trussel mod vores
+      sundhed, vores skrøbelige planet og dyrelivet.
+      <br /><br />Hjertelig tak for, at du i dag har taget kampen op mod
+      plastikforureningen! <br /><br />Glædelig jul ✨
+    </p>
+  </div>
+</div>
 
 <style>
   #formWithSnow {
@@ -225,7 +205,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     position: absolute;
     z-index: 2;
   }
-  .tab,
+  .step,
   form {
     display: flex;
     flex-direction: column;
@@ -448,8 +428,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
   }
 
   /* Hide all steps by default: */
-  .tab,
-  .hide {
+  .step {
     display: none;
   }
 </style>
@@ -462,7 +441,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     var button1 = document.getElementById("Button1");
     if (button1) {
       button1.addEventListener("click", function () {
-        showTab(1); // Gå til næste trin, når Button1 klikkes
+        showStep(1); // Gå til næste trin, når Button1 klikkes
       });
     }
 
@@ -470,7 +449,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     var button2 = document.getElementById("Button2");
     if (button2) {
       button2.addEventListener("click", function () {
-        showTab(2); // Gå til næste trin, når Button2 klikkes (Tab nummer 4)
+        showStep(2); // Gå til næste trin, når Button2 klikkes (Step nummer 4)
       });
     }
 
@@ -478,7 +457,7 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     var button3Card = document.getElementById("Button3_card");
     if (button3Card) {
       button3Card.addEventListener("click", function () {
-        showTab(3); // Gå til næste trin, når Button3_card klikkes (Tab nummer 5)
+        showStep(3); // Gå til næste trin, når Button3_card klikkes (Step nummer 5)
       });
     }
 
@@ -486,18 +465,18 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     var escapeButton = document.getElementById("escape");
     if (escapeButton) {
       escapeButton.addEventListener("click", function () {
-        showTab(0); // Vis tab 1, når escape klikkes
+        showStep(0); // Vis step 1, når escape klikkes
       });
     }
   });
 
-  var currentTab: number = 0; // Current tab is set to be the first tab (0)
-  showTab(currentTab); // Display the current tab
+  var currentStep: number = 0; // Current step is set to be the first step (0)
+  showStep(currentStep); // Display the current step
   console.log("script virker");
 
-  function showTab(n: number) {
-    // This function will display the specified tab of the form ...
-    var x: HTMLCollectionOf<Element> = document.getElementsByClassName("tab");
+  function showStep(n: number) {
+    // This function will display the specified step of the form ...
+    var x: HTMLCollectionOf<Element> = document.getElementsByClassName("step");
     for (var i = 0; i < x.length; i++) {
       (x[i] as HTMLElement).style.display = "none";
     }
