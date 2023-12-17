@@ -21,66 +21,30 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
   <div class="Infographic_container">
     <!-- Tiløj alt tekster -->
     <div class="Plastik opacity">
-      <Image
-        src={Plastik}
-        alt="I Danmark forbuger vi ca. 350.000 tons plastik om året"
-        class="InfoDesktop Info"
-      />
-      <Image
-        src={PlastikMobile}
-        alt="I Danmark forbuger vi ca. 350.000 tons plastik om året."
-        class="InfoMobile Info"
-      />
+      <Image src={Plastik} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året" class="InfoDesktop Info" />
+      <Image src={PlastikMobile} alt="I Danmark forbuger vi ca. 350.000 tons plastik om året." class="InfoMobile Info" />
     </div>
     <Image src={Streg1} alt="En streg" class="Line" />
     <div class="Emballage opacity1">
-      <Image
-        src={Emballage}
-        alt="Det svarer til 27 kilo plastikemballage pr. person årligt."
-        class="Info"
-      />
+      <Image src={Emballage} alt="Det svarer til 27 kilo plastikemballage pr. person årligt." class="Info" />
     </div>
     <Image src={Streg2} alt="En streg" class="Line" />
     <div class="Plastikposer opacity2">
-      <Image
-        src={Plastikposer}
-        alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år."
-        class="Info"
-      />
+      <Image src={Plastikposer} alt="Hver dansker bruger i gennemsnit 85 plastikposer, hvert år." class="Info" />
     </div>
     <Image src={Streg3} alt="En streg" class="Line" />
     <div class="Gavepapir opacity3">
-      <Image
-        src={Gavepapir}
-        alt="I Danmark bruger vi 100.000 tons gavepapir årligt."
-        class="Info"
-      />
+      <Image src={Gavepapir} alt="I Danmark bruger vi 100.000 tons gavepapir årligt." class="Info" />
     </div>
     <Image src={Streg4} alt="En streg" class="Line" />
     <div class="Tekstiler opacity4">
-      <Image
-        src={Tekstiler}
-        alt="Vi smider 90.000 tons tøj ud hvert år i Danmark"
-        class="InfoDesktop Info"
-      />
-      <Image
-        src={TekstilerMobile}
-        alt="Vi smider 90.000 tons tøj ud hvert år i Danmark"
-        class="InfoMobile Info"
-      />
+      <Image src={Tekstiler} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoDesktop Info" />
+      <Image src={TekstilerMobile} alt="Vi smider 90.000 tons tøj ud hvert år i Danmark" class="InfoMobile Info" />
     </div>
     <Image src={Streg5} alt="En streg" class="Line" />
     <div class="Mad opacity5">
-      <Image
-        src={Mad}
-        alt=" og vi smider ca. 700.000 tons mad ud årligt."
-        class="InfoDesktop Info"
-      />
-      <Image
-        src={MadMobile}
-        alt=" og vi smider ca. 700.000 tons mad ud årligt."
-        class="InfoMobile Info"
-      />
+      <Image src={Mad} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoDesktop Info" />
+      <Image src={MadMobile} alt=" og vi smider ca. 700.000 tons mad ud årligt." class="InfoMobile Info" />
     </div>
   </div>
 </section>
@@ -172,14 +136,7 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
 
 <style>
   .Infographic_section {
-    background: linear-gradient(
-        180deg,
-        rgba(220, 236, 241, 0.9) 26.04%,
-        rgba(212, 230, 236, 0.9) 100%
-      ),
-      url("../../public/assets/backgroundImages/plasticOcean.jpg") center/cover
-        no-repeat,
-      lightgray 100%;
+    background: linear-gradient(180deg, rgba(220, 236, 241, 0.9) 26.04%, rgba(212, 230, 236, 0.9) 100%), url("../../public/assets/backgroundImages/plasticOcean.jpg") center/cover no-repeat, lightgray 100%;
     padding: 32px;
     position: relative;
     z-index: 1;
@@ -187,7 +144,6 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
 
   h2 {
     color: var(--color-text-gray900);
-    text-align: center;
     width: 100%;
   }
 
@@ -226,7 +182,7 @@ import Streg5 from "../assets/images/infographics/Streg5.svg";
 
   .opacity {
     opacity: 0; /* Start med en gennemsigtighed på 0 */
-    transition: opacity 0.1s ; /* Valgfri: Tilføj en overgangseffekt for smidig overgang */
+    transition: opacity 0.1s; /* Valgfri: Tilføj en overgangseffekt for smidig overgang */
   }
 
   .opacity1 {
