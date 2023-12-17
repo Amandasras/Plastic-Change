@@ -6,9 +6,7 @@ import InputField from "./form/InputField.astro";
 import Button from "./Button.astro";
 import PaymentMethod from "./form/PaymentMethod.astro";
 import ConsentCheckBox from "./form/ConsentCheckBox.astro";
-
 import { Image } from "astro:assets";
-import snow from "../assets/images/form/snow.svg";
 import PlasticChangeLogo from "../assets/images/form/PCLogo.svg";
 import dankort from "../assets/images/form/dankort.png";
 import visa from "../assets/images/form/visa.png";
@@ -50,30 +48,35 @@ import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
     <PaymentMethod />
     <div id="personalInfo">
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="Fornavn"
         type="text"
         autocomplete="given-name"
         placeholder=""
       />
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="Efternavn"
         type="text"
         autocomplete="family-name"
         placeholder=""
       />
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="E-mail"
         type="email"
         autocomplete="email"
         placeholder=""
       />
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="Telefon"
         type="tel"
         autocomplete="tel"
         placeholder=""
       />
       <InputField
+      inputId="FornavnMobil"
         label="Postnr."
         type=""
         autocomplete="postal-code"

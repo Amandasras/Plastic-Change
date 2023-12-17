@@ -26,27 +26,33 @@ import FormMobil from "../components/FormMobil.astro";
           <Landingpage />
 
           <h2 class="text-display-small">
-            Bliv en del af forandringen: Støt plastikstop i julen <br /> – Én donation ad gangen!
+            Bliv en del af forandringen: Støt plastikstop i julen <br /> – Én donation
+            ad gangen!
           </h2>
 
-          <h2 class="text-display-small readMore">Læs mere om at reducere dit plastikforbrug i juletiden</h2>
+          <h2 class="text-display-small readMore">
+            Læs mere om at reducere dit plastikforbrug i juletiden
+          </h2>
 
           <!-- Find/få tips til at reducere dit plastikforbrug i juletiden -->
         </div>
         <div class="arrow">
-          <Image class="arrowI" src={arrow} alt="Pil som peger ned mod resten af siden" />
+          <Image
+            class="arrowI"
+            src={arrow}
+            alt="Pil som peger ned mod resten af siden"
+          />
         </div>
       </section>
     </div>
   </header>
 
   <main>
-    <div class="info_sektion_mobli_view">
-      <div class="form_plasering_mobil">
-        <div id="form_container_mobil"><FormMobil /></div>
-      </div>
-      <Infographic />
+    <div class="form_plasering_mobil">
+      <FormMobil />
     </div>
+    <Infographic />
+
     <CalenderSection />
     <BrudSection />
     <DitBidrag id="calenderSection" />
@@ -69,27 +75,23 @@ import FormMobil from "../components/FormMobil.astro";
     },
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-  const readMoreButton = document.getElementById('readMoreButton');
+  document.addEventListener("DOMContentLoaded", () => {
+    const readMoreButton = document.getElementById("readMoreButton");
 
-  if (readMoreButton) {
-    readMoreButton.addEventListener('click', (event) => {
-      event.preventDefault(); // Forhindrer standardformularadfærd
-      gsap.to(window, { duration: 1, scrollTo: '#calenderSection' });
-    });
-  }
-});
+    if (readMoreButton) {
+      readMoreButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Forhindrer standardformularadfærd
+        gsap.to(window, { duration: 1, scrollTo: "#calenderSection" });
+      });
+    }
+  });
 </script>
 
 <style>
   .form_plasering_desktop {
     display: none;
   }
-  #form_container_mobil {
-    width: fit-content;
-    height: fit-content;
-    z-index: 5;
-  }
+
   .form_plasering_mobil {
     position: relative;
     background-color: var(--white);

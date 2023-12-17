@@ -6,9 +6,7 @@ import InputField from "./form/InputField.astro";
 import Button from "./Button.astro";
 import PaymentMethod from "./form/PaymentMethod.astro";
 import ConsentCheckBox from "./form/ConsentCheckBox.astro";
-
 import { Image } from "astro:assets";
-import snow from "../assets/images/form/snow.svg";
 import PlasticChangeLogo from "../assets/images/form/PCLogo.svg";
 import dankort from "../assets/images/form/dankort.png";
 import visa from "../assets/images/form/visa.png";
@@ -16,7 +14,6 @@ import mastercard from "../assets/images/form/mastercard.png";
 import billwerk from "../assets/images/form/BiLLWERK_logo.png";
 import thankyouimage from "../assets/images/form/formThankYou.png";
 import mobilepayPayment from "../assets/images/form/mobilepayPayment.png";
-const { handleButtonClick } = Astro.props;
 ---
 
 <!-- STEP 1 -->
@@ -35,7 +32,6 @@ const { handleButtonClick } = Astro.props;
     <div id="les_mere">
       <p class="text-form-label-regular">Hvad går dit bidrag til?</p>
      <Button href="#DitBidrag" label="Læs om det her" size="regular" style="outlined"/> 
-      <!-- <a href="#calenderSection"><Button label="Læs om det her" size="regular" style="outlined" onclick={handleButtonClick}/></a>  -->
     </div>
   </form>
 </div>
@@ -47,30 +43,35 @@ const { handleButtonClick } = Astro.props;
     <PaymentMethod />
     <div id="personalInfo">
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="Fornavn"
         type="text"
         autocomplete="given-name"
         placeholder=""
       />
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="Efternavn"
         type="text"
         autocomplete="family-name"
         placeholder=""
       />
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="E-mail"
         type="email"
         autocomplete="email"
         placeholder=""
       />
       <InputFieldRequired
+      inputId="FornavnMobil"
         label="Telefon"
         type="tel"
         autocomplete="tel"
         placeholder=""
       />
       <InputField
+      inputId="FornavnMobil"
         label="Postnr."
         type=""
         autocomplete="postal-code"
@@ -445,6 +446,7 @@ const { handleButtonClick } = Astro.props;
   .step {
     display: none;
   }
+
 </style>
 
 <script>

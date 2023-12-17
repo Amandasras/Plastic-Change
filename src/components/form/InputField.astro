@@ -1,13 +1,13 @@
 ---
-const { label, placeholder, type, autocomplete, fontWeight } = Astro.props;
+const { label, placeholder, type, autocomplete, fontWeight,inputId } = Astro.props;
 ---
 
 <div class="inputFieldContainer">
   <div class="label">
-    <label for="InputFieldID" class="inputLabel" label-thickness={fontWeight}>{label}</label>
+    <label for={inputId} class="inputLabel" label-thickness={fontWeight}>{label}</label>
   </div>
   <div class="Field">
-    <input type={type} autocomplete={autocomplete} id="InputFieldID" class="inputField" placeholder={placeholder} name="userInfo" />
+    <input type={type} autocomplete={autocomplete} id={inputId} class="inputField" placeholder={placeholder} name="userInfo" />
   </div>
 </div>
 
