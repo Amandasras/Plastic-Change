@@ -4,15 +4,21 @@ import logo from "../assets/Logo.svg";
 import Button from "./Button.astro";
 ---
 
- <header>
+<header>
   <div>
     <a href="/"><Image src={logo} alt="logo, plastik change" /></a>
   </div>
   <nav class="desktop-nav">
     <ul class="nav-list">
-      <li><a class="text-form-label-semibold" href="/kalender/">Julekalender</a></li>
-      <li><a class="text-form-label-semibold" href="/juleTips/">Jule tips</a></li>
-      <li><Button label="Støt" size="regular" style="filled"/></li>
+      <li>
+        <a class="text-form-label-semibold" href="/kalender/">Julekalender</a>
+      </li>
+      <li>
+        <a class="text-form-label-semibold" href="/juleTips/">Jule tips</a>
+      </li>
+      <li>
+        <Button label="Støt" size="regular" style="filled" />
+      </li>
     </ul>
   </nav>
   <div class="mobile-nav">
@@ -115,8 +121,6 @@ import Button from "./Button.astro";
     .mobile-nav {
       display: block;
     }
-
-
 
     .dropdown:hover .dropdown-content {
       display: none;
