@@ -16,8 +16,11 @@ import FormSteps from "./FormSteps.astro";
     <FormSteps />
   </div>
 </div>
-
+</div>
 <style>
+ .form_plasering{
+    position: static;
+}
   #formWithSnow {
     width: 432.27px;
     position: relative;
@@ -25,7 +28,7 @@ import FormSteps from "./FormSteps.astro";
   #snow {
     width: 432.27px;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
   }
   #form_container {
     position: absolute;
@@ -34,11 +37,13 @@ import FormSteps from "./FormSteps.astro";
     margin-left: calc((432.27px - 384px) / 2);
     margin-right: calc((432.27px - 384px) / 2);
     padding: var(--size-spacing-64) var(--size-spacing-32);
-
+    z-index: 2;
     width: 384px;
     border-radius: 11px;
     background-color: var(--color-surface-white);
   }
+
+
 </style>
 
 <script>

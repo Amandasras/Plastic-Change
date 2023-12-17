@@ -11,13 +11,16 @@ import Infographic from "../components/Infographic.astro";
 import Popup from "../components/Popup.astro";
 import { Image } from "astro:assets";
 import arrow from "../assets/images/forside/icons8-arrow-48.png";
+import FormMobil from "../components/FormMobil.astro";
+
 ---
 
 <BaseLayout>
   <header>
     <div class="hero_container">
       <section class="hero_index sticky-hero">
-        <Navigation />
+     <!--    <Navigation /> -->
+     <Navigation/>
         <div class="hero_tekst">
           <h4 class="text-title-uppercase">Kampagne</h4>
           <Landingpage />
@@ -32,19 +35,27 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
           </h2>
 
           <!-- Find/få tips til at reducere dit plastikforbrug i juletiden -->
+          <div class="arrow">
+            <Image
+              class="arrowI"
+              src={arrow}
+              alt="Pil som peger ned mod resten af siden"
+            />
+          </div>
         </div>
-        <div class="arrow">
-          <Image
-            class="arrowI"
-            src={arrow}
-            alt="Pil som peger ned mod resten af siden"
-          />
-        </div>
+      
       </section>
     </div>
   </header>
   <main>
-    <Infographic />
+    <div class="info_sektion_mobli_view">
+      <div class="form_plasering_desktop"><Form /></div>
+      <div class="form_plasering_mobil">
+        <div class="form_container_mobil"><FormMobil /></div>
+      </div>
+      <Infographic />
+    </div>
+    
     <CalenderSection />
     <BrudSection />
   </main>
@@ -68,8 +79,28 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
 </script>
 
 <style>
+  .form_container_mobil {
+    width: fit-content;
+    height: fit-content;
+    z-index: 5;
+  }
+  .form_plasering_mobil {
+    position: relative;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: var(--size-spacing-48) 0;
+    width: 100vw;
+    height: fit-content;
+    z-index: 7;
+  }
+
+  .form_plasering_desktop {
+    display: none;
+  }
+
   .hero_container {
-    height: 80vh; /* Juster højden efter behov */
+    height: 100vh; /* Juster højden efter behov */
     position: relative;
     overflow: hidden;
   }
@@ -78,7 +109,7 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
     background-image: url("../assets/Juleskrald_Plastic_Change_darker.webp");
     background-size: cover;
     background-position: left;
-    height: 80vh;
+    height: 100vh;
     position: relative;
   }
   .hero_tekst {
@@ -108,6 +139,18 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
   }
   .arrowI {
     transform: rotate(-45deg);
+  }
+
+  @media (min-width: 1187px) {
+    .form_plasering_mobil {
+      display: none;
+    }
+    .form_plasering_desktop {
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 63%;
+    }
   }
 
   @media only screen and (min-width: 768px) {
