@@ -47,9 +47,10 @@ import FormMobil from "../components/FormMobil.astro";
       </div>
       <Infographic />
     </div>
+    <a href="#calenderSection">Test</a>
     <CalenderSection />
     <BrudSection />
-    <DitBidrag />
+    <DitBidrag id="calenderSection" />
   </main>
 </BaseLayout>
 
@@ -68,6 +69,17 @@ import FormMobil from "../components/FormMobil.astro";
       pinSpacing: false,
     },
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const readMoreButton = document.getElementById('readMoreButton');
+
+  if (readMoreButton) {
+    readMoreButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Forhindrer standardformularadfærd
+      gsap.to(window, { duration: 1, scrollTo: '#calenderSection' });
+    });
+  }
+});
 </script>
 
 <style>

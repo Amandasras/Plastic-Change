@@ -1,9 +1,9 @@
 ---
-const { size, style, label } = Astro.props;
+const { size, style, label, href } = Astro.props;
 ---
 
 <div class="button" size-variant={size} style-variant={style}>
-  <a href="#" class="button_label" label-variant={style}>{label}</a>
+  <a href={href} class="button_label" label-variant={style}>{label}</a>
 </div>
 
 <style>
@@ -60,20 +60,20 @@ const { size, style, label } = Astro.props;
   }
 
   [style-variant="outlined"] {
-    border: 2px solid var(--color-stroke-gray500);
+    border: 2px solid var(--color-stroke-red500);
   }
   [style-variant="outlined"]:hover {
-    border: 2px solid var(--color-stroke-red500);
+    border: 2px solid var(--color-surface-red600);
   }
 
   [style-variant="outlined"]:hover .button_label {
-    color: var(--color-text-red500);
+    color: var(--color-surface-red600);
   }
   [label-variant="filled"] {
     color: var(--color-text-white);
   }
 
   [label-variant="outlined"] {
-    color: var(--color-text-gray500);
+    color: var(--color-text-red500);
   }
 </style>
