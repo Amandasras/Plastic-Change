@@ -4,20 +4,14 @@
 <div class="text-display-large">
   Julen er <span class="typing-text">hjerternes</span> fest
 </div>
-<!-- <div class="text-display-large">
-  Julen er <span class="typing-text">hjerternes</span><span class="hidden"
-    >forbrugens</span
-  > fest
-</div> -->
 
 <style>
-  /* --------------denne style passer til js hvor hjerternes står der fra starten */
   .text-display-large {
     color: var(--white);
     padding-bottom: var(--size-spacing-24);
   }
   .typing-text {
-    animation: fade ease 2.2s;
+    animation: fade ease 3.2s;
   }
   @keyframes fade {
     0% {
@@ -63,7 +57,7 @@
   // start typing effect with delay
   setTimeout(() => {
     setTyper(text, words);
-  }, 2000); // Tilføj det ønskede delay i millisekunder før animationen starter
+  }, 3000); // Tilføj det ønskede delay i millisekunder før animationen starter
 
   function setTyper(element, words) {
     const LETTER_TYPE_DELAY = 125;
@@ -83,13 +77,11 @@
 
     function startTyping() {
       wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
-      text.classList.add("show");
     }
 
     function typeLetter() {
       if (animationComplete) {
         clearInterval(wordTypeInterval);
-        return;
       }
 
       const word = words[wordIndex];
@@ -108,27 +100,11 @@
             element.classList.add("finished"); // Tilføj klassen 'finished'
           }
         }
-      } else if (direction == DIRECTION_BACKWARDS) {
-        letterIndex--;
-
-        if (letterIndex == 0) {
-          nextWord();
-        }
       }
 
       const textToType = word.substring(0, letterIndex);
 
       element.textContent = textToType;
-    }
-
-    function nextWord() {
-      letterIndex = 0;
-      direction = DIRECTION_FORWARDS;
-      wordIndex++;
-
-      if (wordIndex == words.length) {
-        wordIndex = 0;
-      }
     }
   }
 </script>
