@@ -98,12 +98,12 @@
 
 /* ----------------- Fonts ----------------- */
 @font-face {
-  font-family: "Rubrik";
-  src: local(Rubrik), url(../assets/fonts/Rubik-VariableFont_wght.ttf);
+  font-family: "Rubik";
+  src: local(Rubik), url(../assets/fonts/Rubik-VariableFont_wght.ttf);
 }
 
 @font-face {
-  font-family: "Champton";
+  font-family: "Campton";
   src: url("public/fonts/CamptonBold.otf") format("opentype"), url(public/fonts/CamptonMedium.otf) format("opentype"), url(../assets/fonts/CamptonSemiBold.otf) format("opentype");
 }
 /* display */
