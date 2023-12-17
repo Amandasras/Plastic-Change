@@ -14,6 +14,7 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
 ---
 
 <BaseLayout>
+
   <header>
     <div class="hero_container">
       <section class="hero_index sticky-hero">
@@ -43,10 +44,13 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
       </section>
     </div>
   </header>
+
   <main>
+    <Form/>
     <Infographic />
     <CalenderSection />
     <BrudSection />
+   
   </main>
 </BaseLayout>
 
@@ -68,6 +72,9 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
 </script>
 
 <style>
+ 
+
+
   .hero_container {
     height: 80vh; /* Juster højden efter behov */
     position: relative;
@@ -84,7 +91,6 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
   .hero_tekst {
     padding: var(--size-spacing-24);
     padding-top: var(--size-spacing-24);
-    font-size: var();
   }
   .text-title-uppercase {
     color: var(--white);
@@ -134,4 +140,5 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
       grid-column: 2/3;
     }
   }
+  
 </style>

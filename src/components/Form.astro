@@ -9,15 +9,21 @@ import { Image } from "astro:assets";
 import snow from "../assets/images/form/snow.svg";
 import FormSteps from "./FormSteps.astro";
 ---
-
+<div class="form_plasering">
 <div id="formWithSnow">
   <Image src={snow} alt="illustration af sne på formularen" id="snow" />
   <div id="form_container">
     <FormSteps />
   </div>
 </div>
-
+</div>
 <style>
+
+.form_plasering{
+    position:absolute;
+    top: 29%;
+    left: 60%;
+  }
   #formWithSnow {
     width: 432.27px;
     position: relative;
@@ -25,7 +31,7 @@ import FormSteps from "./FormSteps.astro";
   #snow {
     width: 432.27px;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
   }
   #form_container {
     position: absolute;
@@ -34,7 +40,7 @@ import FormSteps from "./FormSteps.astro";
     margin-left: calc((432.27px - 384px) / 2);
     margin-right: calc((432.27px - 384px) / 2);
     padding: var(--size-spacing-64) var(--size-spacing-32);
-
+z-index: 2;
     width: 384px;
     border-radius: 11px;
     background-color: var(--color-surface-white);
