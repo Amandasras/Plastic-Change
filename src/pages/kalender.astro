@@ -1,58 +1,55 @@
 ---
+import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import Calendar from "../components/Calendar.astro";
 import Navigation from "../components/Navigation.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 import "../styles/reset.css";
-import Button from "../components/Button.astro";
 import Glamping from "../assets/images/julekalender/glamping_ferie.webp";
 ---
 
 <BaseLayout>
   <header>
-    <div class="container">
-      <section class="hero">
-        <Navigation />
-        <!-- Hero -->
-        <div class="hero_tekst">
-          <h4 class="text-title-uppercase">Kampagne</h4>
-          <h1 class="text-display-large">Årets julekalender</h1>
-          <p class="text-display-small">Åben dagens magiske julelåge og tag del i bæredygtig glæde! Reducer plastikforbruget med daglige opgaver og spred julestemning med omtanke!</p>
-        </div>
-      </section>
-    </div>
+    <section class="hero">
+      <Navigation />
+    </section>
   </header>
   <main>
+    <div class="CalenderIntro">
+      <div class="CalenderIntroText">
+        <h2 class="text-display-medium">Åben dagens kalenderlåge</h2>
+        <p class="text-form-label-semibold">Vores julekalender rummer 24 små, men kraftfulde forslag til, hvordan du kan være med til at reducere plastikforbruget og gøre en positiv indvirkning på miljøet.</p>
+      </div>
+    </div>
+    <Calendar />
     <section class="vind_en_glamping">
       <div class="glamping_container">
         <div class="glmaping_overskrifter">
-          <h2 class="text-display-medium">Vind en glamping tur ved tilmelding af julekalenderen</h2>
-          <p class="text-form-label-semibold">Når du tilmelder dig vores julekalender på mail er du samtidig med i konkurrencen om at vinde en mindeværdig oplevelse ude i naturen sammen med en du holder af.</p>
+          <h2 class="text-display-medium">Vind en glampingtur!</h2>
         </div>
         <div class="glamping_content">
           <div class="glaming_tekst">
+            <p class="text-form-label-semibold">Når du tilmelder dig vores julekalender på mail er du samtidig med i konkurrencen om at vinde glamping tur.</p>
             <p class="text-body-regular">
-              Hvis du ikke ønsker at deltage i konkurrencen, men stadig vil bidrage til at bekæmpe plastikforurening, er der også en løsning for dig. Åbn dagens låge og opdag, hvilket lille tiltag du kan implementere i dag for at gøre en forskel.
-              Vores julekalender rummer 24 små, men kraftfulde forslag til, hvordan du kan være med til at reducere plastikforbruget og gøre en positiv indvirkning på miljøet.
+              Få vores julekalender sendt direkte til din email. Den er fyldt med 24 lette tiltage til, hvordan du kan reducere dit plastikforbrug i juletiden og derved få en mere bæredygtig jul. <br />Når du tilmelder dig julekalenderen på mail er
+              du automatisk med i lodtrækningen om at vinde en mindeværdig glampingoplevelse ude i naturen sammen med en du holder af.
             </p>
-            <br />
-            <br />
             <p class="text-body-regular tekst">
-              Derudover vil vi afsløre den heldige vinder af glamping turen i den 24. låge. Så uanset om du er interesseret i at vinde en spændende glamping tur eller bare ønsker at bidrage til en vigtig sag, har vores julekalender noget for enhver
-              smag. Tilmeld dig nyhedsbrevet eller åbn dagens låge – det er din mulighed for at gøre en forskel og være en del af kampen mod plastikforurening!
+              Vi vil afsløre den heldige vinder af glamping turen i den 24. låge. Så uanset om du er interesseret i at vinde en spændende glamping tur eller bare ønsker at bidrage til en vigtig sag, har vores julekalender noget for enhver smag.
+              <br />Tilmeld dig nyhedsbrevet eller åbn dagens låge – det er din mulighed for at gøre en forskel og være en del af kampen mod plastikforurening!
             </p>
+            <div class="Field">
+              <input type="email" min="1" step="1" name="regular" id="inputfieldRegular" class="inputField" autocomplete="email" placeholder="ex: Anne@hansen.dk" />
+              <div id="unit" class="text-form-label-regular">
+                <Button label="Tilmeld" size="small" style="filled" />
+              </div>
+            </div>
           </div>
           <Image src={Glamping} alt="Billedet af et glampingtelt" class="glamping_img" />
         </div>
       </div>
     </section>
-    <Calendar />
-    <div class="button_container">
-      <div class="se_dagens_button">
-        <Button label="Se dagens låge" size="thick" style="filled" />
-      </div>
-    </div>
   </main>
 </BaseLayout>
 
@@ -62,13 +59,10 @@ import Glamping from "../assets/images/julekalender/glamping_ferie.webp";
     background-image: url("../assets/backgroundImages/pakkegaver.webp");
     background-size: cover;
     background-position: right;
-    height: 80vh;
+    height: 96px;
     position: relative;
   }
-  .hero_tekst {
-    padding: var(--size-spacing-24);
-    padding-top: var(--size-spacing-24);
-  }
+
   .text-display-large {
     color: white;
   }
@@ -81,18 +75,25 @@ import Glamping from "../assets/images/julekalender/glamping_ferie.webp";
     max-width: 40ch;
     color: var(--white);
   }
-  .button_container {
+  .CalenderIntro {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  .se_dagens_button {
-    padding-top: var(--size-spacing-24);
-    width: 320px;
-    display: flex;
-    justify-content: center;
+
+  .CalenderIntroText {
+    width: 100%;
+    max-width: 940px;
+    padding: 48px 0 0;
   }
 
+  .CalenderIntroText p {
+    max-width: 60ch;
+  }
+
+  .CalenderIntroText h2 {
+    max-width: 100%;
+  }
   /* ---------------------- */
   /* ---------Vind en glamping section------------ */
   .vind_en_glamping {
@@ -126,6 +127,11 @@ import Glamping from "../assets/images/julekalender/glamping_ferie.webp";
     align-items: center;
     gap: var(--size-spacing-24);
     max-width: 60ch;
+  }
+  .glaming_tekst {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   @media only screen and (min-width: 800px) {
@@ -162,5 +168,41 @@ import Glamping from "../assets/images/julekalender/glamping_ferie.webp";
     .glmaping_overskrifter {
       max-width: 80ch;
     }
+  }
+
+  /* ---------- input field ---------- */
+  .inputLabel {
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .Field {
+    border-radius: 999px;
+    border: 1px solid var(--color-stroke-gray-300, #cacdd5);
+    background: var(--color-surface-white, #fff);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  .inputField {
+    padding: 10px 0 10px 20px;
+    border-radius: 999px;
+    border: none;
+    width: 100%;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    color: var(--color-text-gray400);
+  }
+
+  .inputField::placeholder {
+    color: var(--color-text-gray400);
+  }
+  #unit {
+    padding: 8px;
   }
 </style>
