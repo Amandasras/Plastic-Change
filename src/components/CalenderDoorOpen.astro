@@ -2,11 +2,15 @@
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import ornament from "../assets/images/brudSection/julepynt.png";
+import kryds from "../assets/images/kryds.svg";
 ---
 
 <div id="Door_container">
-  <p class="dato text-display-medium white">1. december</p>
-  <Image class="ornamentImage" src={ornament} alt="Julepynt" />
+  <Image src={kryds} alt="luk lågen" id="exit" />
+  <div class="imageAndTitle">
+    <p class="dato text-display-medium white">1. december</p>
+    <Image class="ornamentImage" src={ornament} alt="Julepynt" />
+  </div>
   <div class="indhold_container">
     <div class="text_containter">
       <p class="text-display-small white">Dagens tip:</p>
@@ -28,7 +32,7 @@ import ornament from "../assets/images/brudSection/julepynt.png";
 
 <style>
   #Door_container {
-    background-image: url("../assets/backgroundImages/Popup2.svg");
+    background-image: url("../../assets/backgroundImages/Popup2.svg");
     background-position: center;
     background-size: cover;
     border-radius: var(--size-spacing-24);
@@ -40,6 +44,15 @@ import ornament from "../assets/images/brudSection/julepynt.png";
 
     width: 90%;
     height: fit-content;
+    position: relative;
+  }
+  #exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #exit:hover {
+    scale: 80%;
   }
   .ornamentImage {
     display: none;
@@ -48,6 +61,7 @@ import ornament from "../assets/images/brudSection/julepynt.png";
     display: flex;
     flex-direction: column;
     gap: 40px;
+    align-items: center;
   }
 
   .text_containter,
@@ -56,12 +70,17 @@ import ornament from "../assets/images/brudSection/julepynt.png";
     flex-direction: column;
     gap: 12px;
   }
-
+  .tilMeldDig_container {
+    max-width: 420px;
+  }
   .white {
     color: var(--color-text-white);
+    background-color: var(--color-surface-green700);
   }
   .tilmeld_dig {
     line-height: 24px;
+    margin: 0 16px;
+    text-align: center;
   }
   /* ---------- input field ---------- */
   .inputLabel {
@@ -98,10 +117,25 @@ import ornament from "../assets/images/brudSection/julepynt.png";
   #unit {
     padding: 8px;
   }
-
-  @media (min-width: 600px) {
+  @media (min-width: 800px) {
+    .container {
+      background-image: url("../assets/backgroundImages/Popup1.svg");
+    }
+  }
+  @media (min-width: 900px) {
     .ornamentImage {
       display: block;
+    }
+
+    #Door_container {
+      flex-direction: row;
+      max-width: 840px;
+    }
+    .imageAndTitle {
+      width: 100%;
+    }
+    .indhold_container {
+      width: 100%;
     }
   }
 </style>
