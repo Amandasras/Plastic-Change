@@ -52,7 +52,7 @@ import "../styles/global.css";
         </div>
         <div class="card_content">
           <p class="text-body-small">Hvad kan du gøre?</p>
-          <p class="text-display-small">Gode råd til gaveindpakning</p>
+          <p class="text-display-small">Gode råd til indpakning</p>
         </div>
       </article>
     </a>
@@ -102,6 +102,10 @@ import "../styles/global.css";
     object-fit: cover;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   @media (min-width: 800px) {
     #brudSection {
       display: flex;
@@ -112,8 +116,7 @@ import "../styles/global.css";
     .border_img {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      margin: 0 var(--size-spacing-64) var(--size-spacing-64)
-        var(--size-spacing-64);
+      margin: 0 var(--size-spacing-64) var(--size-spacing-64) var(--size-spacing-64);
       overflow: hidden;
       border-radius: var(--border-size-4);
       border-radius: var(--border-size-4);
