@@ -1,5 +1,4 @@
 ---
-import Popup from "./Popup.astro";
 import CalenderDoorOpen from "./CalenderDoorOpen.astro";
 
 import { Image } from "astro:assets";
@@ -30,7 +29,6 @@ import door24 from "../assets/images/julekalender/door24.svg";
 ---
 
 <div class="container">
-  <!-- <Popup id="popup"/> -->
   <div id="calendar">
     <div class="calender-row1">
       <div class="calendar-collum1">
@@ -121,8 +119,8 @@ import door24 from "../assets/images/julekalender/door24.svg";
       </div>
     </div>
   </div>
-  <div class="OpenDoor_container">
-    <CalenderDoorOpen />
+  <div id="OpenDoor_container">
+    <CalenderDoorOpen id="OpenDoor" />
   </div>
 </div>
 
@@ -132,18 +130,17 @@ import door24 from "../assets/images/julekalender/door24.svg";
     display: grid;
   }
 
-  .OpenDoor_container {
+  #OpenDoor_container {
     width: 100vw;
-    /* skal ændres på Com: */
     padding-top: 32px;
-    display: flex;
     justify-content: center;
-    /* skal ændres på Com: */
     align-items: flex-start;
     background: rgba(0, 0, 0, 0.34);
     backdrop-filter: blur(20px);
     position: absolute;
     height: 100%;
+
+    display: none;
   }
 
   .door {
@@ -154,6 +151,9 @@ import door24 from "../assets/images/julekalender/door24.svg";
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .door:hover img {
+    opacity: 0.5;
   }
 
   #calendar {
@@ -186,7 +186,7 @@ import door24 from "../assets/images/julekalender/door24.svg";
     height: max-content;
     object-fit: contain;
   }
-  @media only screen and (min-width: 601px) {
+  @media only screen and (min-width: 600px) {
     #calendar {
       flex-direction: row;
       gap: 10px;
@@ -204,6 +204,12 @@ import door24 from "../assets/images/julekalender/door24.svg";
       gap: 10px;
     }
   }
+  @media (min-width: 800px) {
+    #OpenDoor_container {
+      padding-top: 0;
+      align-items: center;
+    }
+  }
   @media only screen and (min-width: 1100px) {
     .door img {
       width: 160px;
@@ -212,3 +218,18 @@ import door24 from "../assets/images/julekalender/door24.svg";
     }
   }
 </style>
+
+<script>
+  const doors = document.querySelectorAll(".door");
+  const OpenDoorContainer = document.getElementById("OpenDoor_container");
+
+  doors.forEach(function (door) {
+    door.addEventListener("click", function () {
+      OpenDoorContainer.style.display = "flex";
+    });
+  });
+
+  OpenDoorContainer.addEventListener("click", function () {
+    OpenDoorContainer.style.display = "none";
+  });
+</script>
