@@ -12,7 +12,6 @@ import Button from "./Button.astro";
     <ul class="nav-list">
       <li><a class="text-form-label-semibold" href="/kalender/">Julekalender</a></li>
       <li><a class="text-form-label-semibold" href="/juleTips/">Jule tips</a></li>
-      <li><Button label="Støt" size="regular" style="filled"/></li>
     </ul>
   </nav>
   <div class="mobile-nav">
@@ -40,7 +39,7 @@ import Button from "./Button.astro";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--size-spacing-12);
+    padding: var(--size-spacing-12) var(--size-spacing-32) var(--size-spacing-12) var(--size-spacing-12);
   }
 
   li a {
@@ -116,7 +115,13 @@ import Button from "./Button.astro";
       display: block;
     }
 
-
+    header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--size-spacing-12);
+  }
 
     .dropdown:hover .dropdown-content {
       display: none;
