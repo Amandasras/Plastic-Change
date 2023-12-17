@@ -1,6 +1,7 @@
 ---
+import Button from "./Button.astro";
 import { Image } from "astro:assets";
-import snow from "../assets/images/ditBidrag/snowSquare.svg";
+import snow from "../assets/images/form/snow.svg";
 import havIllustration from "../assets/images/ditBidrag/beskyttehavet.png";
 import ressourcerIllustration from "../assets/images/ditBidrag/jordensressourcer.png";
 import klimaIllustration from "../assets/images/ditBidrag/klimaaftryk.png";
@@ -8,70 +9,77 @@ import kemiIllustration from "../assets/images/ditBidrag/skadeligplastik-kemi.pn
 ---
 
 <section>
-  <h2 class="text-display-medium">Gå med i kampen mod plastik-foureing</h2>
-  <div id="formWithSnow">
-    <Image src={snow} alt="illustration af sne på formularen" id="snow" />
-    <div class="formBackground">
+  <div class="sectionInSection">
+    <h2 class="text-display-medium">Gå med i kampen mod plastik-foureing</h2>
+    <div id="formWithSnow">
+      <div class="snowContainer">
+        <Image src={snow} alt="illustration af sne på formularen" id="snow" />
+      </div>
       <div id="form_container">
         <div class="formText">
-          <p class="text-display-medium">Giv en julegave til planeten</p>
+          <p class="text-display-medium formTitle">Giv en julegave til planeten</p>
           <p class="text-body-regular">Du kan også hjælpe i juletiden ved at give et beløb til vores mission</p>
+          <div id="Button">
+            <Button label="Støt nu" size="regularWide" style="filled" />
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <h2 class="text-display-medium">Dit bidrag går bandt andet til at:</h2>
-  <div class="cards">
-    <div class="cardContainer" id="hav">
-      <div id="havCard" class="ditBidragCard">
-        <Image src={havIllustration} alt="illustration af en fisk" class="illustration" />
-        <h3 class="text-display-small">Beskytte naturen og havet mod plastikforurening</h3>
+  <div class="sectionInSection">
+    <h2 class="text-display-medium">Dit bidrag går bandt andet til at:</h2>
+    <div class="cards">
+      <div class="cardContainer" id="hav">
+        <div id="havCard" class="ditBidragCard">
+          <Image src={havIllustration} alt="illustration af en fisk" class="illustration" />
+          <h3 class="text-display-small">Beskytte naturen og havet mod plastikforurening</h3>
+        </div>
+        <div class="ditBidragCardOpen" id="havOpen">
+          <p class="text-body-regular">Hvert år ender mindst 15 millioner tons plastik i havet. Det svarer omtrent til, at der hvert minut bliver tømt to lastbiler med plastik ud i havet.</p>
+          <p class="text-body-regular">Kun 10 plastikprodukter udgør 75% af alt plastikaffald der ender i havet, hvor størstedelen er engangsplastik fra fødevareemballage.</p>
+        </div>
       </div>
-      <div class="ditBidragCardOpen" id="havOpen">
-        <p class="text-body-regular">Hvert år ender mindst 15 millioner tons plastik i havet. Det svarer omtrent til, at der hvert minut bliver tømt to lastbiler med plastik ud i havet.</p>
-        <p class="text-body-regular">Kun 10 plastikprodukter udgør 75% af alt plastikaffald der ender i havet, hvor størstedelen er engangsplastik fra fødevareemballage.</p>
+      <div class="cardContainer" id="klima">
+        <div id="klimaCard" class="ditBidragCard">
+          <Image src={klimaIllustration} alt="illustration fod med klimaaftrykket" class="illustration" />
+          <h3 class="text-display-small">Mindske klimaaftryk</h3>
+        </div>
+        <div id="klimaOpen" class="ditBidragCardOpen">
+          <p class="text-body-regular">I dag udleder plastikproduktionen mere CO2 end hele den globale flyindustri, og produktionen forventes at firedobles inden 2050.</p>
+          <p class="text-body-regular">
+            Vi kan spare kloden for 3,7 mio. tons CO2 årligt i Europa de næste 9 år, hvis vi sætter mål om genbrug på 50% af vores emballager inden 2030. Det svarer til hvad det nuværende antal personbiler i Hovedstadsområdet, Region Sjælland,
+            Aarhus, Odense, Aalborg og Bornholm vil udlede årligt.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="cardContainer" id="klima">
-      <div id="klimaCard" class="ditBidragCard">
-        <Image src={klimaIllustration} alt="illustration fod med klimaaftrykket" class="illustration" />
-        <h3 class="text-display-small">Mindske klimaaftryk</h3>
+      <div class="cardContainer" id="ressourcer">
+        <div id="ressourcerCard" class="ditBidragCard">
+          <Image src={ressourcerIllustration} alt="illustration jordens ressourcer" class="illustration" />
+          <h3 class="text-display-small">Skåne Jordens ressourcer</h3>
+        </div>
+        <div id="ressourcerOpen" class="ditBidragCardOpen">
+          <p class="text-body-regular">
+            Alt for meget plastik smides ud og brændes af efter være brugt i ganske få minutter. I Danmark bruger vi hvert år omkring 130 millioner engangskopper alene til kaffen. Kopperne bruges i gennemsnit i blot 15 minutter, hvorefter de bliver
+            til affald.
+          </p>
+          <p class="text-body-regular">
+            På Europæisk plan kan vi spare 10 milliarder kubikmeter vand årligt ved at sætte mål for genbrug på 50% af vores emballager. Det svarer til et vandforbrug på 4 mio. olympiske swimmingpools om året – altså 1,1 swimmingpool per dansker ml.
+            18-64 år.
+          </p>
+        </div>
       </div>
-      <div id="klimaOpen" class="ditBidragCardOpen">
-        <p class="text-body-regular">I dag udleder plastikproduktionen mere CO2 end hele den globale flyindustri, og produktionen forventes at firedobles inden 2050.</p>
-        <p class="text-body-regular">
-          Vi kan spare kloden for 3,7 mio. tons CO2 årligt i Europa de næste 9 år, hvis vi sætter mål om genbrug på 50% af vores emballager inden 2030. Det svarer til hvad det nuværende antal personbiler i Hovedstadsområdet, Region Sjælland, Aarhus,
-          Odense, Aalborg og Bornholm vil udlede årligt.
-        </p>
-      </div>
-    </div>
-    <div class="cardContainer" id="ressourcer">
-      <div id="ressourcerCard" class="ditBidragCard">
-        <Image src={ressourcerIllustration} alt="illustration jordens ressourcer" class="illustration" />
-        <h3 class="text-display-small">Skåne Jordens ressourcer</h3>
-      </div>
-      <div id="ressourcerOpen" class="ditBidragCardOpen">
-        <p class="text-body-regular">
-          Alt for meget plastik smides ud og brændes af efter være brugt i ganske få minutter. I Danmark bruger vi hvert år omkring 130 millioner engangskopper alene til kaffen. Kopperne bruges i gennemsnit i blot 15 minutter, hvorefter de bliver til
-          affald.
-        </p>
-        <p class="text-body-regular">
-          På Europæisk plan kan vi spare 10 milliarder kubikmeter vand årligt ved at sætte mål for genbrug på 50% af vores emballager. Det svarer til et vandforbrug på 4 mio. olympiske swimmingpools om året – altså 1,1 swimmingpool per dansker ml.
-          18-64 år.
-        </p>
-      </div>
-    </div>
-    <div class="cardContainer" id="kemi">
-      <div id="kemiCard" class="ditBidragCard">
-        <Image src={kemiIllustration} alt="illustration farlig kemi" class="illustration" />
-        <h3 class="text-display-small">Beskytte folkesundheden mod skadelig kemi</h3>
-      </div>
-      <div id="kemiOpen" class="ditBidragCardOpen">
-        <p class="text-body-regular">Op mod 12.000 forskellige typer kemikalier bruges i emballage og andre former for fødevarekontaktmateriale.</p>
-        <p class="text-body-regular">
-          Flere af disse kemikalier er farlige for menneskers helbred, og kan føre til kræft, hjertesygdom, inflammatorisk tarmsygdom, kronisk inflammatorisk ledsygdom, genotoksicitet, kroniske sygdomme (såsom åreforkalkning, diabetes,
-          hjerte-kar-sygdomme) og autoimmune sygdomme.
-        </p>
+      <div class="cardContainer" id="kemi">
+        <div id="kemiCard" class="ditBidragCard">
+          <Image src={kemiIllustration} alt="illustration farlig kemi" class="illustration" />
+          <h3 class="text-display-small">Beskytte folkesundheden mod skadelig kemi</h3>
+        </div>
+        <div id="kemiOpen" class="ditBidragCardOpen">
+          <p class="text-body-regular">Op mod 12.000 forskellige typer kemikalier bruges i emballage og andre former for fødevarekontaktmateriale.</p>
+          <p class="text-body-regular">
+            Flere af disse kemikalier er farlige for menneskers helbred, og kan føre til kræft, hjertesygdom, inflammatorisk tarmsygdom, kronisk inflammatorisk ledsygdom, genotoksicitet, kroniske sygdomme (såsom åreforkalkning, diabetes,
+            hjerte-kar-sygdomme) og autoimmune sygdomme.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -91,30 +99,108 @@ import kemiIllustration from "../assets/images/ditBidrag/skadeligplastik-kemi.pn
   p {
     color: var(--color-text-white);
   }
+
+  .sectionInSection {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
   #formWithSnow {
     width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 48px;
+  }
+
+  .snowContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   #snow {
-    width: 325px;
-    height: fit-content;
-  }
-  .formBackground {
-    margin: 0 15px;
-  }
-  #form_container {
+    position: absolute;
     width: 100%;
-    border-radius: 0 0 10px 10px;
+    height: fit-content;
+    x: 2;
+    top: -48px;
+    object-fit: cover;
+  }
+
+  #form_container {
+    width: calc(100% - 30px);
+    border-radius: 10px;
+    margin: 0 15px;
+    padding: var(--size-spacing-48) var(--size-spacing-16) var(--size-spacing-16);
     background-color: var(--color-surface-white);
   }
 
-  .formText {
-    padding: 16px 16px 40px 16px;
+  @media (min-width: 430px) {
+    #form_container {
+      padding-top: 56px;
+    }
   }
 
+  @media (min-width: 470px) {
+    #form_container {
+      padding-top: 72px;
+    }
+  }
+
+  @media (min-width: 520px) {
+    #form_container {
+      padding-top: 80px;
+    }
+    #snow {
+      top: -64px;
+    }
+  }
+
+  @media (min-width: 560px) {
+    #form_container {
+      padding-top: 88px;
+    }
+  }
+  @media (min-width: 600px) {
+    #formWithSnow {
+      margin-top: 64px;
+    }
+    #form_container {
+      width: calc(100% - 60px);
+      margin: 0 30px;
+      max-width: calc(446px + 30px);
+    }
+    .snowContainer {
+      max-width: 535px;
+    }
+    #snow {
+      max-width: 535px;
+    }
+  }
+
+  .formText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .formTitle {
+    font-size: 28px;
+  }
   #form_container p {
     color: var(--color-text-gray900);
   }
 
+  #Button {
+    width: 100%;
+    max-width: 220px;
+  }
   /* Cards */
   .cardContainer {
     background-color: var(--color-surface-red700);
