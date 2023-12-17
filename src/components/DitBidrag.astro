@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import snow from "../assets/images/ditBidrag/snowSquare.svg";
+// import hav from "../assets/images/ditBidrag/";
+// import ressourcer from "../assets/images/ditBidrag/jordensressourcer.png";
+// import klima from "../assets/images/ditBidrag/klimaaftryk.png";
+// import kemi from "../assets/images/ditBidrag/skadeligplastik-kemi.png";
+---
+
+<section>
+  <h2 class="text-display-medium">Gå med i kampen mod plastik-foureing</h2>
+  <div id="formWithSnow">
+    <Image src={snow} alt="illustration af sne på formularen" id="snow" />
+    <div class="formBackground">
+      <div id="form_container">
+        <div class="formText">
+          <p class="text-display-medium">Giv en julegave til planeten</p>
+          <p class="text-body-regular">Du kan også hjælpe i juletiden ved at give et beløb til vores mission</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="text-display-medium">Dit bidrag går bandt andet til at:</h2>
+  <div class="ditBidragCard">
+    <!-- <Image src={hav} alt="illustration af en fisk" class="illustration" /> -->
+    <h3>Beskytte naturen og havet mod plastikforurening</h3>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--color-surface-red600);
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+  h2,
+  h3 {
+    color: var(--color-text-white);
+  }
+  #formWithSnow {
+    width: 100%;
+  }
+  #snow {
+    width: 325px;
+    height: fit-content;
+  }
+  .formBackground {
+    margin: 0 15px;
+  }
+  #form_container {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--color-surface-white);
+  }
+
+  .formText {
+    padding: 16px 16px 40px 16px;
+  }
+
+  #form_container p {
+    color: var(--color-text-gray900);
+  }
+
+  /* Cards */
+  .ditBidragCard {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid var(--color-surface-red700);
+    border-right: 2px solid var(--color-surface-red700);
+    border-bottom: 2px solid var(--color-surface-red700);
+    border-left: 2px solid var(--color-surface-red700);
+    background: var(--color-surface-red600);
+  }
+  .illustration {
+    width: 220px;
+    height: 220px;
+  }
+</style>

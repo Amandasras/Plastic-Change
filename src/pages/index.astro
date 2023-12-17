@@ -11,6 +11,7 @@ import Infographic from "../components/Infographic.astro";
 import Popup from "../components/Popup.astro";
 import { Image } from "astro:assets";
 import arrow from "../assets/images/forside/icons8-arrow-48.png";
+import DitBidrag from "../components/DitBidrag.astro";
 ---
 
 <BaseLayout>
@@ -24,22 +25,15 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
           <Landingpage />
 
           <h2 class="text-display-small">
-            Bliv en del af forandringen: Støt plastikstop i julen <br /> – Én donation
-            ad gangen!
+            Bliv en del af forandringen: Støt plastikstop i julen <br /> – Én donation ad gangen!
           </h2>
 
-          <h2 class="text-display-small readMore">
-            Læs mere om at reducere dit plastikforbrug i juletiden
-          </h2>
+          <h2 class="text-display-small readMore">Læs mere om at reducere dit plastikforbrug i juletiden</h2>
 
           <!-- Find/få tips til at reducere dit plastikforbrug i juletiden -->
         </div>
         <div class="arrow">
-          <Image
-            class="arrowI"
-            src={arrow}
-            alt="Pil som peger ned mod resten af siden"
-          />
+          <Image class="arrowI" src={arrow} alt="Pil som peger ned mod resten af siden" />
         </div>
       </section>
     </div>
@@ -50,7 +44,7 @@ import arrow from "../assets/images/forside/icons8-arrow-48.png";
     <Infographic />
     <CalenderSection />
     <BrudSection />
-   
+    <DitBidrag />
   </main>
 </BaseLayout>
 
