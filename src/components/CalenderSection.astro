@@ -5,16 +5,36 @@ import door1 from "../assets/images/julekalender/door1.svg";
 ---
 
 <section class="CalenderSection">
-  <h2 class="text-display-medium">Følg med i årets julekalender.<br />Tilmeld dig og vind en glamping tur</h2>
-  <Image src={door1} alt="dagens låge" class="CalenderDoor" />
-  <Button label="Åben dagens låge" size="regular" style="filled" />
+  <h2 class="text-display-medium">
+    Følg med i årets julekalender.<br />Tilmeld dig og vind en glamping tur
+  </h2>
+  <a href="/kalender/">
+    <Image src={door1} alt="dagens låge" class="CalenderDoor" /></a
+  >
+  <a href="/kalender/">
+    <Button label="Åben dagens låge" size="regular" style="filled" />
+  </a>
   <p class="text-title-uppercase">eller</p>
   <div class="emailSignUp_container">
-    <p class="text-form-label-semibold">Modtag vores dagens låge i din mail med tips og tricks til en plastikreduceret jul og vær med i lodtrækningen om en glamping tur for to.</p>
+    <p class="text-form-label-semibold">
+      Modtag vores dagens låge i din mail med tips og tricks til en
+      plastikreduceret jul og vær med i lodtrækningen om en glamping tur for to.
+    </p>
     <div class="inputFieldContainer">
       <div class="Field">
-        <input type="email" min="1" step="1" name="regular" id="inputfieldRegular" class="inputField" autocomplete="email" placeholder="ex: Anne@hansen.dk" />
-        <div id="unit" class="text-form-label-regular"><Button label="Tilmeld" size="small" style="filled" /></div>
+        <input
+          type="email"
+          min="1"
+          step="1"
+          name="regular"
+          id="inputfieldRegular"
+          class="inputField"
+          autocomplete="email"
+          placeholder="ex: Anne@hansen.dk"
+        />
+        <div id="unit" class="text-form-label-regular">
+          <Button label="Tilmeld" size="small" style="filled" />
+        </div>
       </div>
     </div>
   </div>
